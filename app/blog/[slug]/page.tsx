@@ -3,7 +3,7 @@ import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
 
-import { ArrowIcon } from 'app/components/icon'
+import { ArrowIcon } from 'app/components/icons'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -12,7 +12,6 @@ export async function generateStaticParams() {
     slug: post.slug,
   }))
 }
-
 
 export function generateMetadata({ params }) {
   let post = getBlogPosts().find((post) => post.slug === params.slug)
