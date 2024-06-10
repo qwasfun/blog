@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prettier-fix": "prettier --write ."
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@tailwindcss/postcss": "4.0.0-alpha.13",

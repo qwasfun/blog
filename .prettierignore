@@ -1,0 +1,12 @@
+# Build artifacts
+.next/
+.turbo/
+_next/
+__tmp__/
+dist/
+target/
+compiled/
+
+lerna.json
+test-timings.json
+pnpm-lock.yaml
