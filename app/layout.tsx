@@ -11,13 +11,13 @@ import { baseUrl } from './sitemap'
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Qwas',
-    template: '%s | Qwas',
+    default: 'Qwas Portfolio',
+    template: '%s | Qwas Portfolio',
   },
-  description: 'This is Qwas Websites.',
+  description: 'This is Qwas Portfolio.',
   openGraph: {
     title: 'Qwas',
-    description: 'This is Qwas Websites.',
+    description: 'This is Qwas Portfolio.',
     url: baseUrl,
     siteName: 'Qwas',
     locale: 'zh_CN',
@@ -32,6 +32,12 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://qwas.fun',
+    types: {
+      'application/rss+xml': [{ url: './rss.xml', title: 'rss' }],
     },
   },
 }
