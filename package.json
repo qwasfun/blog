@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prettier-fix": "prettier --write ."
   },
   "dependencies": {
     "@tailwindcss/postcss": "4.0.0-alpha.13",
@@ -16,6 +17,7 @@
     "next": "canary",
     "next-mdx-remote": "^4.4.1",
     "postcss": "^8.4.35",
+    "prettier": "^3.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sugar-high": "^0.6.0",
