@@ -101,7 +101,7 @@ export default function Blog({ params }) {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href={`https://github.com/qwasfun/blog/blob/main/app/blog/posts/${post.slug}.mdx`}
+            href={`https://github.com/qwasfun/blog/blob/main/app/blog/posts/${post.slug}.md`}
           >
             <ArrowIcon />
             <p className="ml-2 h-7">View this page on Github</p>
