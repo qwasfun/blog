@@ -67,6 +67,14 @@ syncthing
 vi /home/syncthing/.config/syncthing/config.xml
 ```
 
+或
+
+```sh
+vi /home/syncthing/.local/state/syncthing/config.xml
+```
+
+> 配置文件的路径可能不一样
+
 找下如下行
 
 ```xml
