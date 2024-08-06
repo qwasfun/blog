@@ -40,8 +40,10 @@ sudo apt-get install syncthing
 
 ## 新增运行用户（可选）
 
+> `useradd` 创建 `syncthing` 用户，并生成 `/home/syncthing` 目录，不会设置密码
+
 ```sh
-adduser syncthing
+useradd -m syncthing
 ```
 
 ### 运行
