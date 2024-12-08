@@ -15,9 +15,15 @@ summary:
   "proxies": {
     "http-proxy": "http://127.0.0.1:7890",
     "https-proxy": "http://127.0.0.1:7890",
-    "no-proxy": "*.aliyun.com,*.*.aliyuncs.com,127.0.0.0/8"
+    "no-proxy": "*.aliyun.com,*.*.aliyuncs.com,*.qwas.fun,127.0.0.0/8"
   }
 }
+```
+
+修改配置后需重启
+
+```sh
+systemctl restart docker
 ```
 
 Docker 的文档在这：[Configure the daemon to use a proxy](https://docs.docker.com/config/daemon/proxy/)
