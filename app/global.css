@@ -79,8 +79,8 @@ html {
 }
 
 .prose blockquote {
-  border-left: .25em solid #d0d7de;
-  @apply font-medium px-3; 
+  border-left: 0.25em solid #d0d7de;
+  @apply font-medium px-3;
 }
 
 .prose blockquote code {

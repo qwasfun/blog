@@ -1,31 +1,33 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { formatDate, getPostFiles } from 'app/utils'
 import { baseUrl } from 'app/sitemap'
 
 import { ArrowIcon } from 'app/components/icons'
 
-export async function generateStaticParams() {
-  let posts = getBlogPosts()
+// export async function generateStaticParams() {
+//   const posts = getPostFiles(['blog'])
 
-  return posts.map((post) => ({
-    slug: post.slug,
-  }))
-}
+//   return posts.map((post) => ({
+//     slug: post.slug,
+//   }))
+// }
 
 export function generateMetadata({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+  const post = getPostFiles([params.folder]).find(
+    (post) => post.slug === params.slug
+  )
   if (!post) {
     return
   }
 
-  let {
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata
-  let ogImage = image
+  const ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
@@ -37,7 +39,7 @@ export function generateMetadata({ params }) {
       description,
       type: 'article',
       publishedTime,
-      url: `${baseUrl}/blog/${post.slug}`,
+      url: `${baseUrl}/${params.folder}/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -53,8 +55,10 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function Blog({ params }) {
-  let post = getBlogPosts().find((post) => post.slug === params.slug)
+export default function Post({ params }) {
+  const post = getPostFiles([params.folder]).find(
+    (post) => post.slug === params.slug
+  )
 
   if (!post) {
     notFound()
@@ -76,7 +80,7 @@ export default function Blog({ params }) {
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
               : `/og?title=${encodeURIComponent(post.metadata.title)}`,
-            url: `${baseUrl}/blog/${post.slug}`,
+            url: `${baseUrl}/${post.folder}/${post.slug}`,
             author: {
               '@type': 'Person',
               name: 'My Portfolio',
@@ -101,7 +105,7 @@ export default function Blog({ params }) {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href={`https://github.com/qwasfun/blog/blob/main/app/blog/posts/${post.slug}.md`}
+            href={`https://github.com/qwasfun/blog/blob/main/content/${post.folder}/${post.slug}.md`}
           >
             <ArrowIcon />
             <p className="ml-2 h-7">View this page on Github</p>

@@ -30,7 +30,7 @@ function getMDXFiles(dir) {
   return fs
     .readdirSync(dir)
     .filter(
-      (file) => path.extname(file) === '.md'
+      (file) => path.extname(file) === '.md' || path.extname(file) === 'mdx'
     )
 }
 
@@ -39,13 +39,16 @@ function readMDXFile(filePath) {
   return parseFrontmatter(rawContent)
 }
 
-function getMDXData(dir) {
+function getMDXData(folder) {
+  let dir = path.join(process.cwd(), 'content', folder)
+
   let mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
     let { metadata, content } = readMDXFile(path.join(dir, file))
     let slug = path.basename(file, path.extname(file))
 
     return {
+      folder,
       metadata,
       slug,
       content,
@@ -53,8 +56,17 @@ function getMDXData(dir) {
   })
 }
 
-export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+export function getPostFiles(folders) {
+  let files: any = []
+
+  for (let i = 0; i < folders.length; i++) {
+    let folder = folders[i]
+    let file = getMDXData(folder)
+
+    files = files.concat(file)
+  }
+
+  return files
 }
 
 export function formatDate(date: string, includeRelative = false) {

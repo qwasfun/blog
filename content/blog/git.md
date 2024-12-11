@@ -4,7 +4,7 @@ publishedAt: 2024-12-08
 summary:
 ---
 
-内容来自 *Git：Mastering Version Control*
+内容来自 _Git：Mastering Version Control_
 
 《Git：Mastering Version Control》 Ferdinando Santacroce Aske Olsson Rasmus Voss Jakub Narębski
 

@@ -1,10 +1,11 @@
 import { baseUrl } from 'app/sitemap'
-import { getBlogPosts } from 'app/blog/utils'
+import { getPostFiles } from 'app/utils'
 
 export async function GET() {
-  let allBlogs = await getBlogPosts()
+  let folder = process.env.CONTENT_FOLDERS?.split(',')
+  let list = getPostFiles(folder)
 
-  const itemsXml = allBlogs
+  const itemsXml = list
     .sort((a, b) => {
       if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
         return -1
@@ -15,7 +16,7 @@ export async function GET() {
       (post) =>
         `<item>
           <title>${post.metadata.title}</title>
-          <link>${baseUrl}/blog/${post.slug}</link>
+          <link>${baseUrl}/${post.folder}/${post.slug}</link>
           <description>${post.metadata.summary || ''}</description>
           <pubDate>${new Date(
             post.metadata.publishedAt

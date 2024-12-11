@@ -107,4 +107,4 @@ systemctl enable syncthing@syncthing.service
 
 ## 参考
 
-上面 Linux 安装的内容是抄的:)  [Debian/Ubuntu使用apt的方式安装syncthing](https://sqmn666.com/archives/debian-ubuntushi-yong-aptde-fang-shi-an-zhuang-syncthing)
+上面 Linux 安装的内容是抄的:) [Debian/Ubuntu使用apt的方式安装syncthing](https://sqmn666.com/archives/debian-ubuntushi-yong-aptde-fang-shi-an-zhuang-syncthing)
