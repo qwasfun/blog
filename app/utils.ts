@@ -27,10 +27,12 @@ function parseFrontmatter(fileContent: string) {
 }
 
 function getMDXFiles(dir) {
-  return fs
-    .readdirSync(dir)
-    .filter(
-      (file) => path.extname(file) === '.md' || path.extname(file) === 'mdx'
+  let files: string[] = []
+  if (fs.existsSync(dir)) {
+    files = fs.readdirSync(dir)
+  } 
+  return files.filter(
+    (file) => path.extname(file) === '.md' || path.extname(file) === '.mdx'
     )
 }
 
