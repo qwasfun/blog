@@ -39,6 +39,8 @@ export function createdCommitTime(file: string): string {
     const output = child.stdout.toString().trim().split(String.fromCharCode(10))
     const firstCommitTime = output[output.length - 1] || ''
 
+    console.log('firstCommitTime',file, firstCommitTime)
+
     createdCache.set(file, firstCommitTime)
 
     return firstCommitTime
