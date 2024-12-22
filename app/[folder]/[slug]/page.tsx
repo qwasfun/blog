@@ -102,7 +102,7 @@ export default function Post({ params }) {
           发表于 {formatDate(post.metadata.createdAt, true)}
         </p>
         <p className="text-sm text-neutral-600 dark:text-neutral-400 md:ml-3">
-          最后更新于: {formatDate(post.metadata.updatedAt, true)}
+          最后更新于 {formatDate(post.metadata.updatedAt, true)}
         </p>
       </div>
       <article className="prose">
