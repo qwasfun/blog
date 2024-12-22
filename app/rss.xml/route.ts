@@ -2,7 +2,7 @@ import { baseUrl } from 'app/sitemap'
 import { getPostFiles } from 'app/utils/utils'
 
 export async function GET() {
-  let folder = process.env.CONTENT_FOLDERS?.split(',')
+  let folder = process.env.CONTENT_FOLDERS?.split(',') || []
   let list = getPostFiles(folder)
 
   const itemsXml = list
