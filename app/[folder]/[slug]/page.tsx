@@ -94,7 +94,7 @@ export default function Post({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
+      <h1 className="title font-semibold text-4xl tracking-tighter">
         {post.metadata.title}
       </h1>
       <div className="flex flex-col md:flex-row mt-2 mb-8 text-sm">
