@@ -46,6 +46,7 @@ export function createdCommitTime(file: string): string {
     console.log("child2child2child2child2child2child2",child2.stdout.toString())
 
     const output = child.stdout.toString()
+    console.log("output",child2.stdout.toString())
 
     const arr = output.split(String.fromCharCode(10))
     const outputT = arr.length > 1 ? arr[arr.length - 2] : arr[arr.length - 1]
