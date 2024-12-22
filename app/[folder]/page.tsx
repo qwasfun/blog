@@ -6,6 +6,15 @@ export const metadata = {
   title: 'Blog',
   description: 'Read my blog.',
 }
+// 返回一个 `params` 列表来填充 [slug] 动态段
+export async function generateStaticParams() {
+  const folders = process.env.CONTENT_FOLDERS?.split(',') || []
+
+  // 需要返回一个包含 params 对象的数组
+  return folders.map((folder) => ({
+    folder: folder,
+  }))
+}
 
 export default function Page({ params }) {
   const { folder } = params
