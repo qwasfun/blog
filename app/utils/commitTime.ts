@@ -36,13 +36,9 @@ export function createdCommitTime(file: string): string {
       { cwd: dirname(file) }
     )
 
-    const output = child.stdout.toString().trim()
-    console.log('output', file, output)
+    const output = child.stdout.toString().trim().split(String.fromCharCode(10))
+    const firstCommitTime = output[output.length - 1] || ''
 
-    const arr = output.split(String.fromCharCode(10))
-    const firstCommitTime =
-      arr.length > 1 ? arr[arr.length - 1] : arr[0]
-    console.log('output', file, firstCommitTime)
     createdCache.set(file, firstCommitTime)
 
     return firstCommitTime
