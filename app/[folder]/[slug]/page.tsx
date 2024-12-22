@@ -1,17 +1,10 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
-import { formatDate, getPostFiles } from 'app/utils'
+import { getPostFiles } from 'app/utils/utils'
 import { baseUrl } from 'app/sitemap'
 
 import { ArrowIcon } from 'app/components/icons'
-
-// export async function generateStaticParams() {
-//   const posts = getPostFiles(['blog'])
-
-//   return posts.map((post) => ({
-//     slug: post.slug,
-//   }))
-// }
+import { formatDate } from '../../utils/formatDate'
 
 export function generateMetadata({ params }) {
   const post = getPostFiles([params.folder]).find(
@@ -21,12 +14,7 @@ export function generateMetadata({ params }) {
     return
   }
 
-  const {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    image,
-  } = post.metadata
+  const { title, createdAt, summary: description, image } = post.metadata
   const ogImage = image
     ? image
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`
@@ -38,7 +26,7 @@ export function generateMetadata({ params }) {
       title,
       description,
       type: 'article',
-      publishedTime,
+      createdAt,
       url: `${baseUrl}/${params.folder}/${post.slug}`,
       images: [
         {
@@ -74,8 +62,8 @@ export default function Post({ params }) {
             '@context': 'https://schema.org',
             '@type': 'BlogPosting',
             headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
+            datePublished: post.metadata.createdAt,
+            dateModified: post.metadata.updatedAt,
             description: post.metadata.summary,
             image: post.metadata.image
               ? `${baseUrl}${post.metadata.image}`
@@ -91,9 +79,12 @@ export default function Post({ params }) {
       <h1 className="title font-semibold text-2xl tracking-tighter">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex flex-col md:flex-row mt-2 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {formatDate(post.metadata.publishedAt)}
+          发表于 {formatDate(post.metadata.createdAt, true)}
+        </p>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400 md:ml-3">
+          最后更新于: {formatDate(post.metadata.updatedAt, true)}
         </p>
       </div>
       <article className="prose">

@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { formatDate, getPostFiles } from 'app/utils'
+
+import { formatDate } from '../utils/formatDate'
 
 export function PostList(props) {
   const { list } = props
@@ -8,9 +9,7 @@ export function PostList(props) {
     <div>
       {list
         .sort((a, b) => {
-          if (
-            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-          ) {
+          if (new Date(a.metadata.createdAt) > new Date(b.metadata.createdAt)) {
             return -1
           }
           return 1
@@ -26,7 +25,7 @@ export function PostList(props) {
                 {post.metadata.title}
               </p>
               <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.metadata.publishedAt, false)}
+                {formatDate(post.metadata.createdAt, false)}
               </p>
             </div>
           </Link>

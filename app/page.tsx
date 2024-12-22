@@ -1,5 +1,5 @@
 import { PostList } from 'app/components/PostList'
-import { getPostFiles } from './utils'
+import { getPostFiles } from './utils/utils'
 
 export default function Page() {
   const folder = process.env.CONTENT_FOLDERS?.split(',') || []

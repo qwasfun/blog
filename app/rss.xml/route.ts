@@ -1,5 +1,5 @@
 import { baseUrl } from 'app/sitemap'
-import { getPostFiles } from 'app/utils'
+import { getPostFiles } from 'app/utils/utils'
 
 export async function GET() {
   let folder = process.env.CONTENT_FOLDERS?.split(',')
@@ -7,7 +7,7 @@ export async function GET() {
 
   const itemsXml = list
     .sort((a, b) => {
-      if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
+      if (new Date(a.metadata.createdAt) > new Date(b.metadata.createdAt)) {
         return -1
       }
       return 1
@@ -18,9 +18,7 @@ export async function GET() {
           <title>${post.metadata.title}</title>
           <link>${baseUrl}/${post.folder}/${post.slug}</link>
           <description>${post.metadata.summary || ''}</description>
-          <pubDate>${new Date(
-            post.metadata.publishedAt
-          ).toUTCString()}</pubDate>
+          <pubDate>${new Date(post.metadata.createdAt).toUTCString()}</pubDate>
         </item>`
     )
     .join('\n')

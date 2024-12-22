@@ -1,6 +1,6 @@
 import { PostList } from 'app/components/PostList'
-import { getPostFiles } from 'app/utils'
-import NotFound from 'app/not-found'
+import { getPostFiles } from 'app/utils/utils'
+import NotFound from 'app/NotFound'
 
 export const metadata = {
   title: 'Blog',
