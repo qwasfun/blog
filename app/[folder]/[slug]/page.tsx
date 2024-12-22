@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation'
+import NotFound from 'app/NotFound'
 import { CustomMDX } from 'app/components/mdx'
 import { getPostFiles } from 'app/utils/utils'
 import { baseUrl } from 'app/sitemap'
@@ -44,7 +44,7 @@ export function generateMetadata({ params }) {
       title,
       description,
       type: 'article',
-      publishedTime:createdAt,
+      publishedTime: createdAt,
       url: `${baseUrl}/${params.folder}/${post.slug}`,
       images: [
         {
@@ -67,7 +67,7 @@ export default function Post({ params }) {
   )
 
   if (!post) {
-    notFound()
+    return <NotFound />
   }
 
   return (

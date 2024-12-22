@@ -1,23 +1,15 @@
 import Link from 'next/link'
 
-const folders = process.env.CONTENT_FOLDERS?.split(',')
-
-const folderNavs = {}
-
-folders?.map((item) => {
-  folderNavs[`/${item}`] = {
-    name: item.replace(/\b(\s\w|^\w)/g, function (txt) {
-      return txt.toUpperCase()
-    }),
-  }
-})
-
 const navItems = {
   '/': {
     name: 'Home',
   },
-
-  ...folderNavs,
+  '/blog': {
+    name: 'Blog',
+  },
+  '/code': {
+    name: 'Code',
+  },
 }
 
 export function Navbar() {
