@@ -29,7 +29,7 @@ export function generateMetadata({ params }) {
     (post) => post.slug === params.slug
   )
   if (!post) {
-    return
+    return {}
   }
 
   const { title, createdAt, summary: description, image } = post.metadata
@@ -44,7 +44,7 @@ export function generateMetadata({ params }) {
       title,
       description,
       type: 'article',
-      createdAt,
+      publishedTime:createdAt,
       url: `${baseUrl}/${params.folder}/${post.slug}`,
       images: [
         {
@@ -94,15 +94,15 @@ export default function Post({ params }) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-2xl tracking-tighter">
+      <h1 className="title font-semibold text-4xl tracking-tighter">
         {post.metadata.title}
       </h1>
-      <div className="flex flex-col md:flex-row mt-2 mb-8 text-sm">
+      <div className="flex flex-col md:flex-row mt-3 mb-8 text-sm">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           发表于 {formatDate(post.metadata.createdAt, true)}
         </p>
         <p className="text-sm text-neutral-600 dark:text-neutral-400 md:ml-3">
-          最后更新于: {formatDate(post.metadata.updatedAt, true)}
+          最后更新于 {formatDate(post.metadata.updatedAt, true)}
         </p>
       </div>
       <article className="prose">

@@ -13,17 +13,26 @@ function parseFrontMatter(fileContent: string) {
   let match = frontMatterRegex.exec(fileContent)
   let frontMatterBlock = match ? match![1] : ''
   let content = fileContent.replace(frontMatterRegex, '').trim()
-  let frontMatterLines = frontMatterBlock
-    ? frontMatterBlock.trim().split('\n')
-    : []
   let metadata: Partial<Metadata> = {}
 
-  frontMatterLines.forEach((line) => {
-    let [key, ...valueArr] = line.split(': ')
-    let value = valueArr.join(': ').trim()
-    value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
-  })
+  // 文件存在 front matter 信息
+  if (frontMatterBlock) {
+    let frontMatterLines: string[] = []
+    frontMatterLines = frontMatterBlock
+      ? frontMatterBlock.trim().split('\n')
+      : []
+
+    frontMatterLines.forEach((line) => {
+      let [key, ...valueArr] = line.split(': ')
+      let value = valueArr.join(': ').trim()
+      value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
+      metadata[key.trim() as keyof Metadata] = value
+    })
+  } else {
+    // 不存在 matter 信息，读取第一行 # 作为 标题
+    metadata.title = content.match(/^#\s+(.*)$/m)![1] || ''
+    content = content.replace(/^#\s+(.*)$/m, '')
+  }
 
   return { metadata: metadata as Metadata, content }
 }
