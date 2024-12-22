@@ -37,6 +37,14 @@ export function createdCommitTime(file: string): string {
       { cwd: dirname(file) }
     )
 
+    const child2 = spawn.sync(
+      'git',
+      ['version'],
+      { cwd: dirname(file) }
+    )
+
+    console.log("child2child2child2child2child2child2",child2.stdout.toString())
+
     const output = child.stdout.toString()
 
     const arr = output.split(String.fromCharCode(10))
