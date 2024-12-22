@@ -28,7 +28,6 @@ export function createdCommitTime(file: string): string {
   if (cached) return cached
 
   if (!fs.existsSync(file)) return ''
-  //
 
   try {
     const child = spawn.sync(
@@ -37,22 +36,16 @@ export function createdCommitTime(file: string): string {
       { cwd: dirname(file) }
     )
 
-    const child2 = spawn.sync(
-      'git',
-      ['version'],
-      { cwd: dirname(file) }
-    )
-
-    console.log("child2", child2.stdout.toString())
-
-    const output = child.stdout.toString()
-    console.log("output", file, output)
+    const output = child.stdout.toString().trim()
+    console.log('output', file, output)
 
     const arr = output.split(String.fromCharCode(10))
-    const outputT = arr.length > 1 ? arr[arr.length - 2] : arr[arr.length - 1]
-    createdCache.set(file, outputT)
+    const firstCommitTime =
+      arr.length > 1 ? arr[arr.length - 1] : arr[0]
+    console.log('output', file, firstCommitTime)
+    createdCache.set(file, firstCommitTime)
 
-    return outputT
+    return firstCommitTime
   } catch (error) {
     console.error('Error getting earliest commit time:', error)
     return ''
