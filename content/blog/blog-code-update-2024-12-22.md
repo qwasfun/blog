@@ -49,3 +49,7 @@ Vercel 部署时， `git clone` 默认添加 `--depth=10`, 也就是默认只拉
 记录 [Vercel 的文档](https://vercel.com/docs/deployments/configure-a-build#configuring-a-build)
 
 环境变量 `VERCEL_DEEP_CLONE` 为 `true` 拉取全部 Git 历史记录
+
+## 可选配置 Front Matter
+
+将 Front Matter 改为可选配置，Front Matter 里主要有两个参数，标题和时间，如果没有配置Front Matter，标题使用 Markdown 文件第一个大标题，时间通过 Git 历史获取
