@@ -1,10 +1,10 @@
-import NotFound from 'app/NotFound'
 import { CustomMDX } from 'app/components/mdx'
 import { getPostFiles } from 'app/utils/utils'
 import { baseUrl } from 'app/sitemap'
 
 import { ArrowIcon } from 'app/components/icons'
 import { formatDate } from '../../utils/formatDate'
+import { notFound } from 'next/navigation'
 
 // 返回一个 `params` 列表来填充 [slug] 动态段
 export async function generateStaticParams() {
@@ -67,7 +67,7 @@ export default function Post({ params }) {
   )
 
   if (!post) {
-    return <NotFound />
+    notFound()
   }
 
   return (

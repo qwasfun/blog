@@ -1,6 +1,6 @@
 import { PostList } from 'app/components/PostList'
 import { getPostFiles } from 'app/utils/utils'
-import NotFound from 'app/NotFound'
+import { notFound } from 'next/navigation'
 
 export const metadata = {
   title: 'Blog',
@@ -23,7 +23,7 @@ export default function Page({ params }) {
     return txt.toUpperCase()
   })
   if (list.length === 0) {
-    return <NotFound />
+    notFound()
   }
 
   return (
