@@ -29,3 +29,13 @@
 ## 未来
 
 心怀感恩，做自己！攒钱，攒钱，攒钱，努力学习，强壮身体。
+
+## APP年度总结
+
+微信阅读年度报告
+
+![we read](https://static.qwas.fun/public/2024/12/weread.jpg)
+
+QQ 音乐年度
+
+![qq music](https://static.qwas.fun/public/2024/12/qqmusic.jpg)
