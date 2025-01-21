@@ -1,4 +1,4 @@
-# 高德、百度等地图笔记
+# 高德、百度等地图开发笔记
 
 ## 坐标系
 
@@ -8,7 +8,12 @@
 
 - BD09：为百度坐标系，在GCJ02坐标系基础上再次加密。百度地图API 使用该坐标系
 
+[坐标转换说明](https://lbs.baidu.com/index.php?title=jspopularGL/guide/coorinfo)
+
 ```js
+/**
+ * 回调形式实现
+ */
 const convertor = new BMap.Convertor()
 // const convertor = new BMapGL.Convertor()
 const points = []
@@ -22,7 +27,9 @@ convertor.translate(
 ```
 
 ```js
-// 坐标系转换
+/**
+ * 坐标系转换 Promise 实现
+ */
 convertorTranslate(arr) {
   const points = []
   arr.map(item => {
@@ -49,6 +56,14 @@ convertorTranslate(arr) {
   * COORDINATES_MAPBAR = 7，mapbar地图坐标
   * COORDINATES_51 = 8，51地图坐标
   */
+```
+
+[地图JS API示例](https://lbsyun.baidu.com/jsdemo.htm#TranslateoriTobd)
+
+[使用API接口地址转换坐标](https://lbs.baidu.com/faq/api?title=webapi/guide/changeposition-base)
+
+```md
+https://api.map.baidu.com/geoconv/v2/?coords=114.21892734521,29.575429778924&model=1&ak=您的AK
 ```
 
 高德地图坐标拾取 [https://lbs.amap.com/tools/picker](https://lbs.amap.com/tools/picker)
