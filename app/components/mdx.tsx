@@ -3,27 +3,13 @@ import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
+import remarkGfm from 'remark-gfm'
 
-function Table({ data }) {
-  let headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ))
-  let rows = data.rows.map((row, index) => (
-    <tr key={index}>
-      {row.map((cell, cellIndex) => (
-        <td key={cellIndex}>{cell}</td>
-      ))}
-    </tr>
-  ))
-
-  return (
-    <table>
-      <thead>
-        <tr>{headers}</tr>
-      </thead>
-      <tbody>{rows}</tbody>
-    </table>
-  )
+const options = {
+  mdxOptions: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+  },
 }
 
 function CustomLink(props) {
@@ -98,7 +84,6 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
-  Table,
 }
 
 export function CustomMDX(props) {
@@ -106,6 +91,7 @@ export function CustomMDX(props) {
     <MDXRemote
       {...props}
       components={{ ...components, ...(props.components || {}) }}
+      options={options}
     />
   )
 }
