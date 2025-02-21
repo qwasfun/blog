@@ -7,7 +7,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@tailwindcss/postcss": "4.0.0-alpha.13",
+    "@tailwindcss/postcss": "4.0.7",
     "@types/node": "20.11.17",
     "@types/react": "18.2.55",
     "@types/react-dom": "18.2.19",
@@ -17,13 +17,12 @@
     "fs-extra": "^11.2.0",
     "next": "14.2.21",
     "next-mdx-remote": "^5.0.0",
-    "postcss": "^8.4.35",
     "prettier": "^3.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "remark-gfm": "^4.0.0",
     "sugar-high": "^0.6.0",
-    "tailwindcss": "4.0.0-alpha.13",
+    "tailwindcss": "4.0.7",
     "typescript": "5.3.3"
   },
   "devDependencies": {
