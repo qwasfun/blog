@@ -10,28 +10,28 @@
     - 如果5前面的数字是偶数，则舍去5。
     - 如果5前面的数字是奇数，则进位。
 
-```text
-9.8249 ≈ 9.82
-9.8267 ≈ 9.83
+```js
+9.8249 ≈ 9.82  // 小于5舍去
+9.8267 ≈ 9.83  // 大于5进位
 
-9.82501 ≈ 9.83
-9.8351 ≈ 9.84
+9.82501 ≈ 9.83 // 5后有非0数字，进位
+9.8351  ≈ 9.84 // 5后面有非0数字，进位
 
-9.825 ≈ 9.82
-9.835 ≈ 9.84
+9.825 ≈ 9.82   // 5后面没有数字，看5前面的数字，奇数，舍去5
+9.835 ≈ 9.84   // 5后面没有数字，看5前面的数字，偶数，进位 
 ```
 
 JavaScript 中 toFixed 计算时，使用银行家舍入法
 
 ```js
-console.log((9.8249).toFixed(2)) // 小于5舍去 9.82
-console.log((9.8267).toFixed(2)) // 大于5进位 9.83
+console.log((9.8249).toFixed(2)) // 9.82
+console.log((9.8267).toFixed(2)) // 9.83
 
-console.log((9.82501).toFixed(2)) // 5后有非0数字，进位 9.83
-console.log((9.8351).toFixed(2))  // 5后面有非0数字，进位 9.84
+console.log((9.82501).toFixed(2)) // 9.83
+console.log((9.8351).toFixed(2))  // 9.84
 
-console.log((9.825).toFixed(2)) // 5后面没有数字，看5前面的数字，奇数，舍去5 9.82
-console.log((9.835).toFixed(2)) // 5后面没有数字，看5前面的数字，偶数。进位 9.84
+console.log((9.825).toFixed(2)) // 9.82
+console.log((9.835).toFixed(2)) // 9.84
 ```
 
 [银行家舍入法：一种更公平的四舍五入-Blog · WeFreeStar](https://blog.wefreestar.com/archives/bank-rounding-fairer-approach)
