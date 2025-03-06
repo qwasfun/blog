@@ -18,3 +18,15 @@ This is a porfolio site template complete with a blog. Includes:
 ## Reference
 
 https://github.com/vercel/examples/tree/main/solutions/blog
+
+```shell
+npm run db:generate
+```
+
+```shell
+npm run db:migrate
+```
+
+```shell
+npm run db:studio
+```

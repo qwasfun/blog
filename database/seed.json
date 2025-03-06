@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Qwas",
+    "feedLink": "https://qwas.fun/rss.xml"
+  },
+  {
+    "title": "GitHub Public Timeline Feed",
+    "feedLink": "https://github.com/qwasfun.atom"
+  }
+]
