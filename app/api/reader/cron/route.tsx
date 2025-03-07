@@ -3,6 +3,8 @@ import { rssFeed, rssPost } from '../../../../database/schema'
 import { db } from '../../../../database/drizzle'
 import { sql } from 'drizzle-orm'
 
+export const dynamic = 'force-dynamic'
+
 type CustomFeed = { id: number }
 type CustomItem = {
   title: string
