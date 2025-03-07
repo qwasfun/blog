@@ -1,11 +1,70 @@
 {
-  "id": "709b375a-200d-4462-880e-e422263b1468",
+  "id": "1880d1c8-aa5f-45a9-a0ab-89efc8e3c209",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.rss_articles": {
-      "name": "rss_articles",
+    "public.rss_feeds": {
+      "name": "rss_feeds",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "feed_link": {
+          "name": "feed_link",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "last_fetch_at": {
+          "name": "last_fetch_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {
+        "rss_feeds_feed_link_unique": {
+          "name": "rss_feeds_feed_link_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "feed_link"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.rss_posts": {
+      "name": "rss_posts",
       "schema": "",
       "columns": {
         "id": {
@@ -61,79 +120,28 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "rss_articles_feed_id_rss_feeds_id_fk": {
-          "name": "rss_articles_feed_id_rss_feeds_id_fk",
-          "tableFrom": "rss_articles",
+        "rss_posts_feed_id_rss_feeds_id_fk": {
+          "name": "rss_posts_feed_id_rss_feeds_id_fk",
+          "tableFrom": "rss_posts",
           "tableTo": "rss_feeds",
-          "columnsFrom": ["feed_id"],
-          "columnsTo": ["id"],
+          "columnsFrom": [
+            "feed_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
           "onDelete": "no action",
           "onUpdate": "no action"
         }
       },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {
-        "rss_articles_link_unique": {
-          "name": "rss_articles_link_unique",
+        "rss_posts_link_unique": {
+          "name": "rss_posts_link_unique",
           "nullsNotDistinct": false,
-          "columns": ["link"]
-        }
-      },
-      "policies": {},
-      "checkConstraints": {},
-      "isRLSEnabled": false
-    },
-    "public.rss_feeds": {
-      "name": "rss_feeds",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "title": {
-          "name": "title",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "feed_link": {
-          "name": "feed_link",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": true
-        },
-        "last_fetch_at": {
-          "name": "last_fetch_at",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "createdAt": {
-          "name": "createdAt",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": true,
-          "default": "now()"
-        },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "timestamp",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "rss_feeds_feed_link_unique": {
-          "name": "rss_feeds_feed_link_unique",
-          "nullsNotDistinct": false,
-          "columns": ["feed_link"]
+          "columns": [
+            "link"
+          ]
         }
       },
       "policies": {},

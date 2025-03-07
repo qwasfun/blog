@@ -1,5 +1,5 @@
 import Parser from 'rss-parser'
-import { rssFeed, rssArticle } from '../../../../database/schema'
+import { rssFeed, rssPost } from '../../../../database/schema'
 import { db } from '../../../../database/drizzle'
 import { sql } from 'drizzle-orm'
 
@@ -19,9 +19,9 @@ const parser: Parser<CustomFeed, CustomItem> = new Parser({
 })
 
 async function fetchAndSave(feed) {
-  const articles = await parser.parseURL(feed.feedLink)
+  const posts = await parser.parseURL(feed.feedLink)
 
-  const newArticles = articles.items
+  const parsedPosts = (posts.items as CustomItem[])
     .map((item) => {
       return {
         title: item.title,
@@ -37,10 +37,10 @@ async function fetchAndSave(feed) {
     })
 
   await db
-    .insert(rssArticle)
-    .values(newArticles)
+    .insert(rssPost)
+    .values(parsedPosts)
     .onConflictDoUpdate({
-      target: rssArticle.link,
+      target: rssPost.link,
       set: {
         title: sql`excluded
         .

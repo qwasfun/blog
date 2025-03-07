@@ -9,7 +9,7 @@ export const rssFeed = pgTable('rss_feeds', {
   updatedAt: timestamp('updated_at').defaultNow(),
 })
 
-export const rssArticle = pgTable('rss_articles', {
+export const rssPost = pgTable('rss_posts', {
   id: serial('id').primaryKey(),
   title: text('title').notNull(),
   link: text('link').unique().notNull(),
