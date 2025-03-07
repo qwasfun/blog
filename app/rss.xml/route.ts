@@ -1,9 +1,8 @@
-import { baseUrl } from 'app/sitemap'
+import { appFolders, baseUrl } from 'app/config'
 import { getPostFiles } from 'app/utils/utils'
 
 export async function GET() {
-  let folder = process.env.CONTENT_FOLDERS?.split(',') || []
-  let list = getPostFiles(folder)
+  let list = getPostFiles(appFolders)
 
   const itemsXml = list
     .sort((a, b) => {

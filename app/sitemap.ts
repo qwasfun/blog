@@ -1,16 +1,14 @@
 import { getPostFiles } from 'app/utils/utils'
 import { formatDate } from './utils/formatDate'
-
-export const baseUrl = 'https://qwas.fun'
+import { appFolders, baseUrl } from './config'
 
 export default async function sitemap() {
-  const folder = process.env.CONTENT_FOLDERS?.split(',') || []
-  const posts = getPostFiles(folder).map((post) => ({
+  const posts = getPostFiles(appFolders).map((post) => ({
     url: `${baseUrl}/${post.folder}/${post.slug}`,
     lastModified: formatDate(post.metadata.createdAt),
   }))
 
-  const routes = ['', ...folder].map((route) => ({
+  const routes = ['', ...appFolders].map((route) => ({
     url: `${baseUrl}/${route}`,
     lastModified: formatDate(Date()),
   }))

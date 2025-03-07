@@ -1,27 +1,20 @@
 import { PostList } from 'app/components/PostList'
 import { getPostFiles } from 'app/utils/utils'
 import { notFound } from 'next/navigation'
+import { folder } from './config'
+
+const folderTitle = folder.replace(/\b(\s\w|^\w)/g, function (txt) {
+  return txt.toUpperCase()
+})
 
 export const metadata = {
-  title: 'Blog',
+  title: folderTitle,
   description: 'Read my blog.',
 }
-// 返回一个 `params` 列表来填充 [slug] 动态段
-export async function generateStaticParams() {
-  const folders = process.env.CONTENT_FOLDERS?.split(',') || []
 
-  // 需要返回一个包含 params 对象的数组
-  return folders.map((folder) => ({
-    folder: folder,
-  }))
-}
-
-export default function Page({ params }) {
-  const { folder } = params
+export default function Page() {
   const list = getPostFiles([folder])
-  const folderTitle = folder.replace(/\b(\s\w|^\w)/g, function (txt) {
-    return txt.toUpperCase()
-  })
+
   if (list.length === 0) {
     notFound()
   }

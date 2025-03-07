@@ -1,9 +1,9 @@
 import { PostList } from 'app/components/PostList'
 import { getPostFiles } from './utils/utils'
+import { appFolders } from './config'
 
 export default function Page() {
-  const folder = process.env.CONTENT_FOLDERS?.split(',') || []
-  const list = getPostFiles(folder)
+  const list = getPostFiles(appFolders)
   return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Qwas</h1>

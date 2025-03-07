@@ -1,33 +1,25 @@
 import { CustomMDX } from 'app/components/mdx'
 import { getPostFiles } from 'app/utils/utils'
-import { baseUrl } from 'app/sitemap'
 
 import { ArrowIcon } from 'app/components/icons'
 import { formatDate } from '../../utils/formatDate'
 import { notFound } from 'next/navigation'
+import { folder } from '../config'
+import { baseUrl } from '../../config'
 
 // 返回一个 `params` 列表来填充 [slug] 动态段
 export async function generateStaticParams() {
-  const folders = process.env.CONTENT_FOLDERS?.split(',') || ['blog']
+  // 获取文件夹下所有文章
+  const posts = getPostFiles([folder])
 
-  // 为每个文件夹获取所有文章
-  const params = folders.flatMap((folder) => {
-    const posts = getPostFiles([folder])
-
-    // 为每篇文章返回 folder 和 slug 参数
-    return posts.map((post) => ({
-      folder: folder,
-      slug: post.slug,
-    }))
-  })
-
-  return params
+  // 根据文章生成 slug 参数
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
 }
 
 export function generateMetadata({ params }) {
-  const post = getPostFiles([params.folder]).find(
-    (post) => post.slug === params.slug
-  )
+  const post = getPostFiles([folder]).find((post) => post.slug === params.slug)
   if (!post) {
     return {}
   }
@@ -61,10 +53,13 @@ export function generateMetadata({ params }) {
   }
 }
 
-export default function Post({ params }) {
-  const post = getPostFiles([params.folder]).find(
-    (post) => post.slug === params.slug
-  )
+/**
+ * 只有用了动态路由才会调用了 generateStaticParams，并能从 params 取到路由的参数信息，否则 Page 的参数为空
+ * 通过遍历 generateStaticParams 返回的数组(posts)生成页面
+ * params的值是 posts 数组中某一项
+ */
+export default function Page({ params }) {
+  const post = getPostFiles([folder]).find((post) => post.slug === params.slug)
 
   if (!post) {
     notFound()
@@ -114,7 +109,7 @@ export default function Post({ params }) {
             className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
             rel="noopener noreferrer"
             target="_blank"
-            href={`https://github.com/qwasfun/blog/blob/main/content/${post.folder}/${post.slug}.md`}
+            href={`https://github.com/qwasfun/blog/blob/main/content/${folder}/${post.slug}.md`}
           >
             <ArrowIcon />
             <p className="ml-2 h-7">View this page on Github</p>
