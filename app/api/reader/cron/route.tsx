@@ -20,19 +20,25 @@ const parser: Parser<CustomFeed, CustomItem> = new Parser({
 
 async function fetchAndSave(feed) {
   const articles = await parser.parseURL(feed.feedLink)
-  const newArticles = articles.items.map((item) => {
-    return {
-      title: item.title,
-      link: item.link,
-      author: item.author ?? '',
-      feedId: feed.id,
-      pubDate: new Date(item.pubDate),
-    }
-  })
+
+  const newArticles = articles.items
+    .map((item) => {
+      return {
+        title: item.title,
+        link: item.link,
+        author: item.author ?? '',
+        feedId: feed.id,
+        pubDate: new Date(item.pubDate),
+      }
+    })
+    .filter((item, index, self) => {
+      // 去重，新的内容覆盖旧的
+      return index === self.findIndex((obj) => obj.link === item.link)
+    })
 
   await db
     .insert(rssArticle)
-    .values([...newArticles])
+    .values(newArticles)
     .onConflictDoUpdate({
       target: rssArticle.link,
       set: {
