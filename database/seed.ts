@@ -3,6 +3,7 @@ import feedSeed from './seed.json'
 import { rssFeed } from './schema'
 
 // TODO: Replace DATABASE_URL with the actual database url string
+// @ts-ignore
 const db = drizzle(DATABASE_URL)
 
 const seed = async () => {
