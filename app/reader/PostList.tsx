@@ -20,8 +20,8 @@ export function PostList(props) {
               <p className="text-neutral-900 dark:text-neutral-100 tracking-tight md:order-last">
                 {post.title}
               </p>
-              <p className="text-neutral-600 dark:text-neutral-400 w-[100px] tabular-nums">
-                {formatDate(post.pubDate, false)}
+              <p className="text-neutral-600 dark:text-neutral-400 pr-2 tabular-nums">
+                {formatDate(post.pubDate, true)}
               </p>
             </div>
           </Link>
