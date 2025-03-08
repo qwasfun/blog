@@ -7,8 +7,8 @@ const navItems = {
   '/blog': {
     name: 'Blog',
   },
-  '/code': {
-    name: 'Code',
+  '/reader': {
+    name: 'Reader',
   },
 }
 

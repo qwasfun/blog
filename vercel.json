@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/reader",
+      "schedule": "0 0 * * *"
+    }
+  ]
+}
