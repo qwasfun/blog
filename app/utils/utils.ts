@@ -89,3 +89,23 @@ export function getPostFiles(folders: string[]) {
 
   return files
 }
+
+export function getExcalidrawList() {
+  let dir = path.join(process.cwd(), 'public', 'excalidraw')
+
+  let files: string[] = []
+  if (fs.existsSync(dir)) {
+    files = fs.readdirSync(dir)
+  }
+
+  return files
+    .filter((file) => path.extname(file) === '.excalidraw')
+    .map((file) => {
+      return {
+        title: file,
+        link: file,
+        updatedAt: lastUpdatedCommitTime(path.join(dir, file)),
+        createdAt: createdCommitTime(path.join(dir, file)),
+      }
+    })
+}

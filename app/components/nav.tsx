@@ -10,6 +10,9 @@ const navItems = {
   '/reader': {
     name: 'Reader',
   },
+  '/excalidraws': {
+    name: 'Excalidraw',
+  },
 }
 
 export function Navbar() {

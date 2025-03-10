@@ -16,7 +16,7 @@ const Page = ({ searchParams }) => {
   useEffect(() => {
     const loadExcalidrawFile = async () => {
       try {
-        const response = await fetch(`/${f}`)
+        const response = await fetch(`/excalidraw/${f}`)
         const data = await response.json()
 
         if (excalidrawAPI) {
