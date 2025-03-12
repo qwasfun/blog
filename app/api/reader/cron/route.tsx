@@ -11,12 +11,13 @@ type CustomItem = {
   link: string
   author: string
   pubDate: string
+  content: string
 }
 
 const parser: Parser<CustomFeed, CustomItem> = new Parser({
   customFields: {
     feed: [],
-    item: ['title', 'link', 'author', 'pubDate'],
+    item: ['title', 'link', 'author', 'pubDate', 'content'],
   },
 })
 
@@ -30,6 +31,7 @@ async function fetchAndSave(feed) {
         link: item.link,
         author: item.author ?? '',
         feedId: feed.id,
+        content: item.content ?? '',
         pubDate: new Date(item.pubDate),
       }
     })
