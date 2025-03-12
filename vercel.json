@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/reader",
+      "path": "/api/reader/cron",
       "schedule": "0 0 * * *"
     }
   ]
