@@ -4,7 +4,6 @@ import { rssPost } from 'database/schema'
 import { desc } from 'drizzle-orm'
 
 export const dynamic = 'force-dynamic'
-export const revalidate = 3600
 
 export default async function Page({ searchParams }) {
   const pageSize = 20

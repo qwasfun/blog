@@ -14,6 +14,7 @@ export const rssPost = pgTable('rss_posts', {
   title: text('title').notNull(),
   link: text('link').unique().notNull(),
   author: text('author'),
+  content: text('content'),
   pubDate: timestamp('pub_date').notNull(),
   feedId: integer('feed_id')
     .notNull()

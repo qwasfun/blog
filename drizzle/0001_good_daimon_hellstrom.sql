@@ -1,0 +1,1 @@
+ALTER TABLE "rss_posts" ADD COLUMN "content" text;
