@@ -1,3 +1,5 @@
+'use client'
+
 import './global.css'
 import type { Metadata } from 'next'
 import { Navbar } from './components/nav'
@@ -5,8 +7,10 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './config'
+import { usePathname } from 'next/navigation'
+import { ReactNode } from 'react'
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: 'Qwas Portfolio',
@@ -39,27 +43,31 @@ export const metadata: Metadata = {
     },
   },
 }
+const cx = (...classes: string[]) => classes.filter(Boolean).join(' ')
 
-const cx = (...classes) => classes.filter(Boolean).join(' ')
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const pathname = usePathname()
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+  // 根据是否为“独立页面”，设置不同样式
+  const isStandalonePage =
+    pathname.startsWith('/excalidraw') && !pathname.startsWith('/excalidraws')
+
+  const mainClass = cx(
+    'flex-auto min-w-0 flex flex-col px-2 md:px-0',
+    isStandalonePage ? '' : 'lg:mx-auto max-w-3xl' // 只在不是独立页时添加
+  )
+
   return (
     <html
       lang="zh"
       className={cx('text-black bg-white dark:text-white dark:bg-black')}
     >
-      <body className="antialiased max-w-3xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </main>
+      <body className="antialiased mx-4">
+        <Navbar />
+        <main className={mainClass}>{children}</main>
+        {!isStandalonePage && <Footer />}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
