@@ -43,7 +43,10 @@ const Page = ({ searchParams }) => {
 
   return (
     <>
-      <div style={{ width: '100%', height: '600px' }} className="border-1">
+      <div
+        style={{ width: '100%', height: `calc(100vh - var(--spacing) * 45)` }}
+        className="border-1"
+      >
         <Excalidraw
           viewModeEnabled={isViewMode}
           langCode="zh-CN"
