@@ -3,13 +3,16 @@ import { getPostFiles } from 'app/utils/utils'
 import { notFound } from 'next/navigation'
 import { folder } from './config'
 
+import { siteTitle } from 'app/config'
+import { metadataBase } from '../components/metadataBase'
+
 const folderTitle = folder.replace(/\b(\s\w|^\w)/g, function (txt) {
   return txt.toUpperCase()
 })
 
 export const metadata = {
-  title: folderTitle,
-  description: 'Read my blog.',
+  ...metadataBase,
+  title: folderTitle + ' - ' + siteTitle,
 }
 
 export default function Page() {
