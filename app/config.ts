@@ -3,4 +3,5 @@
  */
 export const appFolders = ['blog']
 
+export const siteTitle = 'Qwas'
 export const baseUrl = 'https://qwas.fun'

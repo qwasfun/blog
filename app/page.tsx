@@ -1,6 +1,12 @@
 import { PostList } from 'app/components/PostList'
 import { getPostFiles } from './utils/utils'
 import { appFolders } from './config'
+import { metadataBase } from './components/metadataBase'
+
+export const metadata = {
+  ...metadataBase,
+  title: 'Qwas Portfolio',
+}
 
 export default function Page() {
   const list = getPostFiles(appFolders)

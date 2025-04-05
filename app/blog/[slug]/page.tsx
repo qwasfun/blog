@@ -5,7 +5,7 @@ import { ArrowIcon } from 'app/components/icons'
 import { formatDate } from '../../utils/formatDate'
 import { notFound } from 'next/navigation'
 import { folder } from '../config'
-import { baseUrl } from '../../config'
+import { baseUrl, siteTitle } from '../../config'
 
 // 返回一个 `params` 列表来填充 [slug] 动态段
 export async function generateStaticParams() {
@@ -30,14 +30,14 @@ export function generateMetadata({ params }) {
     : `${baseUrl}/og?title=${encodeURIComponent(title)}`
 
   return {
-    title,
+    title: title + ' - ' + siteTitle,
     description,
     openGraph: {
       title,
       description,
       type: 'article',
       publishedTime: createdAt,
-      url: `${baseUrl}/${params.folder}/${post.slug}`,
+      url: `${baseUrl}/${folder}/${post.slug}`,
       images: [
         {
           url: ogImage,
