@@ -27,8 +27,11 @@ const Page = ({ searchParams }) => {
               viewBackgroundColor:
                 data.appState.viewBackgroundColor || '#ffffff',
             },
-            files: data.files,
           })
+
+          if (data.files) {
+            excalidrawAPI.addFiles(data.files)
+          }
           excalidrawAPI.scrollToContent(excalidrawAPI.getSceneElements(), {
             fitToContent: true,
           })
