@@ -13,6 +13,9 @@ const navItems = {
   '/excalidraws': {
     name: 'Excalidraw',
   },
+  '/changelog': {
+    name: 'Changelog',
+  },
 }
 
 export function Navbar() {
