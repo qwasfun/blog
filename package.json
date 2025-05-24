@@ -11,7 +11,7 @@
     "db:studio": "npx drizzle-kit studio"
   },
   "dependencies": {
-    "@excalidraw/excalidraw": "0.18.0-a9e2d23",
+    "@excalidraw/excalidraw": "0.18.0",
     "@neondatabase/serverless": "^0.10.4",
     "@tailwindcss/postcss": "4.0.7",
     "@types/node": "20.11.17",
