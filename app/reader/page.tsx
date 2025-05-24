@@ -12,7 +12,8 @@ export const metadata = {
   title: 'Reader - ' + siteTitle,
 }
 
-export default async function Page({ searchParams }) {
+export default async function Page(props) {
+  const searchParams = await props.searchParams;
   const pageSize = 20
   const page = searchParams.p ?? 1
   const postList = await db
