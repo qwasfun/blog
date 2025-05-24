@@ -9,8 +9,8 @@ const Excalidraw = dynamic(
 )
 
 const Page = props => {
-  const searchParams = use(props.searchParams);
-  const { f = 'show.excalidraw' } = searchParams
+  const searchParams = use(props.searchParams) as { f?: string } | undefined;
+  const { f = 'show.excalidraw' } = searchParams || {};
   const [excalidrawAPI, setExcalidrawAPI] = React.useState<any>(null)
   const [isViewMode, setIsViewMode] = useState(true)
 
