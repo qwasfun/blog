@@ -17,7 +17,6 @@ export const metadata = {
 
 export default function Page() {
   const list = getPostFiles([folder])
-  console.log('list', list)
 
   if (list.length === 0) {
     notFound()

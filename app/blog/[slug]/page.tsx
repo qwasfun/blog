@@ -18,7 +18,8 @@ export async function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }) {
+export async function generateMetadata(props) {
+  const params = await props.params;
   const post = getPostFiles([folder]).find((post) => post.slug === params.slug)
   if (!post) {
     return {}
@@ -58,7 +59,8 @@ export function generateMetadata({ params }) {
  * 通过遍历 generateStaticParams 返回的数组(posts)生成页面
  * params的值是 posts 数组中某一项
  */
-export default function Page({ params }) {
+export default async function Page(props) {
+  const params = await props.params;
   const post = getPostFiles([folder]).find((post) => post.slug === params.slug)
 
   if (!post) {

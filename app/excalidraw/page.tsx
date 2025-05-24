@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, use } from 'react';
 import dynamic from 'next/dynamic'
 import '@excalidraw/excalidraw/index.css'
 
@@ -8,7 +8,8 @@ const Excalidraw = dynamic(
   { ssr: false }
 )
 
-const Page = ({ searchParams }) => {
+const Page = props => {
+  const searchParams = use(props.searchParams);
   const { f = 'show.excalidraw' } = searchParams
   const [excalidrawAPI, setExcalidrawAPI] = React.useState<any>(null)
   const [isViewMode, setIsViewMode] = useState(true)

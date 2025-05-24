@@ -11,7 +11,7 @@ export const metadata = {
 const Page = () => {
   const list = getExcalidrawList()
 
-  return <ExcalidrawList list={list} />
+  return <ExcalidrawList list={list}/>
 }
 
 export default Page
