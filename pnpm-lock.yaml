@@ -63,8 +63,8 @@ importers:
         specifier: ^3.13.0
         version: 3.13.0
       sugar-high:
-        specifier: ^0.6.0
-        version: 0.6.0
+        specifier: ^0.9.3
+        version: 0.9.3
       tailwindcss:
         specifier: 4.1.7
         version: 4.1.7
@@ -2417,8 +2417,8 @@ packages:
   stylis@4.3.6:
     resolution: {integrity: sha512-yQ3rwFWRfwNUY7H5vpU0wfdkNSnvnJinhF9830Swlaxl03zsOjCfmX0ugac+3LtK0lYSgwL/KXc8oYL3mG4YFQ==}
 
-  sugar-high@0.6.0:
-    resolution: {integrity: sha512-SBE1FI2NTVgLDo9E9yLO2rBT56HZAi3ONGeoTqJsHIN9cEAATrrKjZfIrSc5H5AoZ/mQd8OI7j27rvVXT9IxoA==}
+  sugar-high@0.9.3:
+    resolution: {integrity: sha512-sjJH8J76D1dRMU3QINnsYr1wfQyXbyEVQQvdgzJvIer6mkgM8ahB9fNrb+FDWzRKsLuITiBOR0ZbbhDZDUbqjg==}
 
   tailwindcss@4.1.7:
     resolution: {integrity: sha512-kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==}
@@ -5157,7 +5157,7 @@ snapshots:
 
   stylis@4.3.6: {}
 
-  sugar-high@0.6.0: {}
+  sugar-high@0.9.3: {}
 
   tailwindcss@4.1.7: {}
 
