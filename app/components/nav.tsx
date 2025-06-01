@@ -16,6 +16,9 @@ const navItems = {
   '/changelog': {
     name: 'Changelog',
   },
+  '/draft': {
+    name: 'Draft',
+  },
 }
 
 export function Navbar() {
@@ -23,7 +26,7 @@ export function Navbar() {
     <div className="max-w-3xl lg:mx-auto pt-8 pb-8 tracking-tight">
       <div className="lg:sticky lg:top-20 md:-ml-[8px]">
         <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade md:overflow-auto scroll-pr-6 md:relative"
+          className="flex flex-row items-start relative px-0 pb-0 fade overflow-auto scroll-pr-6 md:relative"
           id="nav"
         >
           <div className="flex flex-row space-x-0 pr-10">
