@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev -p 4000",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write .",
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
+    "cypress": "^14.4.0",
     "drizzle-kit": "^0.31.1"
   }
 }
