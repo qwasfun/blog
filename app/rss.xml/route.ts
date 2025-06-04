@@ -1,7 +1,9 @@
 import { appFolders, baseUrl } from 'app/config'
 import { getPostFiles } from 'app/utils/utils'
 
-export function GET() {
+export const dynamic = 'force-static'
+
+export async function GET() {
   let list = getPostFiles(appFolders)
 
   const itemsXml = list
