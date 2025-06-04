@@ -1,0 +1,57 @@
+name: e2e-tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test-by-cypress:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Install Cypress
+        run: npx cypress install
+
+      - name: Cypress Info
+        run: pnpm exec cypress info
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v5
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        with:
+          start: npm run dev
+          wait-on: http://localhost:3000
+        continue-on-error: true
+
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots-headless-chrome
+          path: ./cypress/screenshots
+
+      - name: Check screenshot dimensions
+        run: npx image-size cypress/screenshots/**/*.png
