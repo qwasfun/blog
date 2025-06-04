@@ -35,8 +35,14 @@ jobs:
       - name: Cypress Info
         run: pnpm exec cypress info
 
-      - name: Run Cypress Tests
-        run: pnpm exec cypress run --browser chrome
+      - name: Run server
+        run: pnpm dev
+
+      - name: Run Cypress tests
+        uses: cypress-io/github-action@v5
+        with:
+          start: npm run serve
+          wait-on: http://localhost:3000
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
