@@ -14,11 +14,11 @@ export async function GET() {
     .map(
       (post) =>
         `<item>
-          <title>${post.metadata.title}</title>
-          <link>${baseUrl}/${post.folder}/${post.slug}</link>
-          <description>${post.metadata.summary || ''}</description>
-          <pubDate>${new Date(post.metadata.createdAt)}</pubDate>
-        </item>`
+    <title>${post.metadata.title}</title>
+    <link>${baseUrl}/${post.folder}/${post.slug}</link>
+    <description>${post.metadata.summary || ''}</description>
+    <pubDate>${new Date(post.metadata.createdAt).toUTCString()}</pubDate>
+</item>`
     )
     .join('\n')
 
