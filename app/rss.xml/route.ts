@@ -14,8 +14,8 @@ export async function GET() {
       return 1
     })
     .map(
-      (post) =>
-        `<item>
+      (post) => `
+        <item>
           <title>${post.metadata.title}</title>
           <link>${baseUrl}/${post.folder}/${post.slug}</link>
           <description>${post.metadata.summary || ''}</description>
