@@ -17,7 +17,9 @@ export function lastUpdatedCommitTime(file: string): string {
     { cwd: dirname(file) }
   )
 
-  const output = child.stdout.toString()
+  const output = child.stdout
+    ? child.stdout.toString().trim().split(String.fromCharCode(10))
+    : ''
   updatedCache.set(file, output)
 
   return output
@@ -36,7 +38,9 @@ export function createdCommitTime(file: string): string {
       { cwd: dirname(file) }
     )
 
-    const output = child.stdout.toString().trim().split(String.fromCharCode(10))
+    const output = child.stdout
+      ? child.stdout.toString().trim().split(String.fromCharCode(10))
+      : []
     const firstCommitTime = output[output.length - 1] || ''
 
     createdCache.set(file, firstCommitTime)
