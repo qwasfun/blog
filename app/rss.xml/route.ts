@@ -17,7 +17,7 @@ export async function GET() {
           <title>${post.metadata.title}</title>
           <link>${baseUrl}/${post.folder}/${post.slug}</link>
           <description>${post.metadata.summary || ''}</description>
-          <pubDate>${new Date(post.metadata.createdAt).toUTCString()}</pubDate>
+          <pubDate>${new Date(post.metadata.createdAt)}</pubDate>
         </item>`
     )
     .join('\n')
@@ -34,7 +34,7 @@ export async function GET() {
 
   return new Response(rssFeed, {
     headers: {
-      'Content-Type': 'application/rss+xml',
+      'Content-Type': 'application/rss+xml;charset=UTF-8',
     },
   })
 }
