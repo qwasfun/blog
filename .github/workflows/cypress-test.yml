@@ -2,8 +2,10 @@ name: cypress-test
 on:
   push:
     branches:
-      - 'main'
+      - main
   pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
