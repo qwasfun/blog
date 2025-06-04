@@ -1,4 +1,4 @@
-name: cypress-test
+name: e2e-tests
 on:
   push:
     branches:
