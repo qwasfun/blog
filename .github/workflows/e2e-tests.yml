@@ -35,9 +35,6 @@ jobs:
       - name: Cypress Info
         run: pnpm exec cypress info
 
-      - name: Run server
-        run: pnpm dev
-
       - name: Run Cypress tests
         uses: cypress-io/github-action@v5
         with:
