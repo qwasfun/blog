@@ -17,7 +17,7 @@ export function GET() {
     <title>${post.metadata.title}</title>
     <link>${baseUrl}/${post.folder}/${post.slug}</link>
     <description>${post.metadata.summary || ''}</description>
-    <pubDate>${new Date(post.metadata.createdAt).toUTCString()}</pubDate>
+    <pubDate>${new Date(post.metadata.createdAt)}</pubDate>
 </item>`
     )
     .join('\n')
