@@ -16,21 +16,21 @@ export async function GET() {
     .map(
       (post) =>
         `<item>
-    <title>${post.metadata.title}</title>
-    <link>${baseUrl}/${post.folder}/${post.slug}</link>
-    <description>${post.metadata.summary || ''}</description>
-    <pubDate>${new Date(post.metadata.createdAt).toUTCString()}</pubDate>
-</item>`
+          <title>${post.metadata.title}</title>
+          <link>${baseUrl}/${post.folder}/${post.slug}</link>
+          <description>${post.metadata.summary || ''}</description>
+          <pubDate>${new Date(post.metadata.createdAt).toUTCString()}</pubDate>
+        </item>`
     )
     .join('\n')
 
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-        <title>Qwas Portfolio</title>
-        <link>${baseUrl}</link>
-        <description>This is Qwas portfolio RSS feed</description>
-        ${itemsXml}
+      <title>Qwas Portfolio</title>
+      <link>${baseUrl}</link>
+      <description>This is Qwas portfolio RSS feed</description>
+      ${itemsXml}
     </channel>
   </rss>`
 
