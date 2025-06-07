@@ -2,6 +2,7 @@ import Parser from 'rss-parser'
 import { rssFeed, rssPost } from '../../../../database/schema'
 import { db } from '../../../../database/drizzle'
 import { sql } from 'drizzle-orm'
+import { revalidatePath } from 'next/cache'
 
 export const dynamic = 'force-dynamic'
 
@@ -70,6 +71,8 @@ export async function GET() {
   })
 
   const results = await Promise.allSettled(promises)
+
+  revalidatePath('/reader') // 清除/reader路径的缓存数据
 
   // 打印结果
   results.forEach((result, index) => {
