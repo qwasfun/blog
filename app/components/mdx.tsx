@@ -5,6 +5,8 @@ import { highlight } from 'sugar-high'
 import React from 'react'
 import remarkGfm from 'remark-gfm'
 
+import { Tabs, TabItem } from './Tabs'
+
 const options = {
   mdxOptions: {
     remarkPlugins: [remarkGfm],
@@ -84,6 +86,8 @@ let components = {
   Image: RoundedImage,
   a: CustomLink,
   code: Code,
+  Tabs,
+  TabItem,
 }
 
 export function CustomMDX(props) {
