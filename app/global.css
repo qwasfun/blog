@@ -101,7 +101,7 @@ html {
 }
 
 .prose h2 {
-  @apply text-xl font-semibold tracking-tight mt-6 mb-2;
+  @apply text-xl font-semibold tracking-tight mt-6 mb-2 border-b border-neutral-200 dark:border-neutral-800 pb-2;
 }
 
 .prose h3 {
