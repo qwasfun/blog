@@ -61,6 +61,10 @@
 
 - [7zip](https://www.7-zip.org/)
 
+- [Microsoft 365](https://account.microsoft.com/services/) 需要订阅
+
+- [iCloud](https://apps.microsoft.com/detail/9pktq5699m62?hl=zh-cn&gl=CN)
+
 ### winget
 
 Windows 11 已经自带 winget
@@ -70,6 +74,12 @@ winget -v
 ```
 
 > v1.10.390
+
+- [PowerToys](https://github.com/microsoft/PowerToys)
+
+```sh
+winget install Microsoft.PowerToys -s winget
+```
 
 ### scoop
 
@@ -95,5 +105,7 @@ scoop install yarn
 [UnigetUI 商店地址](https://apps.microsoft.com/detail/xpfftq032ptphf?hl=zh-CN&gl=CN)
 
 [UnigetUI Github 地址](https://github.com/marticliment/UnigetUI)
+
+## BitLocker
 
 [查找 BitLocker 恢复密钥](https://go.microsoft.com/fwlink/?linkid=2165066) 或 https://aka.ms/myrecoverykey
