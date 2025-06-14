@@ -39,7 +39,7 @@ wsl --install -d Ubuntu
 ### 备份新安装的 Ubuntu
 
 ```sh
-wsl --export Ubuntu-24.04 C:\wsl-backup\ubuntu-initial-2404.tar.gz
+wsl --export Ubuntu C:\wsl-backup\ubuntu-initial-2404.tar.gz
 ```
 
 ### 导入已备份的新 Ubuntu 系统
@@ -51,23 +51,25 @@ wsl --import <Distro> <InstallLocation> <FileName> [options]
 ```
 
 ```sh
-wsl --import default-ubuntu C:\wsl\default-ubuntu C:\wsl-backup\backup-ubuntu.tar.gz
+wsl --import default-ubuntu C:\wsl\default-ubuntu C:\wsl-backup\ubuntu-initial-2404.tar.gz
 wsl --import qwas C:\wsl\qwas C:\wsl-backup\ubuntu-initial-2404.tar.gz
-wsl --import work C:\wsl\work C:\wsl-backup\ubuntu-initial-2404.tar.gz
+wsl --import gui C:\wsl\gui C:\wsl-backup\ubuntu-initial-2404.tar.gz
 ```
 
-### 导出现有系统
-
-```sh
-wsl --export default-ubuntu C:\wsl-backup\default-ubuntu.tar.gz
-wsl --export qwas C:\wsl-backup\qwas.tar.gz
-wsl --export work C:\wsl-backup\work.tar.gz
-```
+### 导入现有备份
 
 ```sh
 wsl --import default-ubuntu C:\wsl\default-ubuntu C:\wsl-backup\default-ubuntu.tar.gz
 wsl --import qwas C:\wsl\qwas C:\wsl-backup\qwas.tar.gz
-wsl --import work C:\wsl\work C:\wsl-backup\work.tar.gz
+wsl --import gui C:\wsl\gui C:\wsl-backup\gui.tar.gz
+```
+
+### 备份现有系统
+
+```sh
+wsl --export default-ubuntu C:\wsl-backup\default-ubuntu.tar.gz
+wsl --export qwas C:\wsl-backup\qwas.tar.gz
+wsl --export gui C:\wsl-backup\gui.tar.gz
 ```
 
 ## 运行指定版本
