@@ -14,9 +14,20 @@
 />
 ```
 
-<Image src='https://static.qwas.fun/public/2025/06/street.jpg' 
+<Image src="https://static.qwas.fun/public/2025/06/street.jpg"
  enhancedSrc="https://static.qwas.fun/public/2025/06/street-enhanced.jpg"
  alt="街头摄影"
  defaultName="原图"
  enhancedName="修饰图"
+/>
+
+```tsx
+<Image
+  src="https://static.qwas.fun/public/2025/06/street.jpg"
+  alt="街头摄影"
+/>
+```
+
+<Image src="https://static.qwas.fun/public/2025/06/street.jpg"
+ alt="街头摄影"
 />
