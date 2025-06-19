@@ -65,7 +65,7 @@ export function useTouchGestures({
 
   const handleTouchMove = useCallback(
     (e: React.TouchEvent) => {
-      // e.preventDefault() // Avoid calling preventDefault here to prevent passive event error
+      e.preventDefault()
       const touches = e.touches
 
       if (touches.length === 1 && !isGesturing) {
@@ -84,7 +84,6 @@ export function useTouchGestures({
         }
       } else if (touches.length === 2) {
         // 双指缩放
-        e.preventDefault()
         const currentDistance = getDistance(touches[0], touches[1])
         const scale = currentDistance / initialDistanceRef.current
 
