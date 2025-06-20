@@ -29,7 +29,7 @@ export function FullscreenViewer({
   const btnClassNames = `inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background
         transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
         disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9
-        rounded-md px-3 text-white border-none `
+        rounded-md px-3 bg-black/50 hover:bg-black/70 text-white border-none`
   const [showOriginal, setShowOriginal] = useState(false)
   const [scale, setScale] = useState(1)
   const [rotation, setRotation] = useState(0)
@@ -45,7 +45,7 @@ export function FullscreenViewer({
   const { handleTouchStart, handleTouchMove, handleTouchEnd } =
     useTouchGestures({
       onPinch: (gestureScale) => {
-        setScale((prev) => Math.max(0.5, Math.min(5, prev * gestureScale)))
+        setScale((prev) => Math.max(0.1, Math.min(5, prev * gestureScale)))
       },
       onPan: (deltaX, deltaY) => {
         if (scale > 1) {
@@ -75,17 +75,17 @@ export function FullscreenViewer({
         case ' ':
         case 'Enter':
           if (hasEnhanced) {
-            setShowOriginal((prev) => !prev)
+            setShowOriginal(!showOriginal)
           }
           e.preventDefault()
           break
         case '+':
         case '=':
-          setScale((prev) => Math.min(prev * 1.5, 5))
+          setScale((prev) => Math.min(prev * 1.2, 5))
           e.preventDefault()
           break
         case '-':
-          setScale((prev) => Math.max(prev / 1.5, 0.5))
+          setScale((prev) => Math.max(prev / 1.2, 0.1))
           e.preventDefault()
           break
         case '0':
@@ -107,8 +107,8 @@ export function FullscreenViewer({
   // 鼠标滚轮缩放
   const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault()
-    const delta = e.deltaY > 0 ? -0.5 : 0.5
-    setScale((prev) => Math.max(0.5, Math.min(5, prev + delta)))
+    const delta = e.deltaY > 0 ? 0.9 : 1.1
+    setScale((prev) => Math.max(0.1, Math.min(5, prev * delta)))
   }, [])
 
   // 拖拽功能
@@ -163,7 +163,7 @@ export function FullscreenViewer({
     <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center">
       {/* 桌面端工具栏 */}
       {!isMobile && (
-        <div className="absolute top-4 left-4 right-4 flex justify-end items-center z-10">
+        <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">
           <div className="flex items-center space-x-2">
             {hasEnhanced && (
               <button
@@ -180,9 +180,11 @@ export function FullscreenViewer({
                 )}
               </button>
             )}
+          </div>
 
+          <div className="flex items-center space-x-2">
             <button
-              onClick={() => setScale((prev) => Math.max(prev - 0.5, 0.5))}
+              onClick={() => setScale((prev) => Math.max(prev / 1.2, 0.1))}
               className={
                 btnClassNames +
                 'bg-white/10 hover:bg-white/20 text-white border-none'
@@ -196,7 +198,7 @@ export function FullscreenViewer({
             </span>
 
             <button
-              onClick={() => setScale((prev) => Math.min(prev + 0.5, 5))}
+              onClick={() => setScale((prev) => Math.min(prev * 1.2, 5))}
               className={
                 btnClassNames +
                 'bg-white/10 hover:bg-white/20 text-white border-none'
@@ -232,12 +234,13 @@ export function FullscreenViewer({
       {isMobile && (
         <>
           {/* 顶部工具栏 */}
-          <div className="absolute top-4 left-4 right-4 flex justify-end items-center z-10">
+          <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">
             {hasEnhanced && (
               <button
                 onClick={() => setShowOriginal(!showOriginal)}
                 className={
-                  btnClassNames + 'bg-zinc-800 text-white border-none mr-1'
+                  btnClassNames +
+                  'bg-white/10 hover:bg-white/20 text-white border-none'
                 }
               >
                 {showOriginal ? (
@@ -247,9 +250,13 @@ export function FullscreenViewer({
                 )}
               </button>
             )}
+            <div>{/* 用于将X关闭按钮挤到右边 */}</div>
             <button
               onClick={onClose}
-              className={btnClassNames + 'bg-zinc-800 text-white border-none'}
+              className={
+                btnClassNames +
+                'bg-white/10 hover:bg-white/20 text-white border-none'
+              }
             >
               <X className="w-5 h-5" />
             </button>
@@ -258,8 +265,8 @@ export function FullscreenViewer({
           {/* 底部缩放控制 */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 rounded-full px-4 py-2 z-10 flex items-center space-x-3">
             <button
-              onClick={() => setScale((prev) => Math.max(prev-0.5, 0.5))}
-              className={btnClassNames + 'bg-zinc-800 text-white p-2'}
+              onClick={() => setScale((prev) => Math.max(prev / 1.2, 0.1))}
+              className={btnClassNames + 'text-white hover:bg-white/20 p-2'}
             >
               <ZoomOut className="w-4 h-4" />
             </button>
@@ -269,8 +276,8 @@ export function FullscreenViewer({
             </span>
 
             <button
-              onClick={() => setScale((prev) => Math.min(prev +0.5, 5))}
-              className={btnClassNames + 'bg-zinc-800 text-white p-2'}
+              onClick={() => setScale((prev) => Math.min(prev * 1.2, 5))}
+              className={btnClassNames + 'text-white hover:bg-white/20 p-2'}
             >
               <ZoomIn className="w-4 h-4" />
             </button>
@@ -285,7 +292,6 @@ export function FullscreenViewer({
         onTouchStart={isMobile ? handleTouchStart : undefined}
         onTouchMove={isMobile ? handleTouchMove : undefined}
         onTouchEnd={isMobile ? handleTouchEnd : undefined}
-        onClick={isMobile ? undefined : onClose}
         style={{
           cursor:
             !isMobile && scale > 1
