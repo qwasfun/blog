@@ -29,7 +29,7 @@ export function FullscreenViewer({
   const btnClassNames = `inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background
         transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
         disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-9
-        rounded-md px-3 bg-black/50 hover:bg-black/70 text-white border-none`
+        rounded-md px-3 bg-black/50 hover:bg-black/70 text-white border-none `
   const [showOriginal, setShowOriginal] = useState(false)
   const [scale, setScale] = useState(1)
   const [rotation, setRotation] = useState(0)
@@ -234,13 +234,13 @@ export function FullscreenViewer({
       {isMobile && (
         <>
           {/* 顶部工具栏 */}
-          <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">
+          <div className="absolute top-4 left-4 right-4 flex justify-end items-center z-10">
             {hasEnhanced && (
               <button
                 onClick={() => setShowOriginal(!showOriginal)}
                 className={
                   btnClassNames +
-                  'bg-white/10 hover:bg-white/20 text-white border-none'
+                  'bg-white/10 hover:bg-white/20 text-white border-none mr-1'
                 }
               >
                 {showOriginal ? (
@@ -250,7 +250,6 @@ export function FullscreenViewer({
                 )}
               </button>
             )}
-            <div>{/* 用于将X关闭按钮挤到右边 */}</div>
             <button
               onClick={onClose}
               className={
@@ -266,7 +265,7 @@ export function FullscreenViewer({
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 rounded-full px-4 py-2 z-10 flex items-center space-x-3">
             <button
               onClick={() => setScale((prev) => Math.max(prev / 1.2, 0.1))}
-              className={btnClassNames + 'text-white hover:bg-white/20 p-2'}
+              className={btnClassNames + 'bg-white/10 text-white hover:bg-white/20 p-2'}
             >
               <ZoomOut className="w-4 h-4" />
             </button>
@@ -277,7 +276,7 @@ export function FullscreenViewer({
 
             <button
               onClick={() => setScale((prev) => Math.min(prev * 1.2, 5))}
-              className={btnClassNames + 'text-white hover:bg-white/20 p-2'}
+              className={btnClassNames + 'bg-white/10 text-white hover:bg-white/20 p-2'}
             >
               <ZoomIn className="w-4 h-4" />
             </button>
