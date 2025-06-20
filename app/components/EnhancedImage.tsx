@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Eye, EyeOff, Maximize2 } from 'lucide-react'
-import { FullscreenViewer } from './fullscreen-viewer'
+import { FullscreenViewer } from './FullscreenViewer'
 import { useMobile } from '../../hooks/use-mobile'
 
 interface EnhancedImageProps {
@@ -48,7 +48,7 @@ export function EnhancedImage({
 
   // 移动端长按显示控制按钮
   const handleTouchStart = () => {
-    if (isMobile) {
+    if (isMobile && !showControls) {
       setShowControls(true)
       setTimeout(() => setShowControls(false), 3000)
     }
@@ -78,7 +78,6 @@ export function EnhancedImage({
                 'bg-black/50 hover:bg-black/70 text-white border-none ml-1'
               }
             >
-              {/* 'absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white border-none' */}
               <Maximize2 className="w-4 h-4" />
             </button>
           </div>
@@ -185,6 +184,8 @@ export function EnhancedImage({
           enhancedSrc={enhancedSrc}
           alt={alt}
           hasEnhanced={!!enhancedSrc}
+          defaultName={defaultName}
+          enhancedName={enhancedName}
           onClose={() => setIsFullscreen(false)}
         />
       )}

@@ -11,6 +11,8 @@ interface FullscreenViewerProps {
   src: string
   enhancedSrc: string
   alt: string
+  defaultName?: string
+  enhancedName?: string
   hasEnhanced: boolean
   onClose: () => void
 }
@@ -20,6 +22,8 @@ export function FullscreenViewer({
   enhancedSrc,
   alt,
   hasEnhanced,
+  defaultName = '原图',
+  enhancedName = '修饰图',
   onClose,
 }: FullscreenViewerProps) {
   const btnClassNames = `inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background
@@ -169,7 +173,11 @@ export function FullscreenViewer({
                   'bg-white/10 hover:bg-white/20 text-white border-none'
                 }
               >
-                {showOriginal ? <>查看修饰图</> : <>查看原图</>}
+                {showOriginal ? (
+                  <>查看{enhancedName}</>
+                ) : (
+                  <>查看{defaultName}</>
+                )}
               </button>
             )}
           </div>
@@ -227,6 +235,22 @@ export function FullscreenViewer({
         <>
           {/* 顶部工具栏 */}
           <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">
+            {hasEnhanced && (
+              <button
+                onClick={() => setShowOriginal(!showOriginal)}
+                className={
+                  btnClassNames +
+                  'bg-white/10 hover:bg-white/20 text-white border-none'
+                }
+              >
+                {showOriginal ? (
+                  <>查看{enhancedName}</>
+                ) : (
+                  <>查看{defaultName}</>
+                )}
+              </button>
+            )}
+            <div>{/* 用于将X关闭按钮挤到右边 */}</div>
             <button
               onClick={onClose}
               className={
