@@ -163,7 +163,7 @@ export function FullscreenViewer({
     <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center">
       {/* 桌面端工具栏 */}
       {!isMobile && (
-        <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">
+        <div className="absolute top-4 left-4 right-4 flex justify-end items-center z-10">
           <div className="flex items-center space-x-2">
             {hasEnhanced && (
               <button
@@ -180,9 +180,7 @@ export function FullscreenViewer({
                 )}
               </button>
             )}
-          </div>
 
-          <div className="flex items-center space-x-2">
             <button
               onClick={() => setScale((prev) => Math.max(prev / 1.2, 0.1))}
               className={
@@ -239,8 +237,7 @@ export function FullscreenViewer({
               <button
                 onClick={() => setShowOriginal(!showOriginal)}
                 className={
-                  btnClassNames +
-                  'bg-zinc-800 text-white border-none mr-1'
+                  btnClassNames + 'bg-zinc-800 text-white border-none mr-1'
                 }
               >
                 {showOriginal ? (
@@ -252,10 +249,7 @@ export function FullscreenViewer({
             )}
             <button
               onClick={onClose}
-              className={
-                btnClassNames +
-                'bg-zinc-800 text-white border-none'
-              }
+              className={btnClassNames + 'bg-zinc-800 text-white border-none'}
             >
               <X className="w-5 h-5" />
             </button>
