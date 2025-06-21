@@ -107,7 +107,7 @@ export function EnhancedImage({
         width={width}
         height={height}
         className={`rounded-lg transition-all duration-300 ${className}`}
-        onClick={() => (isMobile ? setIsFullscreen(true) : undefined)}
+        onClick={() => setIsFullscreen(true)}
       />
 
       {/* 桌面端悬停控制按钮 */}
