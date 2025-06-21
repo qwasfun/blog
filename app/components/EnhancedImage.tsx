@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Eye, EyeOff, Maximize2 } from 'lucide-react'
+import { Maximize2 } from 'lucide-react'
 import { FullscreenViewer } from './FullscreenViewer'
 import { useMobile } from '../../hooks/use-mobile'
 
