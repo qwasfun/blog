@@ -285,6 +285,7 @@ export function FullscreenViewer({
         onTouchStart={isMobile ? handleTouchStart : undefined}
         onTouchMove={isMobile ? handleTouchMove : undefined}
         onTouchEnd={isMobile ? handleTouchEnd : undefined}
+        onClick={isMobile ? undefined : onClose}
         style={{
           cursor:
             !isMobile && scale > 1
