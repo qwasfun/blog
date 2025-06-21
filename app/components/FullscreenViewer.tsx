@@ -81,11 +81,11 @@ export function FullscreenViewer({
           break
         case '+':
         case '=':
-          setScale((prev) => Math.min(prev * 1.5, 5))
+          setScale((prev) => Math.min(prev + 0.5, 5))
           e.preventDefault()
           break
         case '-':
-          setScale((prev) => Math.max(prev / 1.5, 0.5))
+          setScale((prev) => Math.max(prev - 0.5, 0.5))
           e.preventDefault()
           break
         case '0':
@@ -258,7 +258,7 @@ export function FullscreenViewer({
           {/* 底部缩放控制 */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 rounded-full px-4 py-2 z-10 flex items-center space-x-3">
             <button
-              onClick={() => setScale((prev) => Math.max(prev-0.5, 0.5))}
+              onClick={() => setScale((prev) => Math.max(prev - 0.5, 0.5))}
               className={btnClassNames + 'bg-zinc-800 text-white p-2'}
             >
               <ZoomOut className="w-4 h-4" />
@@ -269,7 +269,7 @@ export function FullscreenViewer({
             </span>
 
             <button
-              onClick={() => setScale((prev) => Math.min(prev +0.5, 5))}
+              onClick={() => setScale((prev) => Math.min(prev + 0.5, 5))}
               className={btnClassNames + 'bg-zinc-800 text-white p-2'}
             >
               <ZoomIn className="w-4 h-4" />
