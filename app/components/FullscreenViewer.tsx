@@ -45,7 +45,7 @@ export function FullscreenViewer({
   const { handleTouchStart, handleTouchMove, handleTouchEnd } =
     useTouchGestures({
       onPinch: (gestureScale) => {
-        setScale((prev) => Math.max(0.1, Math.min(5, prev * gestureScale)))
+        setScale((prev) => Math.max(0.5, Math.min(5, prev * gestureScale)))
       },
       onPan: (deltaX, deltaY) => {
         if (scale > 1) {
@@ -81,11 +81,11 @@ export function FullscreenViewer({
           break
         case '+':
         case '=':
-          setScale((prev) => Math.min(prev * 1.2, 5))
+          setScale((prev) => Math.min(prev * 1.5, 5))
           e.preventDefault()
           break
         case '-':
-          setScale((prev) => Math.max(prev / 1.2, 0.1))
+          setScale((prev) => Math.max(prev / 1.5, 0.5))
           e.preventDefault()
           break
         case '0':
@@ -107,8 +107,8 @@ export function FullscreenViewer({
   // 鼠标滚轮缩放
   const handleWheel = useCallback((e: WheelEvent) => {
     e.preventDefault()
-    const delta = e.deltaY > 0 ? 0.9 : 1.1
-    setScale((prev) => Math.max(0.1, Math.min(5, prev * delta)))
+    const delta = e.deltaY > 0 ? -0.5 : 0.5
+    setScale((prev) => Math.max(0.5, Math.min(5, prev + delta)))
   }, [])
 
   // 拖拽功能
@@ -182,7 +182,7 @@ export function FullscreenViewer({
             )}
 
             <button
-              onClick={() => setScale((prev) => Math.max(prev / 1.2, 0.1))}
+              onClick={() => setScale((prev) => Math.max(prev - 0.5, 0.5))}
               className={
                 btnClassNames +
                 'bg-white/10 hover:bg-white/20 text-white border-none'
@@ -196,7 +196,7 @@ export function FullscreenViewer({
             </span>
 
             <button
-              onClick={() => setScale((prev) => Math.min(prev * 1.2, 5))}
+              onClick={() => setScale((prev) => Math.min(prev + 0.5, 5))}
               className={
                 btnClassNames +
                 'bg-white/10 hover:bg-white/20 text-white border-none'
@@ -258,7 +258,7 @@ export function FullscreenViewer({
           {/* 底部缩放控制 */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/80 rounded-full px-4 py-2 z-10 flex items-center space-x-3">
             <button
-              onClick={() => setScale((prev) => Math.max(prev / 1.2, 0.1))}
+              onClick={() => setScale((prev) => Math.max(prev-0.5, 0.5))}
               className={btnClassNames + 'bg-zinc-800 text-white p-2'}
             >
               <ZoomOut className="w-4 h-4" />
@@ -269,7 +269,7 @@ export function FullscreenViewer({
             </span>
 
             <button
-              onClick={() => setScale((prev) => Math.min(prev * 1.2, 5))}
+              onClick={() => setScale((prev) => Math.min(prev +0.5, 5))}
               className={btnClassNames + 'bg-zinc-800 text-white p-2'}
             >
               <ZoomIn className="w-4 h-4" />
