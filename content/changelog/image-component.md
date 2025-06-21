@@ -1,4 +1,4 @@
-# 新增 EnhancedImage 组件
+# 新增 Image 组件
 
 组件原本准备命名为 EnhancedImage，但如果命名为 Image， 在 GitHub 上 Markdown 也能预览图片，所以用 Image 了。
 
