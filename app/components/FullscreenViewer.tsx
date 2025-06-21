@@ -75,7 +75,7 @@ export function FullscreenViewer({
         case ' ':
         case 'Enter':
           if (hasEnhanced) {
-            setShowOriginal(!showOriginal)
+            setShowOriginal((prev) => !prev)
           }
           e.preventDefault()
           break
