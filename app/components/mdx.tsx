@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { highlight } from 'sugar-high'
 import React from 'react'
 import remarkGfm from 'remark-gfm'
+import { EnhancedImage } from './EnhancedImage'
 
 import { Tabs, TabItem } from './Tabs'
 
@@ -30,10 +30,6 @@ function CustomLink(props) {
   }
 
   return <a target="_blank" rel="noopener noreferrer" {...props} />
-}
-
-function RoundedImage(props) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />
 }
 
 function Code({ children, ...props }) {
@@ -83,7 +79,7 @@ let components = {
   h4: createHeading(4),
   h5: createHeading(5),
   h6: createHeading(6),
-  Image: RoundedImage,
+  Image: EnhancedImage,
   a: CustomLink,
   code: Code,
   Tabs,
