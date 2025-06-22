@@ -56,6 +56,8 @@ https://chromewebstore.google.com/detail/singlefile/mpiodijhokgodhhofbcjdecpffji
 
 `https://linkding.qwas.fun/api/bookmarks/singlefile/`
 
+![查看配置截图](https://static.qwas.fun/public/2025/06/linkding-singfile.png)
+
 ## 失败案例
 
 一开始准备部署在 claw cloud 上的，免费的羊毛薅一薅。想着数据分离，使用 postgresql 数据库，然而 lingding 应用大约会15分钟自动刷新一次页面，导致 neon 数据库几乎全天在运行，neon 免费用户每月包含191小时，照这样下去，一周就用完了，这哪行啊。
