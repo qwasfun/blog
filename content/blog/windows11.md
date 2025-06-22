@@ -65,6 +65,10 @@
 
 - [iCloud](https://apps.microsoft.com/detail/9pktq5699m62?hl=zh-cn&gl=CN)
 
+- [Docker](https://www.docker.com/)
+
+- [Caesium](https://saerasoft.com/caesium#downloads) 图片压缩
+
 ### winget
 
 Windows 11 已经自带 winget
@@ -79,6 +83,10 @@ winget -v
 
 ```sh
 winget install Microsoft.PowerToys -s winget
+```
+
+```sh
+winget install qBittorrent
 ```
 
 ### scoop
