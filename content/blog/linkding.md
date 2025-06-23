@@ -10,6 +10,10 @@ linkding 是书签管理自托管程序。
 
 提供网页内容保存功能，避免网页失效。自带服务端抓取网页，也提供 SingleFile 上传接口，通过 SingleFile 插件在客户端抓取上传，便于保存那些有反爬策略网站内容
 
+应用地址：https://linkding.qwas.fun
+
+共享书签：https://linkding.qwas.fun/bookmarks/shared
+
 ## 安装
 
 镜像地址 `sissbruecker/linkding:latest-plus`
@@ -26,19 +30,19 @@ services:
     volumes:
       - '/srv/linkding/data:/etc/linkding/data'
     environment:
-      - LD_SUPERUSER_NAME=dong
+      - LD_SUPERUSER_NAME=qwas
       - LD_SUPERUSER_PASSWORD=1K**********Fc
       - LD_DISABLE_BACKGROUND_TASKS=False
       - LD_DISABLE_URL_VALIDATION=False
       - LD_ENABLE_AUTH_PROXY=False
       - LD_DB_ENGINE=sqlite
       - LD_DB_DATABASE=linkding
+      # 解决 CSRF verification failed 的错误
+      - LD_CSRF_TRUSTED_ORIGINS=https://linkding.qwas.fun  
     restart: unless-stopped
 ```
 
 > 其中的 `LD_SUPERUSER_NAME` 是网页端的超级用户，`LD_SUPERUSER_PASSWORD` 是网页端超级用户的密码
-
-https://linkding.qwas.fun
 
 ## 安装 浏览器插件
 
