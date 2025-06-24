@@ -3,9 +3,13 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'content/**'
   pull_request:
     branches:
       - main
+    paths-ignore:
+      - 'content/**'
   workflow_dispatch:
 
 jobs:
