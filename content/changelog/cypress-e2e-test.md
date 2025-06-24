@@ -1,6 +1,6 @@
-# 集成 cypress 端对端测试
+# 集成 Cypress 端对端测试
 
-1. 安装 cypress
+1. 安装 Cypress
 2. 编写测试用例
 3. 集成 CI, 如 Github Action
 
