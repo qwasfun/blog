@@ -91,7 +91,7 @@ export default async function Page(props) {
           }),
         }}
       />
-      <h1 className="title font-semibold text-4xl tracking-tighter">
+      <h1 id="title" className="title font-semibold text-4xl tracking-tighter">
         {post.metadata.title}
       </h1>
       <div className="flex flex-col md:flex-row mt-3 mb-8 text-sm">
