@@ -1,17 +1,17 @@
-// cypress/e2e/changelog.cy.test.ts
+// cypress/e2e/blog.cy.test.ts
 
-describe('Changelog Page', () => {
-  it('should display the changelog list page', () => {
-    cy.visit('/changelog')
-    cy.contains('Changelog').should('be.visible')
+describe('blog Page', () => {
+  it('should display the blog list page', () => {
+    cy.visit('/blog')
+    cy.contains('blog').should('be.visible')
     cy.get('section').within(() => {
       cy.get('ul,ol').should('exist') // PostList renders a list
       cy.get('li').its('length').should('be.gte', 1)
     })
   })
 
-  it('should navigate to a changelog post detail page', () => {
-    cy.visit('/changelog')
+  it('should navigate to a blog post detail page', () => {
+    cy.visit('/blog')
     cy.get('section ul li a').first().click()
 
     // Title should be visible
@@ -27,11 +27,11 @@ describe('Changelog Page', () => {
     // Github link
     cy.contains('View this page on Github')
       .should('have.attr', 'href')
-      .and('include', 'github.com/qwasfun/blog/blob/main/content/changelog/')
+      .and('include', 'github.com/qwasfun/blog/blob/main/content/blog/')
   })
 
   it('should show not found for non-existent post', () => {
-    cy.visit('/changelog/non-existent-slug', { failOnStatusCode: false })
+    cy.visit('/blog/non-existent-slug', { failOnStatusCode: false })
     cy.contains(/not found|404/i).should('exist')
   })
 })

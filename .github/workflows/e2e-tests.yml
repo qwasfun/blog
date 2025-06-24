@@ -33,7 +33,7 @@ jobs:
         run: pnpm install
 
       - name: Install Cypress
-        run: npx cypress install
+        run: pnpm exec cypress install
 
       - name: Cypress Info
         run: pnpm exec cypress info

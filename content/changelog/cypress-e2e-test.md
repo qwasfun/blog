@@ -1,4 +1,4 @@
-# cypress 端对端测试
+# 集成 cypress 端对端测试
 
 1. 安装 cypress
 2. 编写测试用例
@@ -25,6 +25,25 @@ pnpm add -D cypress
 
 https://docs.cypress.io/app/get-started/install-cypress
 
+## 安装 Cypress
+
+<Tabs>
+<TabItem label="npm">
+
+```sh
+npx cypress install
+```
+
+</TabItem>
+<TabItem label="pnpm">
+
+```sh
+pnpm exec cypress install
+```
+
+</TabItem>
+</Tabs>
+
 ## 编写测试用例
 
 <Tabs>
@@ -46,5 +65,4 @@ pnpm exec cypress open
 
 在界面选择 e2e test，cypress 会自动创建一部分配置文件和测试示例
 
-<video controls autoplay muted src="https://static.qwas.fun/public/2025/06/cypress-e2e-test-1.mp4"  />
-
+<video controls autoPlay muted src="https://static.qwas.fun/public/2025/06/cypress-e2e-test-1.mp4"  />
