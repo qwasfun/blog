@@ -53,7 +53,6 @@ wsl --import <Distro> <InstallLocation> <FileName> [options]
 ```sh
 wsl --import default-ubuntu C:\wsl\default-ubuntu C:\wsl-backup\ubuntu-initial-2404.tar.gz
 wsl --import qwas C:\wsl\qwas C:\wsl-backup\ubuntu-initial-2404.tar.gz
-wsl --import gui C:\wsl\gui C:\wsl-backup\ubuntu-initial-2404.tar.gz
 ```
 
 ### 导入现有备份
@@ -61,7 +60,6 @@ wsl --import gui C:\wsl\gui C:\wsl-backup\ubuntu-initial-2404.tar.gz
 ```sh
 wsl --import default-ubuntu C:\wsl\default-ubuntu C:\wsl-backup\default-ubuntu.tar.gz
 wsl --import qwas C:\wsl\qwas C:\wsl-backup\qwas.tar.gz
-wsl --import gui C:\wsl\gui C:\wsl-backup\gui.tar.gz
 ```
 
 ### 备份现有系统
@@ -69,7 +67,6 @@ wsl --import gui C:\wsl\gui C:\wsl-backup\gui.tar.gz
 ```sh
 wsl --export default-ubuntu C:\wsl-backup\default-ubuntu.tar.gz
 wsl --export qwas C:\wsl-backup\qwas.tar.gz
-wsl --export gui C:\wsl-backup\gui.tar.gz
 ```
 
 ## 运行指定版本
@@ -81,12 +78,6 @@ wsl -d default-ubuntu
 ```sh
 wsl -d qwas
 ```
-
-```sh
-wsl -d work
-```
-
----
 
 ## 其他
 
@@ -114,6 +105,38 @@ default=<username>
 ```ini
 [user]
 default=dong
+```
+
+## 我的配置
+
+### 初始化
+
+```sh
+wsl --import qwas C:\wsl\qwas C:\wsl-backup\ubuntu-initial-2404.tar.gz
+wsl --import gui C:\wsl\gui C:\wsl-backup\ubuntu-initial-2404.tar.gz
+wsl --import dev C:\wsl\dev C:\wsl-backup\ubuntu-initial-2404.tar.gz
+wsl --import clang C:\wsl\clang C:\wsl-backup\ubuntu-initial-2404.tar.gz
+wsl --import gcc C:\wsl\gcc C:\wsl-backup\ubuntu-initial-2404.tar.gz
+```
+
+### 导出
+
+```sh
+wsl --export qwas C:\wsl-backup\qwas.tar.gz
+wsl --export gui C:\wsl-backup\gui.tar.gz
+wsl --export dev C:\wsl-backup\dev.tar.gz
+wsl --export clang C:\wsl-backup\clang.tar.gz
+wsl --export gcc C:\wsl-backup\gcc.tar.gz
+```
+
+### 导入
+
+```sh
+wsl --import qwas C:\wsl\qwas C:\wsl-backup\qwas.tar.gz
+wsl --import gui C:\wsl\gui C:\wsl-backup\gui.tar.gz
+wsl --import dev C:\wsl\dev C:\wsl-backup\dev.tar.gz
+wsl --import clang C:\wsl\clang C:\wsl-backup\clang.tar.gz
+wsl --import gcc C:\wsl\gcc C:\wsl-backup\gcc.tar.gz
 ```
 
 ## 参考
