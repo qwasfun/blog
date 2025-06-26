@@ -7,7 +7,7 @@ import { useMobile } from '../../hooks/use-mobile'
 
 interface EnhancedImageProps {
   src: string
-  enhancedSrc?: string // 可选的修饰图片路径
+  originSrc?: string // 可选的增强图片路径
   alt: string
   width?: number
   height?: number
@@ -18,13 +18,13 @@ interface EnhancedImageProps {
 
 export function EnhancedImage({
   src,
+  originSrc,
   alt,
   width = 800,
   height = 600,
   className = '',
   defaultName = '原图',
-  enhancedName = '修饰图',
-  enhancedSrc,
+  enhancedName = '增强图',
 }: EnhancedImageProps) {
   const btnClassNames = `inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background
         transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
@@ -33,12 +33,20 @@ export function EnhancedImage({
   const isMobile = useMobile()
   const [showOriginal, setShowOriginal] = useState(false)
 
-  const currentSrc = showOriginal ? src : enhancedSrc
+  // 判断是否有原图和增强图切换功能
+  const hasSwitch = !!originSrc
+  const originalImage = originSrc || src
+  const enhancedImage = src
+
+  const currentSrc = hasSwitch
+    ? showOriginal
+      ? originalImage
+      : enhancedImage
+    : src
 
   const [isFullscreen, setIsFullscreen] = useState(false)
   const [showControls, setShowControls] = useState(false)
   useEffect(() => {
-    // 在组件卸载时清理全屏状态
     return () => {
       if (isFullscreen) {
         setIsFullscreen(false)
@@ -46,18 +54,17 @@ export function EnhancedImage({
     }
   }, [isFullscreen])
 
-  // 移动端长按显示控制按钮
   const handleTouchStart = () => {
-    if (isMobile && !showControls) {
+    if (isMobile && !showControls && hasSwitch) {
       setShowControls(true)
       setTimeout(() => setShowControls(false), 3000)
     }
   }
 
-  // 如果没有修饰版本，直接显示原图
-  if (!enhancedSrc) {
+  // 没有切换功能，直接显示图片
+  if (!hasSwitch) {
     return (
-      <div className="relative inline-block group">
+      <span className="relative inline-block group">
         <img
           src={src || '/placeholder.svg'}
           alt={alt}
@@ -68,9 +75,9 @@ export function EnhancedImage({
           onClick={() => setIsFullscreen(true)}
         />
 
-        {/* 移动端全屏按钮 */}
+        {/* 桌面端全屏按钮 */}
         {!isMobile && (
-          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <span className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <button
               onClick={() => setIsFullscreen(true)}
               className={
@@ -80,7 +87,7 @@ export function EnhancedImage({
             >
               <Maximize2 className="w-4 h-4" />
             </button>
-          </div>
+          </span>
         )}
 
         {isFullscreen && (
@@ -92,12 +99,13 @@ export function EnhancedImage({
             onClose={() => setIsFullscreen(false)}
           />
         )}
-      </div>
+      </span>
     )
   }
 
+  // 有切换功能
   return (
-    <div
+    <span
       className="relative inline-block group"
       onTouchStart={handleTouchStart}
     >
@@ -112,7 +120,7 @@ export function EnhancedImage({
 
       {/* 桌面端悬停控制按钮 */}
       {!isMobile && (
-        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <span className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <button
             onClick={() => setShowOriginal(!showOriginal)}
             className={
@@ -131,23 +139,21 @@ export function EnhancedImage({
           >
             <Maximize2 className="w-4 h-4" />
           </button>
-        </div>
+        </span>
       )}
 
       {/* 移动端控制按钮 */}
-      {isMobile && (showControls || !enhancedSrc) && (
-        <div className="absolute top-2 right-2 flex space-x-1">
-          {enhancedSrc && (
-            <button
-              onClick={() => setShowOriginal(!showOriginal)}
-              className={
-                btnClassNames +
-                'bg-black/50 hover:bg-black/70 text-white border-none'
-              }
-            >
-              {showOriginal ? <>查看{enhancedName}</> : <>查看{defaultName}</>}
-            </button>
-          )}
+      {isMobile && showControls && (
+        <span className="absolute top-2 right-2 flex space-x-1">
+          <button
+            onClick={() => setShowOriginal(!showOriginal)}
+            className={
+              btnClassNames +
+              'bg-black/50 hover:bg-black/70 text-white border-none'
+            }
+          >
+            {showOriginal ? <>查看{enhancedName}</> : <>查看{defaultName}</>}
+          </button>
           <button
             onClick={() => setIsFullscreen(true)}
             className={
@@ -157,38 +163,38 @@ export function EnhancedImage({
           >
             <Maximize2 className="w-4 h-4" />
           </button>
-        </div>
+        </span>
       )}
 
       {/* 移动端状态指示器 */}
-      {isMobile && enhancedSrc && (showControls || showOriginal) && (
-        <div className="absolute bottom-2 left-2">
+      {isMobile && (showControls || showOriginal) && (
+        <span className="absolute bottom-2 left-2">
           <span className="bg-black/50 text-white text-xs px-2 py-1 rounded">
             {showOriginal ? defaultName : enhancedName}
           </span>
-        </div>
+        </span>
       )}
 
       {/* 桌面端状态指示器 */}
       {!isMobile && (
-        <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <span className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <span className="bg-black/50 text-white text-xs px-2 py-1 rounded">
             {showOriginal ? defaultName : enhancedName}
           </span>
-        </div>
+        </span>
       )}
 
       {isFullscreen && (
         <FullscreenViewer
-          src={src}
-          enhancedSrc={enhancedSrc}
+          src={originalImage}
+          enhancedSrc={enhancedImage}
           alt={alt}
-          hasEnhanced={!!enhancedSrc}
+          hasEnhanced={true}
           defaultName={defaultName}
           enhancedName={enhancedName}
           onClose={() => setIsFullscreen(false)}
         />
       )}
-    </div>
+    </span>
   )
 }
