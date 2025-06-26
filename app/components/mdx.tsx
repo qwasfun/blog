@@ -80,6 +80,7 @@ let components = {
   h5: createHeading(5),
   h6: createHeading(6),
   Image: EnhancedImage,
+  img: EnhancedImage,
   a: CustomLink,
   code: Code,
   Tabs,
