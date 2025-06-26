@@ -64,7 +64,7 @@ export function EnhancedImage({
   // 没有切换功能，直接显示图片
   if (!hasSwitch) {
     return (
-      <div className="relative inline-block group">
+      <span className="relative inline-block group">
         <img
           src={src || '/placeholder.svg'}
           alt={alt}
@@ -77,7 +77,7 @@ export function EnhancedImage({
 
         {/* 桌面端全屏按钮 */}
         {!isMobile && (
-          <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          <span className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
             <button
               onClick={() => setIsFullscreen(true)}
               className={
@@ -87,7 +87,7 @@ export function EnhancedImage({
             >
               <Maximize2 className="w-4 h-4" />
             </button>
-          </div>
+          </span>
         )}
 
         {isFullscreen && (
@@ -99,13 +99,13 @@ export function EnhancedImage({
             onClose={() => setIsFullscreen(false)}
           />
         )}
-      </div>
+      </span>
     )
   }
 
   // 有切换功能
   return (
-    <div
+    <span
       className="relative inline-block group"
       onTouchStart={handleTouchStart}
     >
@@ -120,7 +120,7 @@ export function EnhancedImage({
 
       {/* 桌面端悬停控制按钮 */}
       {!isMobile && (
-        <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <span className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <button
             onClick={() => setShowOriginal(!showOriginal)}
             className={
@@ -139,12 +139,12 @@ export function EnhancedImage({
           >
             <Maximize2 className="w-4 h-4" />
           </button>
-        </div>
+        </span>
       )}
 
       {/* 移动端控制按钮 */}
       {isMobile && showControls && (
-        <div className="absolute top-2 right-2 flex space-x-1">
+        <span className="absolute top-2 right-2 flex space-x-1">
           <button
             onClick={() => setShowOriginal(!showOriginal)}
             className={
@@ -163,25 +163,25 @@ export function EnhancedImage({
           >
             <Maximize2 className="w-4 h-4" />
           </button>
-        </div>
+        </span>
       )}
 
       {/* 移动端状态指示器 */}
       {isMobile && (showControls || showOriginal) && (
-        <div className="absolute bottom-2 left-2">
+        <span className="absolute bottom-2 left-2">
           <span className="bg-black/50 text-white text-xs px-2 py-1 rounded">
             {showOriginal ? defaultName : enhancedName}
           </span>
-        </div>
+        </span>
       )}
 
       {/* 桌面端状态指示器 */}
       {!isMobile && (
-        <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        <span className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
           <span className="bg-black/50 text-white text-xs px-2 py-1 rounded">
             {showOriginal ? defaultName : enhancedName}
           </span>
-        </div>
+        </span>
       )}
 
       {isFullscreen && (
@@ -195,6 +195,6 @@ export function EnhancedImage({
           onClose={() => setIsFullscreen(false)}
         />
       )}
-    </div>
+    </span>
   )
 }
