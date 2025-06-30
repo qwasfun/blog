@@ -34,7 +34,7 @@
     "remark-gfm": "^4.0.1",
     "rss-parser": "^3.13.0",
     "sugar-high": "^0.9.3",
-    "tailwindcss": "4.1.10",
+    "tailwindcss": "4.1.11",
     "typescript": "5.8.3"
   },
   "devDependencies": {
