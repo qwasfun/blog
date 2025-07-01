@@ -9,6 +9,7 @@ import Footer from './components/footer'
 import { baseUrl } from './config'
 import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
+import Script from 'next/script'
 
 const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -60,6 +61,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="zh"
       className={cx('text-black bg-white dark:text-white dark:bg-black')}
     >
+      <Script
+        defer
+        src="https://um.qwas.fun/script.js"
+        data-website-id="7c35ddc6-cc59-497e-be6a-5b2c0fea8937"
+      />
       <body className="antialiased mx-4">
         <Navbar />
         <main className={mainClass}>{children}</main>
