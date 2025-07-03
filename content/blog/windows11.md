@@ -117,3 +117,5 @@ scoop install yarn
 ## BitLocker
 
 [查找 BitLocker 恢复密钥](https://go.microsoft.com/fwlink/?linkid=2165066) 或 https://aka.ms/myrecoverykey
+
+[在 Windows 上设置开发环境](https://learn.microsoft.com/zh-cn/windows/dev-environment/)
