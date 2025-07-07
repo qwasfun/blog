@@ -14,23 +14,43 @@
 
 ## 安装依赖
 
-```sh
-npm i drizzle-orm @neondatabase/serverless
-```
+<Tabs>
+  <TabItem label="npm">
+    ```sh
+    npm i drizzle-orm @neondatabase/serverless
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh
+    pnpm i drizzle-orm @neondatabase/serverless
+    ```
+  </TabItem>
+</Tabs>
 
-```sh
-npm i -D drizzle-kit
-```
+
+<Tabs>
+  <TabItem label="npm">
+    ```sh
+    npm i -D drizzle-kit
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```sh
+    pnpm i -D drizzle-kit
+    ```
+  </TabItem>
+</Tabs>
+
 
 ## 初始化数据库连接
 
-新建.env 文件，填入数据库地址（以下地址仅为示例，请填入实际地址）
+新建 `.env` 文件，填入数据库地址（以下地址仅为示例，请填入实际地址）
 
 ```ini
 DATABASE_URL=postgresql://neondb_owner:npg_abcdefghijkl@ep-abcdef-ghijkl-mnopqrst-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
 ```
 
-新建文件 `databases/drizzle.ts`
+新建文件 `database/drizzle.ts`
 
 ```ts
 import { neon } from '@neondatabase/serverless'
@@ -49,7 +69,7 @@ export const db = drizzle(sql)
 
 ## 定义数据结构
 
-新建文件 `databases/schema.ts`
+新建文件 `database/schema.ts`
 
 ```ts
 import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
