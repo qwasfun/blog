@@ -1,4 +1,4 @@
-# linkding 使用
+# 书签管理应用 - linkding
 
 项目地址：https://github.com/sissbruecker/linkding.git
 
