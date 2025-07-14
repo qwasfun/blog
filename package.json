@@ -17,7 +17,7 @@
     "@excalidraw/excalidraw": "0.18.0",
     "@neondatabase/serverless": "^1.0.1",
     "@tailwindcss/postcss": "4.1.11",
-    "@types/node": "24.0.10",
+    "@types/node": "24.0.13",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vercel/analytics": "^1.1.3",
