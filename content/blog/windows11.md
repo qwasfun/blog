@@ -33,7 +33,6 @@
 - [Git](https://git-scm.com/downloads/win)
 
 - [NVM Windows](https://github.com/coreybutler/nvm-windows/releases)
-
   - nvm install 14
   - nvm install 16
   - nvm install 20
@@ -44,7 +43,6 @@
 - [VS Code](https://code.visualstudio.com/Download)
 
 - [JetBrains Toolbox App](https://www.jetbrains.com/zh-cn/toolbox-app/)
-
   - 安装 WebStorm
   - 安装 CLion
 
@@ -103,10 +101,23 @@ scoop bucket add extras
 ```
 
 ```sh
-scoop install sourcegit
 scoop install pnpm
 scoop install yarn
 ```
+
+```sh
+scoop install sourcegit
+scoop install extras/googlechrome
+scoop install extras/firefox
+```
+
+> "To set profile 'Scoop' as _DEFAULT_, or profiles/settings was lost after update:",
+> " - Run 'Firefox Profile Manager', choose 'Scoop' then click 'Start Firefox'.",
+> " - Visit 'about:profiles' page in Firefox to check _DEFAULT_ profile.",
+
+[chrome](https://www.google.com/intl/zh-CN/chrome/)
+
+[Firefox](https://www.mozilla.org/zh-CN/firefox/new/)
 
 ### UniGetUI
 
