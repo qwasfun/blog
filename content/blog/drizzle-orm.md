@@ -79,14 +79,20 @@ export const chats = pgTable('chats', {
   userId: text('user_id').notNull(),
   message: text('message').notNull(),
   reply: text('reply').notNull(),
-  createAt: timestamp('created_at').defaultNow().notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at')
+    .notNull()
+    .$onUpdate(() => new Date()),
 })
 
 export const users = pgTable('users', {
   userId: text('user_id').primaryKey(),
   name: text('name').notNull(),
   email: text('email').notNull(),
-  createAt: timestamp('created_at').defaultNow().notNull(),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at')
+    .notNull()
+    .$onUpdate(() => new Date()),
 })
 
 // Type inference for Drizzle queries
@@ -99,7 +105,7 @@ export type userSelect = typeof users.$inferSelect
 
 ## 配置 drizzle-kit
 
-根目录下新建 `drizzle.config.ts`
+项目根目录下新建 `drizzle.config.ts`
 
 ```ts
 import { defineConfig } from 'drizzle-kit'
