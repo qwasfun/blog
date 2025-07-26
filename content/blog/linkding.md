@@ -38,7 +38,7 @@ services:
       - LD_DB_ENGINE=sqlite
       - LD_DB_DATABASE=linkding
       # 解决 CSRF verification failed 的错误
-      - LD_CSRF_TRUSTED_ORIGINS=https://linkding.qwas.fun  
+      - LD_CSRF_TRUSTED_ORIGINS=https://linkding.qwas.fun
     restart: unless-stopped
 ```
 
@@ -54,13 +54,27 @@ SingleFile 插件
 
 https://chromewebstore.google.com/detail/singlefile/mpiodijhokgodhhofbcjdecpffjipkle
 
-### 配置 SingleFile 自动保存
+## 配置 SingleFile 自动保存
 
-保存位置 -> 保存到 REST 表单 API
+在 SingleFile 插件设置中，保存位置 -> 保存到 REST 表单 API
 
 `https://linkding.qwas.fun/api/bookmarks/singlefile/`
 
 ![查看配置截图](https://static.qwas.fun/public/2025/06/linkding-singfile.png)
+
+## Pocket 的内容迁移 linkding
+
+Pocket 前些天关闭了，提供数据导出。下载导出数据，使用 [Pocket2Linkding](https://github.com/hkclark/Pocket2Linkding) 将导出的 csv 文件转换成 linkding's 导入支持的格式
+
+为了区分，我原有代码基础上添加了一个自定义 tags，这样导入的所有书签都会有 **Pocket** 这个标签
+
+https://github.com/hkclark/Pocket2Linkding/blob/master/Pocket2Linkding.py#L132
+
+```python
+converter=lambda value: (value.split("|") if value else []) + ["Pocket"],
+```
+
+导入之后看了一下，最后一条收藏是四年前😂，难怪会倒闭~
 
 ## 失败案例
 
