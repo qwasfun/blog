@@ -13,6 +13,8 @@
 
 ## 设置 nvm 代理镜像
 
+> 代理和镜像设置其中一项即可
+
 <Tabs>
   <TabItem label="代理设置">
 ```sh
@@ -46,6 +48,8 @@ nvm npm_mirror  # 留空，使用默认的 https://github.com/npm/cli/archive/
 </Tabs>
 
 ## 设置 npm install 代理
+
+> 代理和镜像设置其中一项即可
 
 设置代理
 
