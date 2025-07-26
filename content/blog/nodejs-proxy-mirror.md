@@ -17,6 +17,7 @@
 
 <Tabs>
   <TabItem label="代理设置">
+
 ```sh
 nvm proxy http://127.0.0.1:7890
 ```
@@ -55,14 +56,18 @@ nvm npm_mirror  # 留空，使用默认的 https://github.com/npm/cli/archive/
 
 <Tabs>
   <TabItem label="npm">
+
 ```sh
 npm config set proxy http://127.0.0.1:7890
 ```
+
   </TabItem>
   <TabItem label="pnpm">
+
 ```sh
 pnpm config set proxy http://127.0.0.1:7890
 ```
+
   </TabItem>
 </Tabs>
 
@@ -70,13 +75,17 @@ pnpm config set proxy http://127.0.0.1:7890
 
 <Tabs>
   <TabItem label="npm">
+
 ```sh
 npm config set registry https://registry.npmmirror.com
 ```
+
   </TabItem>
   <TabItem label="pnpm">
+
 ```sh
 pnpm config set registry https://registry.npmmirror.com
 ```
+
   </TabItem>
 </Tabs>
