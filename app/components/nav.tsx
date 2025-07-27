@@ -13,11 +13,11 @@ const navItems = {
   '/excalidraws': {
     name: 'Excalidraw',
   },
+  '/selfhosted': {
+    name: 'Selfhosted',
+  },
   '/changelog': {
     name: 'Changelog',
-  },
-  '/draft': {
-    name: 'Draft',
   },
 }
 
