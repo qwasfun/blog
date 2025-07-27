@@ -5,7 +5,7 @@ import { metadataBase } from './components/metadataBase'
 
 export const metadata = {
   ...metadataBase,
-  title: 'Qwas Portfolio',
+  title: 'Qwas',
 }
 
 export default function Page() {

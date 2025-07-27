@@ -14,7 +14,7 @@ import Script from 'next/script'
 const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Qwas Portfolio',
+    default: 'Qwas',
     template: '%s | Qwas',
   },
   openGraph: {

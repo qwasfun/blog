@@ -27,7 +27,7 @@ export async function GET() {
   const rssFeed = `<?xml version="1.0" encoding="UTF-8" ?>
   <rss version="2.0">
     <channel>
-      <title>Qwas Portfolio</title>
+      <title>Qwas</title>
       <link>${baseUrl}</link>
       <description>This is Qwas portfolio RSS feed</description>
       ${itemsXml}
