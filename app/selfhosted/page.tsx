@@ -3,7 +3,7 @@ import GenericPostPage, {
   generatePostMetadata,
 } from 'app/components/GenericPostPage'
 
-export const folder = 'selfhosted'
+const folder = 'selfhosted'
 
 export async function generateStaticParams() {
   return generatePostStaticParams(folder)
