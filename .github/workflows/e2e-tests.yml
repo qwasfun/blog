@@ -22,6 +22,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 先装 pnpm, 再装 node，文档示例就是这样写的
+      # https://github.com/pnpm/action-setup?tab=readme-ov-file#use-cache-to-reduce-installation-time
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -43,16 +45,22 @@ jobs:
       - name: Cypress Info
         run: pnpm exec cypress info
 
-      - name: Run Cypress tests
+      - name: Build App
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: pnpm run build
+
+      - name: Run Cypress E2E tests
         id: run-cypress
         uses: cypress-io/github-action@v6
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         with:
-          start: npm run dev
+          start: pnpm run start
           wait-on: http://localhost:3000
           wait-on-timeout: 120
-          # 让测试继续运行，不影响上传步骤
+          browser: chrome
+          headed: true
         continue-on-error: true
 
       - name: Upload screenshots
