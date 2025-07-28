@@ -1,4 +1,5 @@
 name: e2e-tests
+
 on:
   push:
     branches:
@@ -43,16 +44,15 @@ jobs:
         run: pnpm exec cypress info
 
       - name: Run Cypress tests
+        id: run-cypress
         uses: cypress-io/github-action@v5
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         with:
           start: npm run dev
           wait-on: http://localhost:3000
+          # 让测试继续运行，不影响上传步骤
         continue-on-error: true
-
-      # - name: Check screenshot dimensions
-      #   run: npx image-size cypress/screenshots/**/*.png
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
@@ -60,6 +60,19 @@ jobs:
           name: screenshots-headless-chrome
           path: ./cypress/screenshots
 
+      - name: Upload Cypress Videos
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-videos
+          path: ./cypress/videos
+
       - name: Check Cypress exit code
-        if: ${{ failure() }}
-        run: exit 1
+        if: always()
+        run: |
+          if [ "${{ steps.run-cypress.outcome }}" != "success" ]; then
+            echo "❌ Cypress tests failed"
+            exit 1
+          else
+            echo "✅ Cypress tests passed"
+          fi
