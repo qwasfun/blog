@@ -59,6 +59,8 @@ jobs:
           start: pnpm run start
           wait-on: http://localhost:3000
           wait-on-timeout: 120
+          browser: chrome
+          headed: true
         continue-on-error: true
 
       - name: Upload screenshots
