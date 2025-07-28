@@ -45,7 +45,7 @@ jobs:
 
       - name: Run Cypress tests
         id: run-cypress
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         with:
