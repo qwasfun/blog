@@ -55,7 +55,6 @@ jobs:
           start: pnpm run start
           wait-on: http://localhost:3000
           wait-on-timeout: 120
-          # 让测试继续运行，不影响上传步骤
         continue-on-error: true
 
       - name: Upload screenshots
