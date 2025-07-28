@@ -49,7 +49,7 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         with:
-          start: npm run dev
+          start: run run build && npm run start
           wait-on: http://localhost:3000
           wait-on-timeout: 120
           # 让测试继续运行，不影响上传步骤
