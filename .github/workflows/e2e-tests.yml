@@ -46,6 +46,8 @@ jobs:
         run: pnpm exec cypress info
 
       - name: Build App
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: pnpm run build
 
       - name: Run Cypress E2E tests
