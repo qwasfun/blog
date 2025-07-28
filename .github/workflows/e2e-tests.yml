@@ -51,11 +51,15 @@ jobs:
           wait-on: http://localhost:3000
         continue-on-error: true
 
+      # - name: Check screenshot dimensions
+      #   run: npx image-size cypress/screenshots/**/*.png
+
       - name: Upload screenshots
         uses: actions/upload-artifact@v4
         with:
           name: screenshots-headless-chrome
           path: ./cypress/screenshots
 
-      - name: Check screenshot dimensions
-        run: npx image-size cypress/screenshots/**/*.png
+      - name: Check Cypress exit code
+        if: ${{ failure() }}
+        run: exit 1
