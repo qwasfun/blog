@@ -50,7 +50,7 @@
 DATABASE_URL=postgresql://neondb_owner:npg_abcdefghijkl@ep-abcdef-ghijkl-mnopqrst-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require
 ```
 
-新建文件 `database/drizzle.ts`
+新建文件 `db/drizzle.ts`
 
 ```ts
 import { neon } from '@neondatabase/serverless'
@@ -69,7 +69,7 @@ export const db = drizzle(sql)
 
 ## 定义数据结构
 
-新建文件 `database/schema.ts`
+新建文件 `db/schema.ts`
 
 ```ts
 import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
@@ -111,7 +111,7 @@ export type userSelect = typeof users.$inferSelect
 import { defineConfig } from 'drizzle-kit'
 
 export default defineConfig({
-  schema: './database/schema.ts',
+  schema: './db/schema.ts',
   // out:'/drizzle'
   dialect: 'postgresql',
   dbCredentials: {
@@ -139,8 +139,8 @@ npx drizzle-kit migrate
 在需要查询数据的的地方调用
 
 ```ts
-import { db } from 'database/drizzle'
-import { users } from 'database/schema'
+import { db } from 'db/drizzle'
+import { users } from 'db/schema'
 
 const user = await db.select().from(users).where(eq(users.userId, userId))
 ```
