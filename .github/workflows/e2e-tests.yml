@@ -15,9 +15,13 @@ on:
 
 jobs:
   test-by-cypress:
+    # 只有来自自己仓库的分支PR才触发时运行（能访问 secrets）
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
     strategy:
       fail-fast: false
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -46,15 +50,11 @@ jobs:
         run: pnpm exec cypress info
 
       - name: Build App
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: pnpm run build
 
       - name: Run Cypress E2E tests
         id: run-cypress
         uses: cypress-io/github-action@v6
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
         with:
           start: pnpm run start
           wait-on: http://localhost:3000
