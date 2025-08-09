@@ -16,7 +16,9 @@ on:
 jobs:
   test-by-cypress:
     # 只有来自自己仓库的分支PR才触发时运行（能访问 secrets）
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: |
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
     env:
       DATABASE_URL: ${{ secrets.DATABASE_URL }}
