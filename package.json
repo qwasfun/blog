@@ -26,7 +26,7 @@
     "cross-spawn": "^7.0.6",
     "drizzle-orm": "^0.44.4",
     "fs-extra": "^11.3.0",
-    "lucide-react": "^0.526.0",
+    "lucide-react": "^0.539.0",
     "next": "15.4.6",
     "next-mdx-remote": "^5.0.0",
     "prettier": "^3.6.2",
