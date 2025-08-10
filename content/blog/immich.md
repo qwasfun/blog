@@ -52,7 +52,7 @@ UUID="E062236362233E22"  /srv/data ntfs defaults 0 2
 > /srv/data  /srv/data ntfs defaults 0 2
 > ```
 
-## 应用层文件目录路径
+### 应用层文件目录路径
 
 配置文件目录：`/srv/immich-app-site`
 
@@ -70,12 +70,44 @@ UUID="E062236362233E22"  /srv/data ntfs defaults 0 2
 ├── postgres
 └── README.md
 ```
-## 运行
+
+### 运行
 
 ```bash
 cd /srv/immich-app-site
 git clone https://github.com/qwasfun/immich-app-site.git .
 docker compose up -d
+```
+
+## Immich 反向地理编码汉化
+
+[链接](https://github.com/ZingLix/immich-geodata-cn)
+
+### 下载 i18n-iso-countries.zip
+
+```bash
+curl -L -o i18n-iso-countries.zip https://github.com/ZingLix/immich-geodata-cn/releases/download/auto-release/i18n-iso-countries.zip
+unzip i18n-iso-countries.zip
+```
+
+### 下载 geodata
+
+```bash
+# 在 geodata 目录下进行操作
+
+cd geodata
+
+# 下载脚本
+curl -o update.sh https://raw.githubusercontent.com/ZingLix/immich-geodata-cn/refs/heads/main/geodata/update.sh
+
+# 运行更新脚本，参数为你需要的版本，例如 geodata_admin_2_admin_3
+bash update.sh geodata_admin_2_admin_3
+```
+
+### 重启 Immich
+
+```bash
+sudo docker compose down && sudo docker compose up -d
 ```
 
 ## 页面截图
