@@ -37,7 +37,7 @@
     "@types/fs-extra": "11.0.4",
     "@types/node": "20.19.10",
     "@types/react": "19.1.1",
-    "@types/react-dom": "19.1.1",
+    "@types/react-dom": "19.1.7",
     "cypress": "14.5.4",
     "drizzle-kit": "0.31.4",
     "eslint": "9.33.0",
