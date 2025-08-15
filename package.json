@@ -27,6 +27,7 @@
     "next-mdx-remote": "5.0.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
+    "react-hot-toast": "^2.5.2",
     "remark-gfm": "4.0.1",
     "rss-parser": "3.13.0",
     "sugar-high": "0.9.3"

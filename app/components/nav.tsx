@@ -13,8 +13,8 @@ const navItems = {
   '/excalidraws': {
     name: 'Excalidraw',
   },
-  '/selfhosted': {
-    name: 'Selfhosted',
+  '/settings': {
+    name: 'Settings',
   },
   '/changelog': {
     name: 'Changelog',
