@@ -1,16 +1,16 @@
 import Link from 'next/link'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { highlight } from 'sugar-high'
 import React from 'react'
 import remarkGfm from 'remark-gfm'
 import { EnhancedImage } from './EnhancedImage'
+import retypePrism from 'rehype-prism-plus'
 
 import { Tabs, TabItem } from './Tabs'
 
 const options = {
   mdxOptions: {
     remarkPlugins: [remarkGfm],
-    rehypePlugins: [],
+    rehypePlugins: [retypePrism],
   },
 }
 
@@ -30,11 +30,6 @@ function CustomLink(props) {
   }
 
   return <a target="_blank" rel="noopener noreferrer" {...props} />
-}
-
-function Code({ children, ...props }) {
-  let codeHTML = highlight(children)
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />
 }
 
 function slugify(str) {
@@ -82,7 +77,6 @@ let components = {
   Image: EnhancedImage,
   img: EnhancedImage,
   a: CustomLink,
-  code: Code,
   Tabs,
   TabItem,
 }
