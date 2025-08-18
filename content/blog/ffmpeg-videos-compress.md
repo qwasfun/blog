@@ -8,7 +8,7 @@ scoop install ffmpeg
 
 或
 
-```
+```bash
 winget install ffmpeg
 ```
 
@@ -30,7 +30,7 @@ https://trac.ffmpeg.org/wiki/Encode/H.264#a1.ChooseaCRFvalue
 
 将 MOV 文件转换为 mp4，并保留原文件的 `创建时间` 和 `修改时间`
 
-```ps1
+```powershell
 Get-ChildItem -Filter *.MOV | ForEach-Object {
   $outFile = $_.FullName -replace '\.MOV$', '.mp4'
   ffmpeg -i $_.FullName -c:v libx264 -crf 23  $outFile
@@ -41,7 +41,7 @@ Get-ChildItem -Filter *.MOV | ForEach-Object {
 
 转换 mp4 （并重命名为 `原文件_compressed.mp4`）
 
-```ps1
+```powershell
 Get-ChildItem -Filter *.mp4 | ForEach-Object {
   $outFile = $_.FullName -replace '\.mp4$', '_compressed.mp4'
   ffmpeg -i $_.FullName -c:v libx264 -crf 23  $outFile
@@ -54,7 +54,7 @@ Get-ChildItem -Filter *.mp4 | ForEach-Object {
 
 > 会覆盖原文件
 
-```ps1
+```powershell
 Get-ChildItem -Filter RPReplay*.mp4 | ForEach-Object {
   $outFile = $_.FullName -replace '\.mp4$', '_c.mp4'
   ffmpeg -i $_.FullName  -c:v libx264 -crf 23  $outFile
@@ -67,7 +67,7 @@ Get-ChildItem -Filter RPReplay*.mp4 | ForEach-Object {
 
 重命名文件
 
-```ps1
+```powershell
 Get-ChildItem -Filter RPReplay*.mov | ForEach-Object {
   $outFile = $_.FullName -replace '\.mov$', '.mp4'
   Move-Item $_.FullName $outFile
