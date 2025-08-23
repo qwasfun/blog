@@ -167,16 +167,6 @@ pre code {
   counter-reset: sh-line-number;
 }
 
-.code-line::before {
-  counter-increment: sh-line-number 1;
-  content: counter(sh-line-number);
-  margin-right: 16px;
-  text-align: right;
-  display: inline-block;
-  width: 2em;
-  color: #a4a4a4;
-}
-
 pre {
   overflow-x: auto;
 }
@@ -206,21 +196,4 @@ pre {
 
 .code-line.deleted {
   background-color: rgba(239, 68, 68, 0.2); /* Set deleted line (-) color */
-}
-
-.highlight-line {
-  margin-left: -16px;
-  margin-right: -16px;
-  background-color: rgba(55, 65, 81, 0.5); /* Set highlight bg color */
-  border-left: 4px solid rgb(59, 130, 246); /* Set highlight accent border color */
-}
-
-.line-number::before {
-  display: inline-block;
-  width: 1rem;
-  text-align: right;
-  margin-right: 16px;
-  margin-left: -8px;
-  color: rgb(156, 163, 175); /* Line number color */
-  content: attr(line);
 }
