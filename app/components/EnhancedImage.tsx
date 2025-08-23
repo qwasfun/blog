@@ -33,6 +33,20 @@ export function EnhancedImage({
   const isMobile = useMobile()
   const [showOriginal, setShowOriginal] = useState(false)
 
+  // 优化路径处理逻辑，避免重复代码
+  function normalizeSrc(path: string) {
+    if (!path) return path
+    // ? 匹配前面的子表达式零次或一次
+    // * 匹配前面的子表达式零次或多次 
+    // + 匹配前面的子表达式一次或多次
+    return path.replace(/^((\.\.\/)+|\/)public\/static/, '/static')
+  }
+
+  src = normalizeSrc(src)
+  if (originSrc) {
+    originSrc = normalizeSrc(originSrc)
+  }
+
   // 判断是否有原图和增强图切换功能
   const hasSwitch = !!originSrc
   const originalImage = originSrc || src
