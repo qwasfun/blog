@@ -28,7 +28,7 @@
     "prism-themes": "^1.9.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "react-hot-toast": "^2.5.2",
+    "react-hot-toast": "^2.6.0",
     "rehype-prism-plus": "^2.0.1",
     "remark-gfm": "4.0.1",
     "rss-parser": "3.13.0"
