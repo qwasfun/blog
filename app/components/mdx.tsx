@@ -3,14 +3,17 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import React from 'react'
 import remarkGfm from 'remark-gfm'
 import { EnhancedImage } from './EnhancedImage'
+import Audio from './Audio'
+import Video from './Video'
 import retypePrism from 'rehype-prism-plus'
-
+import { remarkMediaToComponent } from '../../lib/remark-media'
 import { Tabs, TabItem } from './Tabs'
 
 const options = {
   mdxOptions: {
-    remarkPlugins: [remarkGfm],
-    rehypePlugins: [retypePrism],
+    remarkPlugins: [remarkMediaToComponent, remarkGfm],
+    rehypePlugins: [retypePrism], // 用于代码高亮
+    format: 'mdx',
   },
 }
 
@@ -67,7 +70,7 @@ function createHeading(level) {
   return Heading
 }
 
-let components = {
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
@@ -76,17 +79,13 @@ let components = {
   h6: createHeading(6),
   Image: EnhancedImage,
   img: EnhancedImage,
+  Video: Video,
+  Audio: Audio,
   a: CustomLink,
   Tabs,
   TabItem,
 }
 
 export function CustomMDX(props) {
-  return (
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-      options={options}
-    />
-  )
+  return <MDXRemote {...props} components={components} options={options} />
 }

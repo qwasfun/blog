@@ -20,8 +20,8 @@
 
 ```tsx
 <Image
-  originSrc="https://static.qwas.fun/public/2025/06/street.jpg"
-  src="https://static.qwas.fun/public/2025/06/street-enhanced.jpg"
+  originSrc="../../public/static/2025/06/street.jpg"
+  src="../../public/static/2025/06/street-enhanced.jpg"
   alt="街头摄影"
   defaultName="原图"
   enhancedName="增强图"
@@ -29,8 +29,8 @@
 ```
 
 <Image 
- originSrc="https://static.qwas.fun/public/2025/06/street.jpg"
- src="https://static.qwas.fun/public/2025/06/street-enhanced.jpg"
+ originSrc="../../public/static/2025/06/street.jpg"
+ src="../../public/static/2025/06/street-enhanced.jpg"
  alt="街头摄影"
  defaultName="原图"
  enhancedName="增强图"
@@ -39,27 +39,41 @@
 ### 只有原图
 
 ```tsx
-<Image src="https://static.qwas.fun/public/2025/06/street.jpg" alt="街头摄影" />
+<Image src="../../public/static/2025/06/street.jpg" alt="街头摄影" />
 ```
 
-<Image src="https://static.qwas.fun/public/2025/06/street.jpg"
+<Image src="../../public/static/2025/06/street.jpg"
  alt="街头摄影"
 />
 
 ### Markdown 语法 （只支持显示原图）
 
 ```md
-![街头摄影](https://static.qwas.fun/public/2025/06/street.jpg)
+![街头摄影](../../public/static/2025/06/street.jpg)
 ```
 
-![街头摄影](https://static.qwas.fun/public/2025/06/street.jpg)
+![街头摄影](../../public/static/2025/06/street.jpg)
 
-### 直接使用 img 标签 （无增强功能）
+### 直接使用 img 标签
+
+~~（无增强功能）~~
+
+20250824 起，支持增强功能
 
 ```html
-<img src="https://static.qwas.fun/public/2025/06/street.jpg" alt="街头摄影" />
+<img src="../../public/static/2025/06/street.jpg" alt="街头摄影" />
 ```
 
-<img src="https://static.qwas.fun/public/2025/06/street.jpg"
+<img src="../../public/static/2025/06/street.jpg"
  alt="街头摄影"
 />
+
+20250823 更新：将引用图片保存在 `public/static/` 目录，构建部署时自动替换成 `/static/`，兼容本地编辑器内预览和 GitHub 在线预览， 同时 Next.js 构建部署后能正常展示
+
+视频演示
+
+<video autoPlay muted loop src="../../public/static/2025/08/Big_Buck_Bunny_720_10s_1MB.mp4" />
+
+音频演示
+
+<audio muted loop src="../../public/static/2025/08/horse.mp3" />
