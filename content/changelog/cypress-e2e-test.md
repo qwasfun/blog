@@ -63,7 +63,7 @@ pnpm exec cypress open
 
 在界面选择 e2e test，cypress 会自动创建一部分配置文件和测试示例
 
-<video controls autoPlay muted src="https://static.qwas.fun/public/2025/06/cypress-e2e-test-1.mp4"  />
+<video controls autoPlay muted src="../../public/static/2025/06/cypress-e2e-test-1.mp4"  />
 
 ## 命令行运行测试用例
 

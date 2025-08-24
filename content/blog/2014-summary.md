@@ -34,8 +34,8 @@
 
 微信阅读年度报告
 
-![we read](https://static.qwas.fun/public/2024/12/weread.jpg)
+![we read](../../public/static/2024/12/weread.jpg)
 
 QQ 音乐年度
 
-![qq music](https://static.qwas.fun/public/2024/12/qqmusic.jpg)
+![qq music](../../public/static/2024/12/qqmusic.jpg)

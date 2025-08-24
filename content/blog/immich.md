@@ -8,7 +8,7 @@
 
 `/dev/sda2` 数据盘 HDD 1TB
 
-![immich server df](https://static.qwas.fun/2025/07/immich-server-df.png)
+![immich server df](../../public/static/2025/07/immich-server-df.png)
 
 将 `/dev/sda2` 挂载到 `/srv/data`
 
@@ -112,6 +112,6 @@ sudo docker compose down && sudo docker compose up -d
 
 ## 页面截图
 
-![immich welcome](https://static.qwas.fun/2025/07/immich-welcome.png)
+![immich welcome](../../public/static/2025/07/immich-welcome.png)
 
-![immich home](https://static.qwas.fun/2025/07/immich-home.png)
+![immich home](../../public/static/2025/07/immich-home.png)

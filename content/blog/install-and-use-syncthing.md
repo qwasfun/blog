@@ -16,11 +16,11 @@ Windows 上可以使用 SyncTrayzor 图形界面操作
 
 [https://github.com/canton7/SyncTrayzor/releases](https://github.com/canton7/SyncTrayzor/releases)
 
-![SyncTrayzor-Screenshot](https://static.qwas.fun/public/2024/06/SyncTrayzor-Screenshot.png)
+![SyncTrayzor-Screenshot](../../public/static/2024/06/SyncTrayzor-Screenshot.png)
 
 设置内网地址同步
 
-![SyncTrayzor-Screenshot-Device](https://static.qwas.fun/public/2024/06/SyncTrayzor-Screenshot-Device.png)
+![SyncTrayzor-Screenshot-Device](../../public/static/2024/06/SyncTrayzor-Screenshot-Device.png)
 
 ## linux 环境
 

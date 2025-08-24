@@ -8,7 +8,7 @@ summary:
 
 ## FireFox
 
-![FireFox 屏幕截图](https://static.qwas.fun/public/2024/06/screenshot-docker-firefox.png)
+![FireFox 屏幕截图](../../public/static/2024/06/screenshot-docker-firefox.png)
 
 ```sh
 docker run --restart no -p 80:3000 -p 443:3001 \
@@ -25,9 +25,9 @@ linuxserver/firefox:latest
 
 执行后 在浏览器访问 `http://ip:80` 或 `https://ip:443` 就可以看到类似截图的界面了。https 提示证书错误，是正常的因为使用的 自签的HTTPS证书。
 
-[FireFox 屏幕截图](https://static.qwas.fun/public/2024/06/screenshot-docker-firefox.png)
+![FireFox 屏幕截图](../../public/static/2024/06/screenshot-docker-firefox.png)
 
-[处理中文字体显示后的 FireFox 屏幕截图](https://static.qwas.fun/public/2024/06/screenshot-docker-firefox-font.png)
+[处理中文字体显示后的 FireFox 屏幕截图](../../public/static/2024/06/screenshot-docker-firefox-font.png)
 
 ## 设置访问密码
 
@@ -83,7 +83,7 @@ docker run --restart no -p 80:3000 -p 443:3001 \
 linuxserver/chromium:latest
 ```
 
-[Chromium 屏幕截图](https://static.qwas.fun/public/2024/06/screenshot-docker-chromium.png)
+![Chromium 屏幕截图](../../public/static/2024/06/screenshot-docker-chromium.png)
 
 ## Opera
 
@@ -92,7 +92,7 @@ docker run --restart no -p 80:3000 -p 443:3001 \
 linuxserver/opera:latest
 ```
 
-[Opera 屏幕截图](https://static.qwas.fun/public/2024/06/screenshot-docker-opera.png)
+![Opera 屏幕截图](../../public/static/2024/06/screenshot-docker-opera.png)
 
 ## MicroSoft Edge
 
@@ -101,4 +101,4 @@ docker run --restart no -p 80:3000 -p 443:3001 \
 linuxserver/msedge:latest
 ```
 
-[MicroSoft Edge 屏幕截图](https://static.qwas.fun/public/2024/06/screenshot-docker-msedge.png)
+![MicroSoft Edge 屏幕截图](../../public/static/2024/06/screenshot-docker-msedge.png)

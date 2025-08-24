@@ -8,7 +8,7 @@
 
 勾选 “适用于 Linux 的 Windows 子系统”
 
-![wsl preparation](https://static.qwas.fun/public/2025/06/wsl-preparation.png)
+![wsl preparation](../../public/static/2025/06/wsl-preparation.png)
 
 ## 安装
 
@@ -16,7 +16,7 @@
 wsl --install
 ```
 
-<video controls autoPlay muted src="https://static.qwas.fun/public/2025/06/wsl-install.mp4" />
+<video controls autoPlay muted src="../../public/static/2025/06/wsl-install.mp4" />
 
 ## 导入导出(备份恢复)
 
