@@ -17,6 +17,18 @@ export function remarkMediaToComponent() {
       if (node.name === 'img') {
         node.name = 'Image' // 替换成 <Image>
       }
+
+      // 遍历 props，把属性名转成 React 规范
+      if (node.attributes) {
+        node.attributes = node.attributes.map((attr: any) => {
+          if (attr.type === 'mdxJsxAttribute') {
+            if (attr.name === 'autoplay') attr.name = 'autoPlay'
+            if (attr.name === 'playsinline') attr.name = 'playsInline'
+            if (attr.name === 'class') attr.name = 'className'
+          }
+          return attr
+        })
+      }
     }
 
     visit(tree, 'mdxJsxFlowElement', replace)
