@@ -62,6 +62,9 @@ importers:
       rss-parser:
         specifier: 3.13.0
         version: 3.13.0
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
     devDependencies:
       '@eslint/eslintrc':
         specifier: 3.3.1
