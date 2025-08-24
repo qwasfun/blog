@@ -60,7 +60,7 @@ https://chromewebstore.google.com/detail/singlefile/mpiodijhokgodhhofbcjdecpffji
 
 `https://linkding.qwas.fun/api/bookmarks/singlefile/`
 
-![查看配置截图](https://static.qwas.fun/public/2025/06/linkding-singfile.png)
+![查看配置截图](../../public/static/2025/06/linkding-singfile.png)
 
 ## Pocket 的内容迁移 linkding
 

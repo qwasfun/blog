@@ -88,22 +88,4 @@ conda env remove --name example312-2
 
 下载地址：https://www.anaconda.com/download
 
-安装截图：
-
-[Anaconda 安装截图 1](https://static.qwas.fun/2025/04/03/anaconda-install-1.png)
-
-[Anaconda 安装截图 2](https://static.qwas.fun/2025/04/03/anaconda-install-2.png)
-
-[Anaconda 安装截图 3](https://static.qwas.fun/2025/04/03/anaconda-install-3.png)
-
-[Anaconda 安装截图 4](https://static.qwas.fun/2025/04/03/anaconda-install-4.png)
-
-[Anaconda 安装截图 5](https://static.qwas.fun/2025/04/03/anaconda-install-5.png)
-
-[Anaconda 安装截图 6](https://static.qwas.fun/2025/04/03/anaconda-install-6.png)
-
-[Anaconda 安装截图 7](https://static.qwas.fun/2025/04/03/anaconda-install-7.png)
-
-[Anaconda 安装截图 8](https://static.qwas.fun/2025/04/03/anaconda-install-8.png)
-
-[Anaconda 安装截图 9](https://static.qwas.fun/2025/04/03/anaconda-install-9.png)
+[查看安装截图](../screenshot/anaconda)

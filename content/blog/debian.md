@@ -20,7 +20,7 @@ lsb_release -a
 df -h
 ```
 
-![debian system info](https://static.qwas.fun/public/2025/08/debian-system-info.png)
+![debian system info](../../public/static/2025/08/debian-system-info.png)
 
 使用的是最新版 debian 12.11，阿里云里预装的 Debian 系统真小，只占用 2.4GB 的磁盘。
 

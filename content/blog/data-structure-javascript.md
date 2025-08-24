@@ -2,7 +2,7 @@
 
 内容来自《[学习JavaScript数据结构与算法（第3版）](https://weread.qq.com/book-detail?v=99732570718ff67e997e35b)》 洛伊安妮·格罗纳
 
-![learning-javascript-data-structures-and-algorithms](https://static.qwas.fun/public/2025/01/learning-javascript-data-structures-and-algorithms.jpg)
+![learning-javascript-data-structures-and-algorithms](../../public/static/2025/01/learning-javascript-data-structures-and-algorithms.jpg)
 
 ## 栈
 
@@ -134,7 +134,7 @@ LinkList
 
 每个元素由一个存储元素本身的节点和一个指向下一个元素的引用（也称指针或链接）组成。
 
-![链表](https://static.qwas.fun/public/2025/01/LinkList.jpeg)
+![链表](../../public/static/2025/01/LinkList.jpeg)
 
 相较于数组，链表添加或移除元素的时候不需要移动其他元素。在访问元素时，在数组中，我们可以直接访问任何位置的任何元素，访问链表中元素，需要从起点（表头）开始迭代链表直到找到所需的元素。
 
@@ -165,7 +165,7 @@ DoubleLinkList
 
 在链表中一个节点只有链向下一个节点的链接；而在双向链表中，链接是双向的：一个链向下一个元素，另一个链向上一个元素
 
-![双向链表](https://static.qwas.fun/public/2025/01/DoubleLinkList.jpeg)
+![双向链表](../../public/static/2025/01/DoubleLinkList.jpeg)
 
 https://gist.github.com/qwasfun/174b428587ba241c4724f2c63ccf10bf
 
@@ -175,7 +175,7 @@ CircularLinkedList
 
 循环链表与链表之间的区别在于，最后一个元素的指针 `tail.next` 不是引用 `undefined` 而是指向第一个元素 `head`
 
-![循环链表](https://static.qwas.fun/public/2025/01/CircularLinkList.jpeg)
+![循环链表](../../public/static/2025/01/CircularLinkList.jpeg)
 
 双向循环列表中有指向 head 元素的 tail.next 和指向 tail 元素的 head.prev
 
@@ -274,13 +274,12 @@ class Dictionary {
 书中介绍了分离链接、线性探测方法，这两种方法都需要重写类的方法 put remove get
 
 1. 分离链接法： 为散列表的每一个位置创建一个链表并将元素存储在里面。解决方法最简单的方法，但是在 HashTable 实例外还需要额外的存储空间
-   
+
    [分离链接处理 散列表冲突](https://gist.github.com/qwasfun/5c56fd07555b092bd8849b06cbb8c722)
 
 2. 线性探查： 处理冲突的方法是将元素直接存储在表中，而不是单独的数据结构中。当向表中某个位置添加新元素的时候，如果索引为position的位置已经被占据了，就尝试position+1的位置，如果position+1的位置也被占据了就尝试position+2的位置，以此类推，直到找到一个空闲的位置。
-   
+
    线性探查分为两种：
-   
    - 一种使用软删除，使用一个特殊的值（标记）来标记键值对被删除了（惰性删除或软删除）
    - 另一种方法需要检验是否有必要将一个或多个元素移动到之前的位置
    - [散列表 线性探查 移动元素处理冲突](https://gist.github.com/qwasfun/3477b022a1213bbe85062f15bb9c0d02)

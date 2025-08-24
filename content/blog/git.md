@@ -8,7 +8,7 @@ summary:
 
 《Git：Mastering Version Control》 Ferdinando Santacroce Aske Olsson Rasmus Voss Jakub Narębski
 
-![Git Mastering Version Control](https://static.qwas.fun/public/2024/12/Git-Mastering-Version-Control.jpg)
+![Git Mastering Version Control](../../public/static/2024/12/Git-Mastering-Version-Control.jpg)
 
 ## git config
 
