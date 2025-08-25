@@ -30,14 +30,7 @@ Blog 的图片、视频存储在对象存储中，无法通过 Git 跟踪历史�
 ></video>
 ```
 
-<video
-autoplay
-muted
-loop
-playsinline
-src="../../public/static/2025/08/Big_Buck_Bunny_720_10s_1MB.mp4"
-
-> </video>
+<video autoplay muted loop playsinline src="../../public/static/2025/08/Big_Buck_Bunny_720_10s_1MB.mp4"></video>
 
 音频演示
 
