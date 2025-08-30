@@ -84,6 +84,13 @@ const components = {
   a: CustomLink,
   Tabs,
   TabItem,
+  // 代码演示组件
+  Demo: ({ children }: { children: React.ReactNode }) => (
+    <div className="my-6 rounded-lg border bg-card p-6">
+      <div className="mb-4 text-sm font-medium text-muted-foreground">演示</div>
+      {children}
+    </div>
+  ),
 }
 
 export function CustomMDX(props) {
