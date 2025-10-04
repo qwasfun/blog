@@ -1,6 +1,5 @@
 import { CustomMDX } from './mdx'
 import { getPostFiles } from '../utils/utils'
-import { ArrowIcon } from './icons'
 import { formatDate } from '../utils/formatDate'
 import { notFound } from 'next/navigation'
 import { baseUrl, siteTitle } from '../config'
@@ -83,21 +82,13 @@ export default function GenericPostPage({
         <CustomMDX source={post.content} />
       </article>
       {post.gitInfo && (
-        <GitInfo gitInfo={post.gitInfo} className="sticky top-20" />
+        <GitInfo
+          gitInfo={post.gitInfo}
+          slug={post.slug}
+          folder={folder}
+          className="sticky top-20"
+        />
       )}
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href={`https://github.com/qwasfun/blog/blob/main/content/${folder}/${post.slug}.md`}
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">View this page on Github</p>
-          </a>
-        </li>
-      </ul>
     </section>
   )
 }

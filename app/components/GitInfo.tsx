@@ -1,3 +1,5 @@
+import { GithubIcon } from './icons'
+
 export interface GitFileInfo {
   firstCommitDate: string
   lastCommitDate: string
@@ -8,9 +10,11 @@ export interface GitFileInfo {
 interface GitInfoProps {
   gitInfo: GitFileInfo
   className?: string
+  folder: string
+  slug: object
 }
 
-export function GitInfo({ gitInfo, className }: GitInfoProps) {
+export function GitInfo({ gitInfo, className, slug, folder }: GitInfoProps) {
   const { firstCommitDate, lastCommitDate, commitCount, authors } = gitInfo
 
   // 如果发布时间和更新时间相同，只显示发布时间
@@ -34,7 +38,7 @@ export function GitInfo({ gitInfo, className }: GitInfoProps) {
           data-slot="card-description"
           className="text-muted-foreground text-sm"
         >
-          基于 Git 提交记录的文章历史
+          <span>基于 Git 提交记录的文章历史</span>
         </div>
       </div>
       <div data-slot="card-content" className="px-6 space-y-4">
@@ -53,7 +57,15 @@ export function GitInfo({ gitInfo, className }: GitInfoProps) {
           )}
           <div>
             <span className="font-medium text-muted-foreground">修订次数</span>
-            <p>{commitCount} 次提交</p>
+            <a
+              className="flex align-center gap-1"
+              rel="noopener noreferrer"
+              target="_blank"
+              href={`https://github.com/qwasfun/blog/blob/main/content/${folder}/${slug}.md`}
+            >
+              <span>{commitCount} 次提交</span>
+              <GithubIcon />
+            </a>
           </div>
           {authors.length > 0 && (
             <div>
