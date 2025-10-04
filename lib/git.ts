@@ -1,5 +1,5 @@
-import { execSync } from "child_process"
-import fs from "fs"
+import { execSync } from 'child_process'
+import fs from 'fs'
 
 export interface GitFileInfo {
   firstCommitDate: string
@@ -35,38 +35,51 @@ export function getGitFileInfo(filePath: string): GitFileInfo {
 
     // 检查是否在 Git 仓库中
     try {
-      execSync("git rev-parse --git-dir", { stdio: "ignore" })
+      execSync('git rev-parse --git-dir', { stdio: 'ignore' })
     } catch {
-      console.warn("不在 Git 仓库中，使用文件系统时间")
+      console.warn('不在 Git 仓库中，使用文件系统时间')
       return defaultInfo
     }
 
     // 获取第一次提交时间（发布时间）
-    const firstCommitDate = execSync(`git log --follow --format=%aI --reverse "${filePath}" | head -1`, {
-      encoding: "utf8",
-    }).trim()
+    const firstCommitDate = execSync(
+      `git log --follow --format=%aI --reverse "${filePath}" | head -1`,
+      {
+        encoding: 'utf8',
+      }
+    ).trim()
 
     // 获取最后一次提交时间（更新时间）
-    const lastCommitDate = execSync(`git log --follow --format=%aI -1 "${filePath}"`, { encoding: "utf8" }).trim()
+    const lastCommitDate = execSync(
+      `git log --follow --format=%aI -1 "${filePath}"`,
+      { encoding: 'utf8' }
+    ).trim()
 
     // 获取提交次数
     const commitCount = Number.parseInt(
       execSync(`git log --follow --oneline "${filePath}" | wc -l`, {
-        encoding: "utf8",
+        encoding: 'utf8',
       }).trim(),
-      10,
+      10
     )
 
     // 获取所有贡献者
-    const authorsOutput = execSync(`git log --follow --format=%an "${filePath}" | sort | uniq`, {
-      encoding: "utf8",
-    }).trim()
+    const authorsOutput = execSync(
+      `git log --follow --format=%an "${filePath}" | sort | uniq`,
+      {
+        encoding: 'utf8',
+      }
+    ).trim()
 
-    const authors = authorsOutput ? authorsOutput.split("\n") : []
+    const authors = authorsOutput ? authorsOutput.split('\n') : []
 
     const gitInfo: GitFileInfo = {
-      firstCommitDate: firstCommitDate ? formatDate(firstCommitDate) : defaultInfo.firstCommitDate,
-      lastCommitDate: lastCommitDate ? formatDate(lastCommitDate) : defaultInfo.lastCommitDate,
+      firstCommitDate: firstCommitDate
+        ? formatDate(firstCommitDate)
+        : defaultInfo.firstCommitDate,
+      lastCommitDate: lastCommitDate
+        ? formatDate(lastCommitDate)
+        : defaultInfo.lastCommitDate,
       commitCount: commitCount || 0,
       authors,
     }
@@ -96,7 +109,7 @@ function getFileSystemDate(filePath: string): string {
  * 格式化日期为 YYYY-MM-DD 格式
  */
 function formatDate(dateString: string): string {
-  return new Date(dateString).toISOString().split("T")[0]
+  return new Date(dateString).toISOString().split('T')[0]
 }
 
 /**
@@ -115,9 +128,15 @@ export function getRepoInfo(): {
   remoteUrl: string
 } | null {
   try {
-    const branch = execSync("git branch --show-current", { encoding: "utf8" }).trim()
-    const commitHash = execSync("git rev-parse HEAD", { encoding: "utf8" }).trim().substring(0, 7)
-    const remoteUrl = execSync("git config --get remote.origin.url", { encoding: "utf8" }).trim()
+    const branch = execSync('git branch --show-current', {
+      encoding: 'utf8',
+    }).trim()
+    const commitHash = execSync('git rev-parse HEAD', { encoding: 'utf8' })
+      .trim()
+      .substring(0, 7)
+    const remoteUrl = execSync('git config --get remote.origin.url', {
+      encoding: 'utf8',
+    }).trim()
 
     return {
       branch,
@@ -125,7 +144,7 @@ export function getRepoInfo(): {
       remoteUrl,
     }
   } catch (error) {
-    console.warn("获取仓库信息失败:", error)
+    console.warn('获取仓库信息失败:', error)
     return null
   }
 }
@@ -135,7 +154,7 @@ export function getRepoInfo(): {
  */
 export function isFileTracked(filePath: string): boolean {
   try {
-    execSync(`git ls-files --error-unmatch "${filePath}"`, { stdio: "ignore" })
+    execSync(`git ls-files --error-unmatch "${filePath}"`, { stdio: 'ignore' })
     return true
   } catch {
     return false

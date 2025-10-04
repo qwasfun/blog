@@ -76,7 +76,7 @@ function getMDXData(folder: string) {
       metadata: metadataData,
       slug,
       content,
-      gitInfo
+      gitInfo,
     }
   })
 }
