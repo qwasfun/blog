@@ -23,7 +23,7 @@ const navItems = {
 
 export function Navbar() {
   return (
-    <div className="max-w-3xl lg:mx-auto pt-8 pb-8 tracking-tight sticky top-0 bg-white z-10">
+    <div className="max-w-3xl lg:mx-auto pt-8 pb-8 tracking-tight sticky top-0 bg-white dark:bg-black z-10">
       <div className="md:-ml-[8px]">
         <nav
           className="flex flex-row items-start relative px-0 pb-0 fade overflow-auto scroll-pr-6 md:relative"
