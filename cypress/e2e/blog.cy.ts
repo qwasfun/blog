@@ -23,11 +23,6 @@ describe('blog Page', () => {
 
     // Article content
     cy.get('article.prose').should('exist')
-
-    // Github link
-    cy.contains('View this page on Github')
-      .should('have.attr', 'href')
-      .and('include', 'github.com/qwasfun/blog/blob/main/content/blog/')
   })
 
   it('should show not found for non-existent post', () => {

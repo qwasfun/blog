@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { createdCommitTime, lastUpdatedCommitTime } from './commitTime'
+import { getGitFileInfo } from '../../lib/git'
 
 type Metadata = {
   title?: string
@@ -57,11 +58,13 @@ function getMDXData(folder: string) {
 
   let mdxFiles = getMDXFiles(dir)
   return mdxFiles.map((file) => {
-    let { metadata, content } = readMDXFile(path.join(dir, file))
+    const fullPath = path.join(dir, file)
+    let { metadata, content } = readMDXFile(fullPath)
     let slug = path.basename(file, path.extname(file))
 
-    let updatedAt = lastUpdatedCommitTime(path.join(dir, file))
-    let createdAt = createdCommitTime(path.join(dir, file))
+    let updatedAt = lastUpdatedCommitTime(fullPath)
+    let createdAt = createdCommitTime(fullPath)
+    const gitInfo = getGitFileInfo(fullPath)
 
     let metadataData = Object.assign({}, metadata, {
       updatedAt: updatedAt,
@@ -73,6 +76,7 @@ function getMDXData(folder: string) {
       metadata: metadataData,
       slug,
       content,
+      gitInfo,
     }
   })
 }
