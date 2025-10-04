@@ -4,6 +4,7 @@ import { ArrowIcon } from './icons'
 import { formatDate } from '../utils/formatDate'
 import { notFound } from 'next/navigation'
 import { baseUrl, siteTitle } from '../config'
+import { GitInfo } from './GitInfo'
 
 export async function generatePostStaticParams(folder: string) {
   const posts = getPostFiles([folder])
@@ -81,6 +82,9 @@ export default function GenericPostPage({
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
+      {post.gitInfo && (
+        <GitInfo gitInfo={post.gitInfo} className="sticky top-20" />
+      )}
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         <li>
           <a
