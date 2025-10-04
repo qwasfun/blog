@@ -52,8 +52,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     pathname.startsWith('/excalidraw') && !pathname.startsWith('/excalidraws')
 
   const mainClass = cx(
-    'flex-auto min-w-0 flex flex-col px-2 md:px-0',
-    isStandalonePage ? '' : 'lg:mx-auto max-w-3xl' // 只在不是独立页时添加
+    'flex-auto min-w-0 flex flex-col pt-6 px-2 md:px-0',
+    isStandalonePage ? '' : 'md:mx-auto max-w-2xl' // 只在不是独立页时添加
   )
 
   return (
