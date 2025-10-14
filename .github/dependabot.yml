@@ -11,3 +11,12 @@ updates:
       interval: "weekly"
       day: "friday"
     open-pull-requests-limit: 100
+    # Group React packages so updates for react, react-dom and their @types are
+    # opened/updated together in a single PR by Dependabot.
+    groups:
+      react:
+        patterns:
+          - "^react$"
+          - "^react-dom$"
+          - "^@types/react$"
+          - "^@types/react-dom$"
