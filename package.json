@@ -38,7 +38,7 @@
     "@eslint/eslintrc": "3.3.1",
     "@tailwindcss/postcss": "4.1.14",
     "@types/fs-extra": "11.0.4",
-    "@types/node": "24.8.0",
+    "@types/node": "24.9.1",
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
     "cypress": "15.4.0",
