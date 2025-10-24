@@ -27,8 +27,8 @@ importers:
         specifier: 7.0.6
         version: 7.0.6
       drizzle-orm:
-        specifier: 0.44.6
-        version: 0.44.6(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(gel@2.0.1)
+        specifier: 0.44.7
+        version: 0.44.7(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(gel@2.0.1)
       fs-extra:
         specifier: 11.3.2
         version: 11.3.2
@@ -2032,8 +2032,8 @@ packages:
     resolution: {integrity: sha512-+CHgPFzuoTQTt7cOYCV6MOw2w8vqEn/ap1yv4bpZOWL03u7rlVRQhUY0WYT3rHsgVTXwYQDZaSUJSQrMBUKuWg==}
     hasBin: true
 
-  drizzle-orm@0.44.6:
-    resolution: {integrity: sha512-uy6uarrrEOc9K1u5/uhBFJbdF5VJ5xQ/Yzbecw3eAYOunv5FDeYkR2m8iitocdHBOHbvorviKOW5GVw0U1j4LQ==}
+  drizzle-orm@0.44.7:
+    resolution: {integrity: sha512-quIpnYznjU9lHshEOAYLoZ9s3jweleHlZIAWR/jX9gAWNg/JhQ1wj0KGRf7/Zm+obRrYd9GjPVJg790QY9N5AQ==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -6128,7 +6128,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.44.6(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(gel@2.0.1):
+  drizzle-orm@0.44.7(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(gel@2.0.1):
     optionalDependencies:
       '@neondatabase/serverless': 1.0.2
       '@types/pg': 8.15.5
