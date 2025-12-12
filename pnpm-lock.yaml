@@ -15,8 +15,8 @@ importers:
         specifier: 1.0.2
         version: 1.0.2
       '@vercel/analytics':
-        specifier: 1.5.0
-        version: 1.5.0(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)
+        specifier: 1.6.1
+        version: 1.6.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)
       '@vercel/functions':
         specifier: 3.3.4
         version: 3.3.4
@@ -1457,8 +1457,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@vercel/analytics@1.5.0':
-    resolution: {integrity: sha512-MYsBzfPki4gthY5HnYN7jgInhAZ7Ac1cYDoRWFomwGHWEX7odTEzbtg9kf/QSo7XEsEAqlQugA6gJ2WS2DEa3g==}
+  '@vercel/analytics@1.6.1':
+    resolution: {integrity: sha512-oH9He/bEM+6oKlv3chWuOOcp8Y6fo6/PSro8hEkgCW3pu9/OiCXiUpRUogDh3Fs3LH2sosDrx8CxeOLBEE+afg==}
     peerDependencies:
       '@remix-run/react': ^2
       '@sveltejs/kit': ^1 || ^2
@@ -5680,7 +5680,7 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
-  '@vercel/analytics@1.5.0(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)':
+  '@vercel/analytics@1.6.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)':
     optionalDependencies:
       next: 16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0)
       react: 19.2.3
