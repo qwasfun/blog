@@ -21,8 +21,8 @@ importers:
         specifier: 3.3.4
         version: 3.3.4
       '@vercel/speed-insights':
-        specifier: 1.2.0
-        version: 1.2.0(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)
+        specifier: 1.3.1
+        version: 1.3.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)
       cross-spawn:
         specifier: 7.0.6
         version: 7.0.6
@@ -1496,8 +1496,8 @@ packages:
     resolution: {integrity: sha512-fnYhv671l+eTTp48gB4zEsTW/YtRgRPnkI2nT7x6qw5rkI1Lq2hTmQIpHPgyThI0znLK+vX2n9XxKdXZ7BUbbw==}
     engines: {node: '>= 20'}
 
-  '@vercel/speed-insights@1.2.0':
-    resolution: {integrity: sha512-y9GVzrUJ2xmgtQlzFP2KhVRoCglwfRQgjyfY607aU0hh0Un6d0OUyrJkjuAlsV18qR4zfoFPs/BiIj9YDS6Wzw==}
+  '@vercel/speed-insights@1.3.1':
+    resolution: {integrity: sha512-PbEr7FrMkUrGYvlcLHGkXdCkxnylCWePx7lPxxq36DNdfo9mcUjLOmqOyPDHAOgnfqgGGdmE3XI9L/4+5fr+vQ==}
     peerDependencies:
       '@sveltejs/kit': ^1 || ^2
       next: '>= 13'
@@ -5691,7 +5691,7 @@ snapshots:
 
   '@vercel/oidc@3.0.5': {}
 
-  '@vercel/speed-insights@1.2.0(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)':
+  '@vercel/speed-insights@1.3.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)':
     optionalDependencies:
       next: 16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0)
       react: 19.2.3
