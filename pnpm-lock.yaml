@@ -18,8 +18,8 @@ importers:
         specifier: 1.5.0
         version: 1.5.0(next@16.0.7(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)
       '@vercel/functions':
-        specifier: 3.3.3
-        version: 3.3.3
+        specifier: 3.3.4
+        version: 3.3.4
       '@vercel/speed-insights':
         specifier: 1.2.0
         version: 1.2.0(next@16.0.7(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)
@@ -1483,8 +1483,8 @@ packages:
       vue-router:
         optional: true
 
-  '@vercel/functions@3.3.3':
-    resolution: {integrity: sha512-Gf+Nc/h7YjTpIhVk9UqGqKUcOIlnuSTqEKr7aApEeYjPUeqr/C4UddU6FyCyrFM0tnefKcOXVA6m7op+1JSZBg==}
+  '@vercel/functions@3.3.4':
+    resolution: {integrity: sha512-IoP8Xfr1QeCm+Dv5od3bfPiw/VgLKsA7IBd/88M/Wr421HdbH4b6bW5z8CTxiz1QRpalrPFZcLdMdxu+2hAjZg==}
     engines: {node: '>= 20'}
     peerDependencies:
       '@aws-sdk/credential-provider-web-identity': '*'
@@ -5689,7 +5689,7 @@ snapshots:
       next: 16.0.7(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0)
       react: 19.2.3
 
-  '@vercel/functions@3.3.3':
+  '@vercel/functions@3.3.4':
     dependencies:
       '@vercel/oidc': 3.0.5
 
