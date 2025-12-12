@@ -27,8 +27,8 @@ importers:
         specifier: 7.0.6
         version: 7.0.6
       drizzle-orm:
-        specifier: 0.45.0
-        version: 0.45.0(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(gel@2.0.1)
+        specifier: 0.45.1
+        version: 0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(gel@2.0.1)
       fs-extra:
         specifier: 11.3.2
         version: 11.3.2
@@ -2097,8 +2097,8 @@ packages:
     resolution: {integrity: sha512-hOzRGSdyKIU4FcTSFYGKdXEjFsncVwHZ43gY3WU5Bz9j5Iadp6Rh6hxLSQ1IWXpKLBKt/d5y1cpSPcV+FcoQ1A==}
     hasBin: true
 
-  drizzle-orm@0.45.0:
-    resolution: {integrity: sha512-lyd9VRk3SXKRjV/gQckQzmJgkoYMvVG3A2JAV0vh3L+Lwk+v9+rK5Gj0H22y+ZBmxsrRBgJ5/RbQCN7DWd1dtQ==}
+  drizzle-orm@0.45.1:
+    resolution: {integrity: sha512-Te0FOdKIistGNPMq2jscdqngBRfBpC8uMFVwqjf6gtTVJHIQ/dosgV/CLBU2N4ZJBsXL5savCba9b0YJskKdcA==}
     peerDependencies:
       '@aws-sdk/client-rds-data': '>=3'
       '@cloudflare/workers-types': '>=4'
@@ -4096,9 +4096,6 @@ packages:
     engines: {node: '>=8.0.0'}
     os: [darwin, linux, win32, freebsd, openbsd, netbsd, sunos, android]
     hasBin: true
-
-  tailwindcss@4.1.17:
-    resolution: {integrity: sha512-j9Ee2YjuQqYT9bbRTfTZht9W/ytp5H+jJpZKiYdP/bpnXARAuELt9ofP0lPnmHjbga7SNQIxdTAXCmtKVYjN+Q==}
 
   tailwindcss@4.1.18:
     resolution: {integrity: sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw==}
@@ -6339,7 +6336,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  drizzle-orm@0.45.0(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(gel@2.0.1):
+  drizzle-orm@0.45.1(@neondatabase/serverless@1.0.2)(@types/pg@8.15.5)(gel@2.0.1):
     optionalDependencies:
       '@neondatabase/serverless': 1.0.2
       '@types/pg': 8.15.5
@@ -8984,8 +8981,6 @@ snapshots:
   supports-preserve-symlinks-flag@1.0.0: {}
 
   systeminformation@5.27.7: {}
-
-  tailwindcss@4.1.17: {}
 
   tailwindcss@4.1.18: {}
 
