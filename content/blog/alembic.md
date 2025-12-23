@@ -22,7 +22,7 @@ alembic revision --autogenerate -m "Initial migration"
 
 在 `database.py` 中创建迁移函数 `run_migrations()`
 
-```python
+```py
 def run_migrations():
     try:
         logger.info("Running database migrations...")
@@ -58,7 +58,7 @@ def run_migrations():
 
 1. 生成迁移脚本（在开发环境中）
 
-```pyhton
+```py
 alembic revision --autogenerate -m "描述您的更改（例如：添加用户手机号字段）"
 ```
 
