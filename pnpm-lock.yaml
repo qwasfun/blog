@@ -10,19 +10,19 @@ importers:
     dependencies:
       '@excalidraw/excalidraw':
         specifier: 0.18.0
-        version: 0.18.0(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
+        version: 0.18.0(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
       '@neondatabase/serverless':
         specifier: 1.0.2
         version: 1.0.2
       '@vercel/analytics':
         specifier: 1.6.1
-        version: 1.6.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)
+        version: 1.6.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)(sass@1.51.0))(react@19.2.4)
       '@vercel/functions':
         specifier: 3.3.4
         version: 3.3.4
       '@vercel/speed-insights':
         specifier: 1.3.1
-        version: 1.3.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)
+        version: 1.3.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)(sass@1.51.0))(react@19.2.4)
       cross-spawn:
         specifier: 7.0.6
         version: 7.0.6
@@ -34,25 +34,25 @@ importers:
         version: 11.3.2
       lucide-react:
         specifier: 0.560.0
-        version: 0.560.0(react@19.2.3)
+        version: 0.560.0(react@19.2.4)
       next:
         specifier: 16.0.10
-        version: 16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0)
+        version: 16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)(sass@1.51.0)
       next-mdx-remote:
         specifier: 5.0.0
-        version: 5.0.0(@types/react@19.2.7)(acorn@8.15.0)(react@19.2.3)
+        version: 5.0.0(@types/react@19.2.10)(acorn@8.15.0)(react@19.2.4)
       prism-themes:
         specifier: ^1.9.0
         version: 1.9.0
       react:
-        specifier: 19.2.3
-        version: 19.2.3
+        specifier: 19.2.4
+        version: 19.2.4
       react-dom:
         specifier: 19.1.1
-        version: 19.1.1(react@19.2.3)
+        version: 19.1.1(react@19.2.4)
       react-hot-toast:
         specifier: ^2.6.0
-        version: 2.6.0(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
+        version: 2.6.0(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
       rehype-prism-plus:
         specifier: ^2.0.1
         version: 2.0.1
@@ -79,11 +79,11 @@ importers:
         specifier: 25.0.1
         version: 25.0.1
       '@types/react':
-        specifier: 19.2.7
-        version: 19.2.7
+        specifier: 19.2.10
+        version: 19.2.10
       '@types/react-dom':
         specifier: 19.1.9
-        version: 19.1.9(@types/react@19.2.7)
+        version: 19.1.9(@types/react@19.2.10)
       cypress:
         specifier: 15.7.1
         version: 15.7.1
@@ -1279,8 +1279,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.2.7':
-    resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
+  '@types/react@19.2.10':
+    resolution: {integrity: sha512-WPigyYuGhgZ/cTPRXB2EwUw+XvsRA3GqHlsP4qteqrnnjDrApbS7MxcGr/hke5iUoeB7E/gQtrs9I37zAJ0Vjw==}
 
   '@types/sinonjs__fake-timers@8.1.1':
     resolution: {integrity: sha512-0kSuKjAS0TrGLJ0M/+8MaFkGsQhZpB6pxOmvS3K8FYI72K//YmdfoW9X2qPsAKh1mkwxGD5zib9s1FIFed6E8g==}
@@ -3772,8 +3772,8 @@ packages:
       '@types/react':
         optional: true
 
-  react@19.2.3:
-    resolution: {integrity: sha512-Ku/hhYbVjOQnXDZFv2+RibmLFGwFdeeKHFcOTlrt7xplBnya5OGn/hIRDsqDiSUcfORsDC7MPxwork8jBwsIWA==}
+  react@19.2.4:
+    resolution: {integrity: sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ==}
     engines: {node: '>=0.10.0'}
 
   readdirp@3.6.0:
@@ -4784,14 +4784,14 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@excalidraw/excalidraw@0.18.0(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@excalidraw/excalidraw@0.18.0(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@braintree/sanitize-url': 6.0.2
       '@excalidraw/laser-pointer': 1.3.1
       '@excalidraw/mermaid-to-excalidraw': 1.1.2
       '@excalidraw/random-username': 1.1.0
-      '@radix-ui/react-popover': 1.1.6(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-tabs': 1.0.2(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
+      '@radix-ui/react-popover': 1.1.6(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-tabs': 1.0.2(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
       browser-fs-access: 0.29.1
       canvas-roundrect-polyfill: 0.0.1
       clsx: 1.1.1
@@ -4800,8 +4800,8 @@ snapshots:
       fractional-indexing: 3.2.0
       fuzzy: 0.1.3
       image-blob-reduce: 3.0.1
-      jotai: 2.11.0(@types/react@19.2.7)(react@19.2.3)
-      jotai-scope: 0.7.2(jotai@2.11.0(@types/react@19.2.7)(react@19.2.3))(react@19.2.3)
+      jotai: 2.11.0(@types/react@19.2.10)(react@19.2.4)
+      jotai-scope: 0.7.2(jotai@2.11.0(@types/react@19.2.10)(react@19.2.4))(react@19.2.4)
       lodash.debounce: 4.0.8
       lodash.throttle: 4.1.1
       nanoid: 3.3.3
@@ -4814,11 +4814,11 @@ snapshots:
       png-chunks-extract: 1.0.0
       points-on-curve: 1.0.1
       pwacompat: 2.0.17
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
       roughjs: 4.6.4
       sass: 1.51.0
-      tunnel-rat: 0.1.2(@types/react@19.2.7)(react@19.2.3)
+      tunnel-rat: 0.1.2(@types/react@19.2.10)(react@19.2.4)
     transitivePeerDependencies:
       - '@types/react'
       - '@types/react-dom'
@@ -4848,11 +4848,11 @@ snapshots:
       '@floating-ui/core': 1.7.3
       '@floating-ui/utils': 0.2.10
 
-  '@floating-ui/react-dom@2.1.5(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@floating-ui/react-dom@2.1.5(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@floating-ui/dom': 1.7.3
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
 
   '@floating-ui/utils@0.2.10': {}
 
@@ -5013,11 +5013,11 @@ snapshots:
       - acorn
       - supports-color
 
-  '@mdx-js/react@3.1.0(@types/react@19.2.7)(react@19.2.3)':
+  '@mdx-js/react@3.1.0(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 19.2.7
-      react: 19.2.3
+      '@types/react': 19.2.10
+      react: 19.2.4
 
   '@napi-rs/wasm-runtime@0.2.12':
     dependencies:
@@ -5084,277 +5084,277 @@ snapshots:
 
   '@radix-ui/primitive@1.1.1': {}
 
-  '@radix-ui/react-arrow@1.1.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-arrow@1.1.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      '@types/react-dom': 19.1.9(@types/react@19.2.7)
+      '@types/react': 19.2.10
+      '@types/react-dom': 19.1.9(@types/react@19.2.10)
 
-  '@radix-ui/react-collection@1.0.1(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-collection@1.0.1(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      '@radix-ui/react-compose-refs': 1.0.0(react@19.2.3)
-      '@radix-ui/react-context': 1.0.0(react@19.2.3)
-      '@radix-ui/react-primitive': 1.0.1(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-slot': 1.0.1(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-compose-refs': 1.0.0(react@19.2.4)
+      '@radix-ui/react-context': 1.0.0(react@19.2.4)
+      '@radix-ui/react-primitive': 1.0.1(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-slot': 1.0.1(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
 
-  '@radix-ui/react-compose-refs@1.0.0(react@19.2.3)':
+  '@radix-ui/react-compose-refs@1.0.0(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      react: 19.2.3
+      react: 19.2.4
 
-  '@radix-ui/react-compose-refs@1.1.1(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-compose-refs@1.1.1(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-context@1.0.0(react@19.2.3)':
+  '@radix-ui/react-context@1.0.0(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      react: 19.2.3
+      react: 19.2.4
 
-  '@radix-ui/react-context@1.1.1(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-context@1.1.1(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-direction@1.0.0(react@19.2.3)':
+  '@radix-ui/react-direction@1.0.0(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      react: 19.2.3
+      react: 19.2.4
 
-  '@radix-ui/react-dismissable-layer@1.1.5(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-dismissable-layer@1.1.5(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@radix-ui/primitive': 1.1.1
-      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-use-escape-keydown': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-use-escape-keydown': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      '@types/react-dom': 19.1.9(@types/react@19.2.7)
+      '@types/react': 19.2.10
+      '@types/react-dom': 19.1.9(@types/react@19.2.10)
 
-  '@radix-ui/react-focus-guards@1.1.1(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-focus-guards@1.1.1(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-focus-scope@1.1.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-focus-scope@1.1.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      '@types/react-dom': 19.1.9(@types/react@19.2.7)
+      '@types/react': 19.2.10
+      '@types/react-dom': 19.1.9(@types/react@19.2.10)
 
-  '@radix-ui/react-id@1.0.0(react@19.2.3)':
+  '@radix-ui/react-id@1.0.0(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      '@radix-ui/react-use-layout-effect': 1.0.0(react@19.2.3)
-      react: 19.2.3
+      '@radix-ui/react-use-layout-effect': 1.0.0(react@19.2.4)
+      react: 19.2.4
 
-  '@radix-ui/react-id@1.1.0(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-id@1.1.0(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
+      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-popover@1.1.6(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-popover@1.1.6(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@radix-ui/primitive': 1.1.1
-      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-context': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-dismissable-layer': 1.1.5(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-focus-guards': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-focus-scope': 1.1.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-id': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-popper': 1.2.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-portal': 1.1.4(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-presence': 1.1.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-slot': 1.1.2(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@19.2.7)(react@19.2.3)
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-context': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-dismissable-layer': 1.1.5(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-focus-guards': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-focus-scope': 1.1.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-id': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-popper': 1.2.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-portal': 1.1.4(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-presence': 1.1.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-slot': 1.1.2(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-use-controllable-state': 1.1.0(@types/react@19.2.10)(react@19.2.4)
       aria-hidden: 1.2.6
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
-      react-remove-scroll: 2.7.1(@types/react@19.2.7)(react@19.2.3)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
+      react-remove-scroll: 2.7.1(@types/react@19.2.10)(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      '@types/react-dom': 19.1.9(@types/react@19.2.7)
+      '@types/react': 19.2.10
+      '@types/react-dom': 19.1.9(@types/react@19.2.10)
 
-  '@radix-ui/react-popper@1.2.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-popper@1.2.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@floating-ui/react-dom': 2.1.5(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-arrow': 1.1.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-context': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-use-rect': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-use-size': 1.1.0(@types/react@19.2.7)(react@19.2.3)
+      '@floating-ui/react-dom': 2.1.5(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-arrow': 1.1.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-context': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-use-rect': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-use-size': 1.1.0(@types/react@19.2.10)(react@19.2.4)
       '@radix-ui/rect': 1.1.0
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      '@types/react-dom': 19.1.9(@types/react@19.2.7)
+      '@types/react': 19.2.10
+      '@types/react-dom': 19.1.9(@types/react@19.2.10)
 
-  '@radix-ui/react-portal@1.1.4(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-portal@1.1.4(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-primitive': 2.0.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      '@types/react-dom': 19.1.9(@types/react@19.2.7)
+      '@types/react': 19.2.10
+      '@types/react-dom': 19.1.9(@types/react@19.2.10)
 
-  '@radix-ui/react-presence@1.0.0(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-presence@1.0.0(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      '@radix-ui/react-compose-refs': 1.0.0(react@19.2.3)
-      '@radix-ui/react-use-layout-effect': 1.0.0(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-compose-refs': 1.0.0(react@19.2.4)
+      '@radix-ui/react-use-layout-effect': 1.0.0(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
 
-  '@radix-ui/react-presence@1.1.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-presence@1.1.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      '@types/react-dom': 19.1.9(@types/react@19.2.7)
+      '@types/react': 19.2.10
+      '@types/react-dom': 19.1.9(@types/react@19.2.10)
 
-  '@radix-ui/react-primitive@1.0.1(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-primitive@1.0.1(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      '@radix-ui/react-slot': 1.0.1(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-slot': 1.0.1(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
 
-  '@radix-ui/react-primitive@2.0.2(@types/react-dom@19.1.9(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-primitive@2.0.2(@types/react-dom@19.1.9(@types/react@19.2.10))(@types/react@19.2.10)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-slot': 1.1.2(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-slot': 1.1.2(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      '@types/react-dom': 19.1.9(@types/react@19.2.7)
+      '@types/react': 19.2.10
+      '@types/react-dom': 19.1.9(@types/react@19.2.10)
 
-  '@radix-ui/react-roving-focus@1.0.2(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-roving-focus@1.0.2(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
       '@radix-ui/primitive': 1.0.0
-      '@radix-ui/react-collection': 1.0.1(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-compose-refs': 1.0.0(react@19.2.3)
-      '@radix-ui/react-context': 1.0.0(react@19.2.3)
-      '@radix-ui/react-direction': 1.0.0(react@19.2.3)
-      '@radix-ui/react-id': 1.0.0(react@19.2.3)
-      '@radix-ui/react-primitive': 1.0.1(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-use-callback-ref': 1.0.0(react@19.2.3)
-      '@radix-ui/react-use-controllable-state': 1.0.0(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-collection': 1.0.1(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-compose-refs': 1.0.0(react@19.2.4)
+      '@radix-ui/react-context': 1.0.0(react@19.2.4)
+      '@radix-ui/react-direction': 1.0.0(react@19.2.4)
+      '@radix-ui/react-id': 1.0.0(react@19.2.4)
+      '@radix-ui/react-primitive': 1.0.1(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-use-callback-ref': 1.0.0(react@19.2.4)
+      '@radix-ui/react-use-controllable-state': 1.0.0(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
 
-  '@radix-ui/react-slot@1.0.1(react@19.2.3)':
+  '@radix-ui/react-slot@1.0.1(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      '@radix-ui/react-compose-refs': 1.0.0(react@19.2.3)
-      react: 19.2.3
+      '@radix-ui/react-compose-refs': 1.0.0(react@19.2.4)
+      react: 19.2.4
 
-  '@radix-ui/react-slot@1.1.2(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-slot@1.1.2(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
+      '@radix-ui/react-compose-refs': 1.1.1(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-tabs@1.0.2(react-dom@19.1.1(react@19.2.3))(react@19.2.3)':
+  '@radix-ui/react-tabs@1.0.2(react-dom@19.1.1(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
       '@radix-ui/primitive': 1.0.0
-      '@radix-ui/react-context': 1.0.0(react@19.2.3)
-      '@radix-ui/react-direction': 1.0.0(react@19.2.3)
-      '@radix-ui/react-id': 1.0.0(react@19.2.3)
-      '@radix-ui/react-presence': 1.0.0(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-primitive': 1.0.1(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-roving-focus': 1.0.2(react-dom@19.1.1(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-use-controllable-state': 1.0.0(react@19.2.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      '@radix-ui/react-context': 1.0.0(react@19.2.4)
+      '@radix-ui/react-direction': 1.0.0(react@19.2.4)
+      '@radix-ui/react-id': 1.0.0(react@19.2.4)
+      '@radix-ui/react-presence': 1.0.0(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-primitive': 1.0.1(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-roving-focus': 1.0.2(react-dom@19.1.1(react@19.2.4))(react@19.2.4)
+      '@radix-ui/react-use-controllable-state': 1.0.0(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
 
-  '@radix-ui/react-use-callback-ref@1.0.0(react@19.2.3)':
+  '@radix-ui/react-use-callback-ref@1.0.0(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      react: 19.2.3
+      react: 19.2.4
 
-  '@radix-ui/react-use-callback-ref@1.1.0(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-use-callback-ref@1.1.0(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-use-controllable-state@1.0.0(react@19.2.3)':
+  '@radix-ui/react-use-controllable-state@1.0.0(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      '@radix-ui/react-use-callback-ref': 1.0.0(react@19.2.3)
-      react: 19.2.3
+      '@radix-ui/react-use-callback-ref': 1.0.0(react@19.2.4)
+      react: 19.2.4
 
-  '@radix-ui/react-use-controllable-state@1.1.0(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-use-controllable-state@1.1.0(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
+      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-use-escape-keydown@1.1.0(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-use-escape-keydown@1.1.0(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
+      '@radix-ui/react-use-callback-ref': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-use-layout-effect@1.0.0(react@19.2.3)':
+  '@radix-ui/react-use-layout-effect@1.0.0(react@19.2.4)':
     dependencies:
       '@babel/runtime': 7.28.2
-      react: 19.2.3
+      react: 19.2.4
 
-  '@radix-ui/react-use-layout-effect@1.1.0(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-use-layout-effect@1.1.0(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-use-rect@1.1.0(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-use-rect@1.1.0(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
       '@radix-ui/rect': 1.1.0
-      react: 19.2.3
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@radix-ui/react-use-size@1.1.0(@types/react@19.2.7)(react@19.2.3)':
+  '@radix-ui/react-use-size@1.1.0(@types/react@19.2.10)(react@19.2.4)':
     dependencies:
-      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
+      '@radix-ui/react-use-layout-effect': 1.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
   '@radix-ui/rect@1.1.0': {}
 
@@ -5505,11 +5505,11 @@ snapshots:
 
   '@types/prismjs@1.26.5': {}
 
-  '@types/react-dom@19.1.9(@types/react@19.2.7)':
+  '@types/react-dom@19.1.9(@types/react@19.2.10)':
     dependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  '@types/react@19.2.7':
+  '@types/react@19.2.10':
     dependencies:
       csstype: 3.2.3
 
@@ -5680,10 +5680,10 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.11.1':
     optional: true
 
-  '@vercel/analytics@1.6.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)':
+  '@vercel/analytics@1.6.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)(sass@1.51.0))(react@19.2.4)':
     optionalDependencies:
-      next: 16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0)
-      react: 19.2.3
+      next: 16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)(sass@1.51.0)
+      react: 19.2.4
 
   '@vercel/functions@3.3.4':
     dependencies:
@@ -5691,10 +5691,10 @@ snapshots:
 
   '@vercel/oidc@3.0.5': {}
 
-  '@vercel/speed-insights@1.3.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0))(react@19.2.3)':
+  '@vercel/speed-insights@1.3.1(next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)(sass@1.51.0))(react@19.2.4)':
     optionalDependencies:
-      next: 16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0)
-      react: 19.2.3
+      next: 16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)(sass@1.51.0)
+      react: 19.2.4
 
   acorn-jsx@5.3.2(acorn@8.15.0):
     dependencies:
@@ -7354,15 +7354,15 @@ snapshots:
 
   jiti@2.6.1: {}
 
-  jotai-scope@0.7.2(jotai@2.11.0(@types/react@19.2.7)(react@19.2.3))(react@19.2.3):
+  jotai-scope@0.7.2(jotai@2.11.0(@types/react@19.2.10)(react@19.2.4))(react@19.2.4):
     dependencies:
-      jotai: 2.11.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
+      jotai: 2.11.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
 
-  jotai@2.11.0(@types/react@19.2.7)(react@19.2.3):
+  jotai@2.11.0(@types/react@19.2.10)(react@19.2.4):
     optionalDependencies:
-      '@types/react': 19.2.7
-      react: 19.2.3
+      '@types/react': 19.2.10
+      react: 19.2.4
 
   js-tokens@4.0.0: {}
 
@@ -7535,9 +7535,9 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucide-react@0.560.0(react@19.2.3):
+  lucide-react@0.560.0(react@19.2.4):
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
 
   magic-string@0.30.21:
     dependencies:
@@ -8201,12 +8201,12 @@ snapshots:
 
   natural-compare@1.4.0: {}
 
-  next-mdx-remote@5.0.0(@types/react@19.2.7)(acorn@8.15.0)(react@19.2.3):
+  next-mdx-remote@5.0.0(@types/react@19.2.10)(acorn@8.15.0)(react@19.2.4):
     dependencies:
       '@babel/code-frame': 7.27.1
       '@mdx-js/mdx': 3.1.0(acorn@8.15.0)
-      '@mdx-js/react': 3.1.0(@types/react@19.2.7)(react@19.2.3)
-      react: 19.2.3
+      '@mdx-js/react': 3.1.0(@types/react@19.2.10)(react@19.2.4)
+      react: 19.2.4
       unist-util-remove: 3.1.1
       vfile: 6.0.3
       vfile-matter: 5.0.1
@@ -8215,15 +8215,15 @@ snapshots:
       - acorn
       - supports-color
 
-  next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.3))(react@19.2.3)(sass@1.51.0):
+  next@16.0.10(@babel/core@7.28.5)(react-dom@19.1.1(react@19.2.4))(react@19.2.4)(sass@1.51.0):
     dependencies:
       '@next/env': 16.0.10
       '@swc/helpers': 0.5.15
       caniuse-lite: 1.0.30001760
       postcss: 8.4.31
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
-      styled-jsx: 5.1.6(@babel/core@7.28.5)(react@19.2.3)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
+      styled-jsx: 5.1.6(@babel/core@7.28.5)(react@19.2.4)
     optionalDependencies:
       '@next/swc-darwin-arm64': 16.0.10
       '@next/swc-darwin-x64': 16.0.10
@@ -8475,48 +8475,48 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-dom@19.1.1(react@19.2.3):
+  react-dom@19.1.1(react@19.2.4):
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
       scheduler: 0.26.0
 
-  react-hot-toast@2.6.0(react-dom@19.1.1(react@19.2.3))(react@19.2.3):
+  react-hot-toast@2.6.0(react-dom@19.1.1(react@19.2.4))(react@19.2.4):
     dependencies:
       csstype: 3.1.3
       goober: 2.1.16(csstype@3.1.3)
-      react: 19.2.3
-      react-dom: 19.1.1(react@19.2.3)
+      react: 19.2.4
+      react-dom: 19.1.1(react@19.2.4)
 
   react-is@16.13.1: {}
 
-  react-remove-scroll-bar@2.3.8(@types/react@19.2.7)(react@19.2.3):
+  react-remove-scroll-bar@2.3.8(@types/react@19.2.10)(react@19.2.4):
     dependencies:
-      react: 19.2.3
-      react-style-singleton: 2.2.3(@types/react@19.2.7)(react@19.2.3)
+      react: 19.2.4
+      react-style-singleton: 2.2.3(@types/react@19.2.10)(react@19.2.4)
       tslib: 2.8.1
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  react-remove-scroll@2.7.1(@types/react@19.2.7)(react@19.2.3):
+  react-remove-scroll@2.7.1(@types/react@19.2.10)(react@19.2.4):
     dependencies:
-      react: 19.2.3
-      react-remove-scroll-bar: 2.3.8(@types/react@19.2.7)(react@19.2.3)
-      react-style-singleton: 2.2.3(@types/react@19.2.7)(react@19.2.3)
+      react: 19.2.4
+      react-remove-scroll-bar: 2.3.8(@types/react@19.2.10)(react@19.2.4)
+      react-style-singleton: 2.2.3(@types/react@19.2.10)(react@19.2.4)
       tslib: 2.8.1
-      use-callback-ref: 1.3.3(@types/react@19.2.7)(react@19.2.3)
-      use-sidecar: 1.1.3(@types/react@19.2.7)(react@19.2.3)
+      use-callback-ref: 1.3.3(@types/react@19.2.10)(react@19.2.4)
+      use-sidecar: 1.1.3(@types/react@19.2.10)(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  react-style-singleton@2.2.3(@types/react@19.2.7)(react@19.2.3):
+  react-style-singleton@2.2.3(@types/react@19.2.10)(react@19.2.4):
     dependencies:
       get-nonce: 1.0.1
-      react: 19.2.3
+      react: 19.2.4
       tslib: 2.8.1
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  react@19.2.3: {}
+  react@19.2.4: {}
 
   readdirp@3.6.0:
     dependencies:
@@ -8954,10 +8954,10 @@ snapshots:
     dependencies:
       inline-style-parser: 0.2.4
 
-  styled-jsx@5.1.6(@babel/core@7.28.5)(react@19.2.3):
+  styled-jsx@5.1.6(@babel/core@7.28.5)(react@19.2.4):
     dependencies:
       client-only: 0.0.1
-      react: 19.2.3
+      react: 19.2.4
     optionalDependencies:
       '@babel/core': 7.28.5
 
@@ -9029,9 +9029,9 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  tunnel-rat@0.1.2(@types/react@19.2.7)(react@19.2.3):
+  tunnel-rat@0.1.2(@types/react@19.2.10)(react@19.2.4):
     dependencies:
-      zustand: 4.5.7(@types/react@19.2.7)(react@19.2.3)
+      zustand: 4.5.7(@types/react@19.2.10)(react@19.2.4)
     transitivePeerDependencies:
       - '@types/react'
       - immer
@@ -9204,24 +9204,24 @@ snapshots:
     dependencies:
       punycode: 2.3.1
 
-  use-callback-ref@1.3.3(@types/react@19.2.7)(react@19.2.3):
+  use-callback-ref@1.3.3(@types/react@19.2.10)(react@19.2.4):
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
       tslib: 2.8.1
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  use-sidecar@1.1.3(@types/react@19.2.7)(react@19.2.3):
+  use-sidecar@1.1.3(@types/react@19.2.10)(react@19.2.4):
     dependencies:
       detect-node-es: 1.1.0
-      react: 19.2.3
+      react: 19.2.4
       tslib: 2.8.1
     optionalDependencies:
-      '@types/react': 19.2.7
+      '@types/react': 19.2.10
 
-  use-sync-external-store@1.5.0(react@19.2.3):
+  use-sync-external-store@1.5.0(react@19.2.4):
     dependencies:
-      react: 19.2.3
+      react: 19.2.4
 
   uuid@8.3.2: {}
 
@@ -9358,11 +9358,11 @@ snapshots:
 
   zod@4.1.13: {}
 
-  zustand@4.5.7(@types/react@19.2.7)(react@19.2.3):
+  zustand@4.5.7(@types/react@19.2.10)(react@19.2.4):
     dependencies:
-      use-sync-external-store: 1.5.0(react@19.2.3)
+      use-sync-external-store: 1.5.0(react@19.2.4)
     optionalDependencies:
-      '@types/react': 19.2.7
-      react: 19.2.3
+      '@types/react': 19.2.10
+      react: 19.2.4
 
   zwitch@2.0.4: {}
