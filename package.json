@@ -41,7 +41,7 @@
     "@types/node": "25.0.1",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
-    "cypress": "15.7.1",
+    "cypress": "15.10.0",
     "drizzle-kit": "0.31.8",
     "eslint": "9.39.2",
     "eslint-config-next": "16.0.10",
