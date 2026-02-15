@@ -20,16 +20,16 @@ lsb_release -a
 df -h
 ```
 
-![debian system info](../../public/static/2025/08/debian-system-info.png)
+![debian system info](../../public/static/2026/02/debian-system-info.png)
 
-使用的是最新版 debian 12.11，阿里云里预装的 Debian 系统真小，只占用 2.4GB 的磁盘。
+使用的是最新版 debian 13.3，阿里云里预装的 Debian 系统真小，只占用 1.8GB 的磁盘。
 
 ## 配置SSH自动登录
 
 生成 SSH 密钥对
 
 ```bash
-ssh-keygen -t ed25519 -C "用户名@备注信息"
+ssh-keygen -t ed25519 -C "用户名@备注信息-日期"
 ```
 
 > 引号中内容为备注信息，可以任意填写
