@@ -41,37 +41,27 @@ export function getGitFileInfo(filePath: string): GitFileInfo {
       return defaultInfo
     }
 
-    // 获取第一次提交时间（发布时间）
-    const firstCommitDate = execSync(
-      `git log --follow --format=%aI --reverse "${filePath}" | head -1`,
-      {
-        encoding: 'utf8',
-      }
-    ).trim()
+    const commitDates = execSync(`git log --follow --format=%aI "${filePath}"`, {
+      encoding: 'utf8',
+    })
+      .trim()
+      .split('\n')
+      .filter(Boolean)
 
-    // 获取最后一次提交时间（更新时间）
-    const lastCommitDate = execSync(
-      `git log --follow --format=%aI -1 "${filePath}"`,
-      { encoding: 'utf8' }
-    ).trim()
+    const authors = Array.from(
+      new Set(
+        execSync(`git log --follow --format=%an "${filePath}"`, {
+          encoding: 'utf8',
+        })
+          .trim()
+          .split('\n')
+          .filter(Boolean)
+      )
+    ).sort((left, right) => left.localeCompare(right, 'zh-CN'))
 
-    // 获取提交次数
-    const commitCount = Number.parseInt(
-      execSync(`git log --follow --oneline "${filePath}" | wc -l`, {
-        encoding: 'utf8',
-      }).trim(),
-      10
-    )
-
-    // 获取所有贡献者
-    const authorsOutput = execSync(
-      `git log --follow --format=%an "${filePath}" | sort | uniq`,
-      {
-        encoding: 'utf8',
-      }
-    ).trim()
-
-    const authors = authorsOutput ? authorsOutput.split('\n') : []
+    const firstCommitDate = commitDates[commitDates.length - 1] || ''
+    const lastCommitDate = commitDates[0] || ''
+    const commitCount = commitDates.length
 
     const gitInfo: GitFileInfo = {
       firstCommitDate: firstCommitDate
