@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import '../node_modules/prism-themes/themes/prism-vs.css';
+@import '../node_modules/leaflet/dist/leaflet.css';
 
 @media (prefers-color-scheme: dark) {
   @import '../node_modules/prism-themes/themes/prism-vsc-dark-plus.css';
@@ -169,6 +170,10 @@ pre code {
 
 pre {
   overflow-x: auto;
+}
+
+.leaflet-container {
+  font: inherit;
 }
 
 /**
