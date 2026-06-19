@@ -47,7 +47,7 @@
     "@types/react-dom": "19.2.3",
     "cypress": "15.17.0",
     "drizzle-kit": "0.31.10",
-    "eslint": "9.39.2",
+    "eslint": "10.5.0",
     "eslint-config-next": "16.2.6",
     "prettier": "3.8.4",
     "tailwindcss": "4.3.0",
