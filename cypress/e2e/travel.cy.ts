@@ -1,7 +1,7 @@
 describe('travel Page', () => {
   it('should display the travel list page', () => {
     cy.visit('/travel')
-    cy.contains('travel').should('be.visible')
+    cy.contains('Travel').should('be.visible')
     cy.get('section').within(() => {
       cy.get('ul,ol').should('exist')
       cy.get('li').its('length').should('be.gte', 1)
