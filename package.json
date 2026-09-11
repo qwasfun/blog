@@ -39,7 +39,7 @@
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "3.3.6",
+    "@eslint/eslintrc": "3.3.7",
     "@tailwindcss/postcss": "4.3.3",
     "@types/fs-extra": "11.0.4",
     "@types/node": "26.1.2",
