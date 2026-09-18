@@ -18,8 +18,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@26.5.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sass@1.51.0))(react@19.2.7)
       '@vercel/functions':
-        specifier: 3.9.5
-        version: 3.9.5
+        specifier: 3.9.7
+        version: 3.9.7
       '@vercel/speed-insights':
         specifier: 2.0.0
         version: 2.0.0(next@16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@26.5.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sass@1.51.0))(react@19.2.7)
@@ -1824,15 +1824,15 @@ packages:
       vue-router:
         optional: true
 
-  '@vercel/cli-config@0.2.4':
-    resolution: {integrity: sha512-kZ5SojbrV06GHoU6QIWGwDXLov+s9rWZ7QqdqKfJfBGCNUieGfgaCjeeenNy8Y+QC0bwC0dZ2B4l5Hvdmrgpdw==}
+  '@vercel/cli-config@0.2.6':
+    resolution: {integrity: sha512-2AsKCf6gE/Eniq09ARm1RK9rQMV5pcAHU7BFcR9MISO+4/RsjjkaYbQN6G85/xi9pYZ5CJNXvYn4TI6p1jKBcg==}
 
   '@vercel/cli-exec@1.0.1':
     resolution: {integrity: sha512-g9XerViJ/paZujufXYcu5XYI2vU2rtB4sgdpjUHde5RnOkdmpu0ngH46LCFGHoPXO/C+qDPSczIHIRN+8Q2YKQ==}
     engines: {node: '>= 18'}
 
-  '@vercel/functions@3.9.5':
-    resolution: {integrity: sha512-EUfqlb7AzoEh7URlMNAO4jbJiLWz9grDBHvfjKTDvEP9c8y3DqX3SWPvfaQkUjtkm3b83flhaUUMuewdHa+qmw==}
+  '@vercel/functions@3.9.7':
+    resolution: {integrity: sha512-ICLzHbVZs10igkVMW/ovEMIXFa5ctpEjTa+VWRCOQbIqg9ALZcQcRjcfDuQZ/g2XtPS08EvHjzm538YJU9WsXA==}
     engines: {node: '>= 20'}
     peerDependencies:
       '@aws-sdk/credential-provider-web-identity': '*'
@@ -1843,8 +1843,8 @@ packages:
       ws:
         optional: true
 
-  '@vercel/oidc@3.8.5':
-    resolution: {integrity: sha512-RwXYtnt6za+5UO4IaLywN/6B95AlLqynPRUWRJxeJ/qufwkcLUbZNUxYtzT0uMpuraWhlNcGqPNGkTnZr4BGBw==}
+  '@vercel/oidc@3.8.7':
+    resolution: {integrity: sha512-fRu59npOu+1vsV570tiLKskfuRyOJ1MqceAkXbTIfWPnM+c9ve1tSK81oj4umKKirymlGUss3V60Lm5I38rKDw==}
     engines: {node: '>= 20'}
 
   '@vercel/speed-insights@2.0.0':
@@ -6228,7 +6228,7 @@ snapshots:
       next: 16.3.4(@babel/core@7.29.7(supports-color@8.1.1))(@types/node@26.5.0)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(sass@1.51.0)
       react: 19.2.7
 
-  '@vercel/cli-config@0.2.4':
+  '@vercel/cli-config@0.2.6':
     dependencies:
       xdg-app-paths: 5.5.1
       zod: 4.1.11
@@ -6237,13 +6237,13 @@ snapshots:
     dependencies:
       execa: 5.1.1
 
-  '@vercel/functions@3.9.5':
+  '@vercel/functions@3.9.7':
     dependencies:
-      '@vercel/oidc': 3.8.5
+      '@vercel/oidc': 3.8.7
 
-  '@vercel/oidc@3.8.5':
+  '@vercel/oidc@3.8.7':
     dependencies:
-      '@vercel/cli-config': 0.2.4
+      '@vercel/cli-config': 0.2.6
       '@vercel/cli-exec': 1.0.1
       jose: 5.10.0
 
