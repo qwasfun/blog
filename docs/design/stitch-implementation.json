@@ -5,6 +5,10 @@
       "light": "136851e171054607988f8134aeed3b2b",
       "dark": "22912a05e84441bfba040ae35b80df92"
     },
+    "/blog/[slug]": {
+      "light": "f694c60f104345408322678284ec04e7",
+      "dark": "0f1cd6589f08461b8775f68b90159073"
+    },
     "/blog": {
       "light": "ef741c763de349babd80a4c0b6c97421",
       "dark": "6c777bfb63d54a28980d48a081b13f61"

@@ -4,6 +4,7 @@ import { formatDate } from '../utils/formatDate'
 import { notFound } from 'next/navigation'
 import { baseUrl, siteTitle } from '../config'
 import { GitInfo } from './GitInfo'
+import Link from 'next/link'
 
 export async function generatePostStaticParams(folder: string) {
   const posts = getPostFiles([folder])
@@ -46,8 +47,9 @@ export default function GenericPostPage({
 }) {
   const post = getPostFiles([folder]).find((post) => post.slug === slug)
   if (!post) notFound()
+  const editorial = folder === 'blog'
   return (
-    <section>
+    <section className={editorial ? 'article-detail' : undefined}>
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -67,27 +69,52 @@ export default function GenericPostPage({
           }),
         }}
       />
-      <h1 id="title" className="title font-semibold text-4xl tracking-tighter">
+      {editorial && (
+        <Link href="/blog" className="article-back-link">
+          ← 返回文章
+        </Link>
+      )}
+      <h1
+        id="title"
+        className={
+          editorial
+            ? 'article-title'
+            : 'title font-semibold text-4xl tracking-tighter'
+        }
+      >
         {post.metadata.title}
       </h1>
-      <div className="flex flex-col md:flex-row mt-3 mb-8 text-sm">
+      <div
+        className={
+          editorial
+            ? 'article-dates'
+            : 'flex flex-col md:flex-row mt-3 mb-8 text-sm'
+        }
+      >
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          发表于 {formatDate(post.metadata.createdAt, true)}
+          发表于 {formatDate(post.metadata.createdAt, !editorial)}
         </p>
         <p className="text-sm text-neutral-600 dark:text-neutral-400 md:ml-3">
-          最后更新于 {formatDate(post.metadata.updatedAt, true)}
+          最后更新于 {formatDate(post.metadata.updatedAt, !editorial)}
         </p>
       </div>
-      <article className="prose">
-        <CustomMDX source={post.content} />
+      <article className={editorial ? 'prose article-prose' : 'prose'}>
+        <CustomMDX source={post.content} editorial={editorial} />
       </article>
       {post.gitInfo && (
         <GitInfo
           gitInfo={post.gitInfo}
           slug={post.slug}
           folder={folder}
-          className="sticky top-20"
+          fileExtension={post.fileExtension}
+          editorial={editorial}
+          className={editorial ? undefined : 'sticky top-20'}
         />
+      )}
+      {editorial && (
+        <Link href="/blog" className="article-return-link">
+          返回文章列表 →
+        </Link>
       )}
     </section>
   )

@@ -1,4 +1,5 @@
 import { GithubIcon } from './icons'
+import { formatDate } from '../utils/formatDate'
 
 export interface GitFileInfo {
   firstCommitDate: string
@@ -11,14 +12,70 @@ interface GitInfoProps {
   gitInfo: GitFileInfo
   className?: string
   folder: string
-  slug: object
+  slug: string
+  editorial?: boolean
+  fileExtension?: string
 }
 
-export function GitInfo({ gitInfo, className, slug, folder }: GitInfoProps) {
+export function GitInfo({
+  gitInfo,
+  className,
+  slug,
+  folder,
+  editorial = false,
+  fileExtension = '.md',
+}: GitInfoProps) {
   const { firstCommitDate, lastCommitDate, commitCount, authors } = gitInfo
 
   // 如果发布时间和更新时间相同，只显示发布时间
   const showUpdateTime = firstCommitDate !== lastCommitDate
+  if (editorial)
+    return (
+      <section
+        className="article-git-info"
+        aria-labelledby="article-history-title"
+      >
+        <h2 id="article-history-title">文章信息</h2>
+        <p>基于 Git 提交记录的文章历史</p>
+        <dl>
+          <div>
+            <dt>发布时间</dt>
+            <dd>
+              <time dateTime={firstCommitDate}>
+                {formatDate(firstCommitDate, false)}
+              </time>
+            </dd>
+          </div>
+          {showUpdateTime && (
+            <div>
+              <dt>更新时间</dt>
+              <dd>
+                <time dateTime={lastCommitDate}>
+                  {formatDate(lastCommitDate, false)}
+                </time>
+              </dd>
+            </div>
+          )}
+          <div>
+            <dt>修订次数</dt>
+            <dd>{commitCount} 次提交</dd>
+          </div>
+          {authors.length > 0 && (
+            <div>
+              <dt>贡献者</dt>
+              <dd>{authors.join('、')}</dd>
+            </div>
+          )}
+        </dl>
+        <a
+          href={`https://github.com/qwasfun/blog/commits/main/content/${folder}/${slug}${fileExtension}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          查看 Git 提交历史
+        </a>
+      </section>
+    )
 
   return (
     <div
