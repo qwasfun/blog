@@ -1,17 +1,16 @@
-'use client'
-
 import './global.css'
 import type { Metadata } from 'next'
-import { Navbar } from './components/nav'
+import { SiteShell } from './components/site-shell'
+import { getPostFiles } from './utils/utils'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import Footer from './components/footer'
-import { baseUrl } from './config'
-import { usePathname } from 'next/navigation'
+import { appFolders, baseUrl } from './config'
 import { ReactNode } from 'react'
 import Script from 'next/script'
 
-const metadata: Metadata = {
+const themeScript = `(()=>{try{const t=localStorage.getItem('qwas-theme');document.documentElement.classList.toggle('dark',t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches))}catch{document.documentElement.classList.toggle('dark',matchMedia('(prefers-color-scheme: dark)').matches)}})()`
+
+export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: 'Qwas',
@@ -42,34 +41,24 @@ const metadata: Metadata = {
     },
   },
 }
-const cx = (...classes: string[]) => classes.filter(Boolean).join(' ')
-
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const pathname = usePathname()
-
-  // 根据是否为“独立页面”，设置不同样式
-  const isStandalonePage =
-    pathname.startsWith('/excalidraw') && !pathname.startsWith('/excalidraws')
-
-  const mainClass = cx(
-    'flex-auto min-w-0 flex flex-col pt-6 px-2 md:px-0',
-    isStandalonePage ? '' : 'md:mx-auto max-w-2xl' // 只在不是独立页时添加
-  )
+  const entries = getPostFiles(appFolders).map((post) => ({
+    title: post.metadata.title || post.slug,
+    href: `/${post.folder}/${post.slug}`,
+  }))
 
   return (
-    <html
-      lang="zh"
-      className={cx('text-black bg-white dark:text-white dark:bg-black')}
-    >
+    <html lang="zh" suppressHydrationWarning>
       <Script
         defer
         src="https://um.qwas.fun/script.js"
         data-website-id="7c35ddc6-cc59-497e-be6a-5b2c0fea8937"
       />
-      <body className="antialiased mx-4">
-        <Navbar />
-        <main className={mainClass}>{children}</main>
-        {!isStandalonePage && <Footer />}
+      <body className="antialiased site-body">
+        <Script id="qwas-theme" strategy="beforeInteractive">
+          {themeScript}
+        </Script>
+        <SiteShell entries={entries}>{children}</SiteShell>
         <Analytics />
         <SpeedInsights />
       </body>

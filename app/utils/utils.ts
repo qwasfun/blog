@@ -73,6 +73,7 @@ function getMDXData(folder: string) {
 
     return {
       folder,
+      fileExtension: path.extname(file),
       metadata: metadataData,
       slug,
       content,

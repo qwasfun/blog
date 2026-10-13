@@ -1,56 +1,35 @@
 import Link from 'next/link'
+import { ChronologicalArchive } from '../components/chronological-archive'
 
-import { formatDate } from '../utils/formatDate'
+type ReaderPost = { id: number; title: string; link: string; pubDate: Date }
 
-export function PostList(props) {
-  const { list } = props
-
+export function PostList({ list, page }: { list: ReaderPost[]; page: number }) {
   return (
-    <div>
-      {list.length != 0 ? (
-        list.map((post) => (
-          <Link
-            key={post.id}
-            target="_blank"
-            rel="nofollow noopener"
-            className="flex flex-col space-y-1 mb-4"
-            href={`${post.link}`}
-          >
-            <div className="w-full flex flex-col md:flex-row space-x-0 md:space-x-2">
-              <p className="text-neutral-900 dark:text-neutral-100 tracking-tight md:order-last">
-                {post.title}
-              </p>
-              <p className="text-neutral-600 dark:text-neutral-400 pr-2 tabular-nums">
-                {formatDate(post.pubDate, true)}
-              </p>
-            </div>
-          </Link>
-        ))
-      ) : (
-        <div className="text-center">空</div>
-      )}
-      <div className="w-full flex flex-col md:flex-row space-x-0 justify-between">
-        <div>
-          <Link
-            href={`/reader?p=${props.page - 1}`}
-            className={props.page <= 1 ? 'hidden' : ''}
-          >
-            <div className="rounded-4xl bg-black px-3.5 py-1.25 my-1 text-[0.8125rem]/6 text-center font-semibold text-white hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600">
-              上一页
-            </div>
-          </Link>
-        </div>
-        <div>
-          <Link
-            href={`/reader?p=${props.page - 0 + 1}`}
-            className={list.length < 20 ? 'hidden' : ''}
-          >
-            <div className="rounded-4xl bg-black px-3.5 py-1.25 my-1 text-[0.8125rem]/6 text-center font-semibold text-white hover:bg-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600">
-              下一页
-            </div>
-          </Link>
-        </div>
-      </div>
-    </div>
+    <>
+      <ChronologicalArchive
+        title="阅读"
+        description="来自订阅源的文章与阅读记录。"
+        entries={list.map((post) => ({
+          id: post.id,
+          title: post.title,
+          href: post.link,
+          date: post.pubDate,
+          external: true,
+        }))}
+      />
+      <nav className="archive-pagination" aria-label="阅读列表分页">
+        {page > 1 ? (
+          <Link href={`/reader?p=${page - 1}`}>← 上一页</Link>
+        ) : (
+          <span />
+        )}
+        <span className="pagination-page">第 {page} 页</span>
+        {list.length >= 20 ? (
+          <Link href={`/reader?p=${page + 1}`}>下一页 →</Link>
+        ) : (
+          <span />
+        )}
+      </nav>
+    </>
   )
 }

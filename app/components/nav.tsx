@@ -1,52 +1,92 @@
+'use client'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useRef } from 'react'
+import { ChevronDown } from 'lucide-react'
+import { ThemeToggle } from './theme-toggle'
+import { SiteSearch, SearchEntry } from './site-search'
 
-const navItems = {
-  '/': {
-    name: 'Home',
-  },
-  '/blog': {
-    name: 'Blog',
-  },
-  '/travel': {
-    name: 'Travel',
-  },
-  '/reader': {
-    name: 'Reader',
-  },
-  '/excalidraws': {
-    name: 'Excalidraw',
-  },
-  '/settings': {
-    name: 'Settings',
-  },
-  '/changelog': {
-    name: 'Changelog',
-  },
-}
+const primaryLinks = [
+  ['/', '首页'],
+  ['/blog', '文章'],
+  ['/travel', '旅行'],
+  ['/reader', '阅读'],
+]
+const toolLinks = [
+  ['/excalidraws', 'Excalidraw'],
+  ['/settings', '设置'],
+  ['/changelog', '更新记录'],
+]
 
-export function Navbar() {
+export function Navbar({ entries }: { entries: SearchEntry[] }) {
+  const pathname = usePathname()
+  const tools = useRef<HTMLDetailsElement>(null)
+  const active = (path: string) =>
+    path === '/'
+      ? pathname === path
+      : pathname === path || pathname.startsWith(path + '/')
   return (
-    <div className="max-w-2xl md:mx-auto pt-8 pb-2 tracking-tight sticky top-0 bg-white dark:bg-black z-10">
-      <div className="md:-ml-[8px]">
-        <nav
-          className="flex flex-row items-start relative px-0 pb-0 fade overflow-auto scroll-pr-6 md:relative"
-          id="nav"
-        >
-          <div className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
-              return (
+    <header className="site-header">
+      <div className="site-container header-inner">
+        <Link href="/" className="site-wordmark" aria-label="Qwas 首页">
+          Qwas
+        </Link>
+        <nav id="nav" className="primary-nav" aria-label="主导航">
+          {primaryLinks.map(([href, label]) => (
+            <Link
+              key={href}
+              href={href}
+              aria-current={active(href) ? 'page' : undefined}
+            >
+              {label}
+            </Link>
+          ))}
+          <details
+            className="tools-menu"
+            ref={tools}
+            onBlur={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget as Node))
+                event.currentTarget.open = false
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'Escape') {
+                event.currentTarget.open = false
+                event.currentTarget.querySelector('summary')?.focus()
+              }
+            }}
+          >
+            <summary
+              className={
+                toolLinks.some(([href]) => active(href))
+                  ? 'tools-active'
+                  : undefined
+              }
+            >
+              工具
+              <ChevronDown size={13} aria-hidden="true" />
+            </summary>
+            <div className="tools-links">
+              {toolLinks.map(([href, label]) => (
                 <Link
-                  key={path}
-                  href={path}
-                  className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2 m-1"
+                  key={href}
+                  href={href}
+                  aria-current={active(href) ? 'page' : undefined}
+                  onClick={() => {
+                    if (tools.current) tools.current.open = false
+                  }}
                 >
-                  {name}
+                  {label}
                 </Link>
-              )
-            })}
-          </div>
+              ))}
+            </div>
+          </details>
         </nav>
+        <div className="header-controls">
+          <SiteSearch entries={entries} />
+          <ThemeToggle />
+        </div>
       </div>
-    </div>
+    </header>
   )
 }

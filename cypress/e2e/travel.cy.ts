@@ -1,8 +1,11 @@
 describe('travel Page', () => {
+  beforeEach(() => {
+    cy.intercept('https://um.qwas.fun/**', { statusCode: 204 })
+  })
   it('should display the travel list page', () => {
     cy.visit('/travel')
-    cy.contains('Travel').should('be.visible')
-    cy.get('section').within(() => {
+    cy.contains('h1', '旅行').should('be.visible')
+    cy.get('.article-archive').within(() => {
       cy.get('ul,ol').should('exist')
       cy.get('li').its('length').should('be.gte', 1)
     })

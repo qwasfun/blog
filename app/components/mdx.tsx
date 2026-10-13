@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { MDXRemote } from 'next-mdx-remote/rsc'
+import { compileMDX, MDXRemote } from 'next-mdx-remote/rsc'
+import type { MDXRemoteProps } from 'next-mdx-remote/rsc'
 import React from 'react'
 import remarkGfm from 'remark-gfm'
 import { EnhancedImage } from './EnhancedImage'
@@ -8,12 +9,14 @@ import Video from './Video'
 import retypePrism from 'rehype-prism-plus'
 import { remarkMediaToComponent } from '../../lib/remark-media'
 import { Tabs, TabItem } from './Tabs'
+import { ArticleCodeBlock } from './article-code-block'
+import { articleHeadings, ArticleHeading } from '../utils/article-headings'
 
 const options = {
   mdxOptions: {
     remarkPlugins: [remarkMediaToComponent, remarkGfm],
     rehypePlugins: [retypePrism], // 用于代码高亮
-    format: 'mdx',
+    format: 'mdx' as const,
   },
 }
 
@@ -93,6 +96,70 @@ const components = {
   ),
 }
 
-export function CustomMDX(props) {
-  return <MDXRemote {...props} components={components} options={options} />
+export async function CustomMDX({
+  editorial = false,
+  ...props
+}: MDXRemoteProps & { editorial?: boolean }) {
+  if (!editorial)
+    return <MDXRemote {...props} components={components} options={options} />
+  const headings: ArticleHeading[] = []
+  const articleComponents = { ...components }
+  for (let level = 1; level <= 6; level++) {
+    articleComponents[`h${level}`] = ({ children, id }) =>
+      React.createElement(`h${level}`, { id }, children)
+  }
+  articleComponents['pre'] = ({ children }) => {
+    const code = React.Children.toArray(children).find((child) =>
+      React.isValidElement(child)
+    )
+    const className = React.isValidElement<{ className?: string }>(code)
+      ? code.props.className || ''
+      : ''
+    const rawLanguage = /language-([^\s]+)/.exec(className)?.[1] || 'text'
+    const language =
+      { py: 'python', sh: 'shell', js: 'javascript', ts: 'typescript' }[
+        rawLanguage
+      ] || rawLanguage
+    return <ArticleCodeBlock language={language}>{children}</ArticleCodeBlock>
+  }
+  const { content } = await compileMDX({
+    ...props,
+    components: articleComponents,
+    options: {
+      ...options,
+      mdxOptions: {
+        ...options.mdxOptions,
+        remarkPlugins: [
+          ...options.mdxOptions.remarkPlugins,
+          articleHeadings(headings),
+        ],
+      },
+    },
+  })
+  return (
+    <>
+      {headings.length > 0 && (
+        <details className="article-toc">
+          <summary>目录</summary>
+          <nav aria-label="文章目录">
+            <ol>
+              {headings.map((heading) => (
+                <li
+                  key={heading.id}
+                  style={{
+                    paddingLeft: `${Math.max(0, heading.depth - 2) * 16}px`,
+                  }}
+                >
+                  <a href={`#${encodeURIComponent(heading.id)}`}>
+                    {heading.title}
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </details>
+      )}
+      {content}
+    </>
+  )
 }
