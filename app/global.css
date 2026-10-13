@@ -587,3 +587,52 @@ html {
     font-size: 10px;
   }
 }
+
+/* Complete blog archive, grouped by actual publication year. */
+.archive-intro {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--site-line);
+}
+.archive-intro h1 {
+  font-size: 30px;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.archive-intro p {
+  margin-top: 10px;
+  color: var(--site-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+.archive-year {
+  margin-top: 36px;
+}
+.archive-year h2 {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--site-line);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.archive-post-list .editorial-post-row {
+  grid-template-columns: 52px minmax(0, 1fr);
+  min-height: 56px;
+  padding-block: 12px;
+}
+.archive-post-list .editorial-post-title {
+  font-weight: 400;
+}
+@media (max-width: 600px) {
+  .archive-post-list .editorial-post-row {
+    gap: 12px;
+  }
+  .archive-post-list time {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .archive-post-list .editorial-post-title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}

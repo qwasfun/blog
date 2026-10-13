@@ -3,7 +3,13 @@
 describe('blog Page', () => {
   it('should display the blog list page', () => {
     cy.visit('/blog')
-    cy.contains('blog').should('be.visible')
+    cy.contains('h1', '文章').should('be.visible')
+    cy.get('.primary-nav a[href="/blog"]').should(
+      'have.attr',
+      'aria-current',
+      'page'
+    )
+    cy.get('.archive-year h2').should('have.length.at.least', 1)
     cy.get('section').within(() => {
       cy.get('ul,ol').should('exist') // PostList renders a list
       cy.get('li').its('length').should('be.gte', 1)
