@@ -10,7 +10,7 @@ describe('blog Page', () => {
       'page'
     )
     cy.get('.archive-year h2').should('have.length.at.least', 1)
-    cy.get('section').within(() => {
+    cy.get('.article-archive').within(() => {
       cy.get('ul,ol').should('exist') // PostList renders a list
       cy.get('li').its('length').should('be.gte', 1)
     })

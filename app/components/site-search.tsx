@@ -8,8 +8,10 @@ export type SearchEntry = { title: string; href: string }
 
 export function SiteSearch({ entries }: { entries: SearchEntry[] }) {
   const dialog = useRef<HTMLDialogElement>(null)
+  const trigger = useRef<HTMLButtonElement>(null)
   const input = useRef<HTMLInputElement>(null)
   const [query, setQuery] = useState('')
+  const [ready, setReady] = useState(false)
   const open = () => {
     dialog.current?.showModal()
     input.current?.focus()
@@ -23,6 +25,7 @@ export function SiteSearch({ entries }: { entries: SearchEntry[] }) {
       }
     }
     window.addEventListener('keydown', shortcut)
+    setReady(true)
     return () => window.removeEventListener('keydown', shortcut)
   }, [])
   const term = query.trim().toLocaleLowerCase()
@@ -32,9 +35,11 @@ export function SiteSearch({ entries }: { entries: SearchEntry[] }) {
   return (
     <>
       <button
+        ref={trigger}
         type="button"
         className="search-trigger"
         aria-label="搜索文章"
+        disabled={!ready}
         onClick={open}
       >
         <Search size={16} aria-hidden="true" />
@@ -45,6 +50,13 @@ export function SiteSearch({ entries }: { entries: SearchEntry[] }) {
         ref={dialog}
         className="search-dialog"
         aria-labelledby="search-title"
+        onClose={() => trigger.current?.focus()}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            event.preventDefault()
+            dialog.current?.close()
+          }
+        }}
         onClick={(event) => {
           if (event.target === event.currentTarget) {
             const rect = event.currentTarget.getBoundingClientRect()

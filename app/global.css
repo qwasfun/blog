@@ -450,6 +450,10 @@ html {
   text-decoration: underline;
 }
 @media (max-width: 767px) {
+  .tools-links {
+    left: auto;
+    right: 0;
+  }
   .header-inner {
     flex-wrap: wrap;
     gap: 0;

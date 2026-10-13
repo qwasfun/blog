@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
 
 export function ThemeToggle() {
+  const [ready, setReady] = useState(false)
   useEffect(() => {
     const media = window.matchMedia('(prefers-color-scheme: dark)')
     const sync = () => {
@@ -17,6 +18,7 @@ export function ThemeToggle() {
       )
     }
     sync()
+    setReady(true)
     media.addEventListener('change', sync)
     window.addEventListener('storage', sync)
     return () => {
@@ -30,6 +32,7 @@ export function ThemeToggle() {
       className="icon-button"
       aria-label="切换明暗主题"
       title="切换明暗主题"
+      disabled={!ready}
       onClick={() => {
         const dark = document.documentElement.classList.toggle('dark')
         try {
