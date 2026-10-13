@@ -1,4 +1,6 @@
-import { PostList } from 'app/components/PostList'
+import Link from 'next/link'
+import { EditorialPostList } from './components/editorial-post-list'
+import { sortPosts } from './utils/post-index'
 import { getPostFiles } from './utils/utils'
 import { appFolders } from './config'
 import { metadataBase } from './components/metadataBase'
@@ -9,14 +11,20 @@ export const metadata = {
 }
 
 export default function Page() {
-  const list = getPostFiles(appFolders)
+  const list = sortPosts(getPostFiles(appFolders)).slice(0, 6)
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Qwas</h1>
-      <p className="mb-4">{`I'm ...`}</p>
-      <div className="my-8">
-        <PostList list={list} />
+      <div className="home-intro">
+        <p>记录技术实践与日常思考。</p>
       </div>
+      <div className="editorial-section-heading">
+        <h1>最新文章</h1>
+        <span aria-hidden="true">RECENT WRITINGS</span>
+      </div>
+      <EditorialPostList posts={list} />
+      <Link href="/blog" className="all-posts-link">
+        查看全部文章 <span aria-hidden="true">→</span>
+      </Link>
     </section>
   )
 }

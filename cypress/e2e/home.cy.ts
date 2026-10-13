@@ -6,11 +6,12 @@ describe('Home Page', () => {
   })
   it('should render the main section and heading', () => {
     cy.get('section').should('exist')
-    cy.contains('h1', 'Qwas').should('be.visible')
+    cy.contains('h1', '最新文章').should('be.visible')
+    cy.get('main').contains('Qwas').should('not.exist')
   })
 
   it('should render the description paragraph', () => {
-    cy.contains("I'm ...").should('be.visible')
+    cy.contains('记录技术实践与日常思考。').should('be.visible')
   })
 
   it('should have working navigation', () => {
@@ -22,7 +23,7 @@ describe('Home Page', () => {
   it('should render the PostList with at least one post', () => {
     cy.get('section').within(() => {
       cy.get('ul,ol').should('exist')
-      cy.get('li').its('length').should('be.gte', 1)
+      cy.get('.editorial-post-list > li').should('have.length', 6)
     })
   })
 

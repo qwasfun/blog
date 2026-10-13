@@ -1,13 +1,14 @@
 import './global.css'
 import type { Metadata } from 'next'
 import { SiteShell } from './components/site-shell'
-import { themeScript } from './components/theme-toggle'
 import { getPostFiles } from './utils/utils'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { appFolders, baseUrl } from './config'
 import { ReactNode } from 'react'
 import Script from 'next/script'
+
+const themeScript = `(()=>{try{const t=localStorage.getItem('qwas-theme');document.documentElement.classList.toggle('dark',t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches))}catch{document.documentElement.classList.toggle('dark',matchMedia('(prefers-color-scheme: dark)').matches)}})()`
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),

@@ -483,3 +483,107 @@ html {
     scroll-behavior: auto;
   }
 }
+
+/* Reading-first homepage and shared editorial rows. */
+.home-intro {
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--site-line);
+}
+.home-intro p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: var(--site-muted);
+}
+.editorial-section-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--site-line);
+}
+.editorial-section-heading h1 {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.editorial-section-heading > span {
+  font:
+    11px ui-monospace,
+    monospace;
+  letter-spacing: 0.03em;
+  color: var(--site-muted);
+}
+.editorial-post-row {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  min-height: 72px;
+  padding-block: 16px;
+  border-bottom: 1px solid var(--site-line);
+}
+.editorial-post-row:hover {
+  background: var(--site-hover);
+}
+.editorial-post-row:hover .editorial-post-title {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.editorial-post-row time {
+  font:
+    14px/1.5 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  color: var(--site-muted);
+  font-variant-numeric: tabular-nums;
+}
+.editorial-post-title {
+  font-size: 18px;
+  line-height: 1.65;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.post-section-label {
+  padding: 3px 9px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--site-muted);
+  background: var(--site-selection);
+  border-radius: 2px;
+}
+.all-posts-link {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 32px;
+  font-size: 14px;
+}
+.all-posts-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+@media (max-width: 600px) {
+  .editorial-post-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 12px;
+    padding-block: 18px;
+  }
+  .editorial-post-row time {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 12px;
+  }
+  .editorial-post-title {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 17px;
+  }
+  .post-section-label {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .editorial-section-heading > span {
+    font-size: 10px;
+  }
+}

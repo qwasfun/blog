@@ -3,8 +3,6 @@
 import { useEffect } from 'react'
 import { Moon, Sun } from 'lucide-react'
 
-export const themeScript = `(()=>{try{const t=localStorage.getItem('qwas-theme');document.documentElement.classList.toggle('dark',t==='dark'||(t!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches))}catch{document.documentElement.classList.toggle('dark',matchMedia('(prefers-color-scheme: dark)').matches)}})()`
-
 export function ThemeToggle() {
   useEffect(() => {
     const media = window.matchMedia('(prefers-color-scheme: dark)')
