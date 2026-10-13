@@ -47,7 +47,9 @@ export default function GenericPostPage({
 }) {
   const post = getPostFiles([folder]).find((post) => post.slug === slug)
   if (!post) notFound()
-  const editorial = folder === 'blog'
+  const editorial = ['blog', 'travel', 'changelog'].includes(folder)
+  const sectionTitle =
+    { blog: '文章', travel: '旅行', changelog: '更新记录' }[folder] || '列表'
   return (
     <section className={editorial ? 'article-detail' : undefined}>
       <script
@@ -70,8 +72,8 @@ export default function GenericPostPage({
         }}
       />
       {editorial && (
-        <Link href="/blog" className="article-back-link">
-          ← 返回文章
+        <Link href={`/${folder}`} className="article-back-link">
+          ← 返回{sectionTitle}
         </Link>
       )}
       <h1
@@ -112,8 +114,8 @@ export default function GenericPostPage({
         />
       )}
       {editorial && (
-        <Link href="/blog" className="article-return-link">
-          返回文章列表 →
+        <Link href={`/${folder}`} className="article-return-link">
+          返回{sectionTitle}列表 →
         </Link>
       )}
     </section>

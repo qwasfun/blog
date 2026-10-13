@@ -3,8 +3,8 @@
 describe('Changelog Page', () => {
   it('should display the changelog list page', () => {
     cy.visit('/changelog')
-    cy.contains('Changelog').should('be.visible')
-    cy.get('section').within(() => {
+    cy.contains('h1', '更新记录').should('be.visible')
+    cy.get('.article-archive').within(() => {
       cy.get('ul,ol').should('exist') // PostList renders a list
       cy.get('li').its('length').should('be.gte', 1)
     })

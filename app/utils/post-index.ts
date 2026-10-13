@@ -18,8 +18,13 @@ export function sortPosts(posts: ReadingPost[]) {
 }
 
 export function dateParts(post: ReadingPost) {
-  const date = publicationDate(post)
-  if (!date) return null
+  return calendarDate(post.metadata.createdAt)
+}
+
+export function calendarDate(value: string | Date) {
+  const date =
+    value instanceof Date ? value : new Date(value.replace(/^"|"$/g, ''))
+  if (Number.isNaN(date.getTime())) return null
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Shanghai',
     year: 'numeric',

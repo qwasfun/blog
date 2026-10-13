@@ -17,7 +17,12 @@ export function SiteShell({
   const standalone =
     pathname.startsWith('/excalidraw') && !pathname.startsWith('/excalidraws')
   const designed =
-    pathname === '/' || pathname === '/blog' || pathname.startsWith('/blog/')
+    pathname === '/' ||
+    ['/blog', '/travel', '/changelog'].some(
+      (route) => pathname === route || pathname.startsWith(route + '/')
+    ) ||
+    pathname === '/reader' ||
+    pathname === '/excalidraws'
   return (
     <>
       <a href="#main-content" className="skip-link">

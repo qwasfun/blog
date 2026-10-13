@@ -107,11 +107,10 @@ describe('Article detail redesign', () => {
     cy.screenshot('article-mobile', { capture: 'viewport' })
   })
 
-  it('preserves the legacy layout of undesigned changelog pages', () => {
+  it('shares the article reading layout with changelog pages', () => {
     cy.visit('/changelog/demo-component')
     cy.get('h1#title').should('be.visible')
-    cy.get('.article-detail, .article-toc, .article-code-block').should(
-      'not.exist'
-    )
+    cy.get('.article-detail').should('be.visible')
+    cy.get('.article-return-link').should('have.attr', 'href', '/changelog')
   })
 })
