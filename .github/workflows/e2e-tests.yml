@@ -32,8 +32,6 @@ jobs:
       # https://github.com/pnpm/action-setup?tab=readme-ov-file#use-cache-to-reduce-installation-time
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 11.1.3
 
       - name: Install Node.js
         uses: actions/setup-node@v4
