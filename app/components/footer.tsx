@@ -1,24 +1,23 @@
-import { ArrowIcon } from './icons'
+import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="mb-16 max-w-2xl px-2 md:px-0 md:mx-auto">
-      <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
-        <li>
+    <footer className="site-footer">
+      <div className="site-container footer-inner">
+        <p>© {new Date().getFullYear()} Qwas · 记录技术实践与日常思考</p>
+        <nav aria-label="页脚导航">
           <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
+            href="https://github.com/qwasfun/blog"
             target="_blank"
-            href="/rss.xml"
+            rel="noopener noreferrer"
           >
-            <ArrowIcon />
-            <p className="ml-2 h-7">rss</p>
+            GitHub
           </a>
-        </li>
-      </ul>
-      <p className="mt-8 text-neutral-600 dark:text-neutral-300">
-        © {new Date().getFullYear()} | All rights reserved.
-      </p>
+          <a href="/rss.xml">RSS 订阅</a>
+          <Link href="/excalidraws">Excalidraw 画板</Link>
+          <Link href="/changelog">更新记录</Link>
+        </nav>
+      </div>
     </footer>
   )
 }

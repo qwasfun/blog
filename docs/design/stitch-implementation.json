@@ -1,0 +1,21 @@
+{
+  "projectId": "10783027067331200429",
+  "routes": {
+    "/": {
+      "light": "136851e171054607988f8134aeed3b2b",
+      "dark": "22912a05e84441bfba040ae35b80df92"
+    },
+    "/blog": {
+      "light": "ef741c763de349babd80a4c0b6c97421",
+      "dark": "6c777bfb63d54a28980d48a081b13f61"
+    }
+  },
+  "shared": ["navigation", "footer", "theme", "search"],
+  "constraints": [
+    "monochrome",
+    "single centered column",
+    "no sidebar",
+    "Qwas wordmark only in header",
+    "live content and Git dates"
+  ]
+}
