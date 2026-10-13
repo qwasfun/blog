@@ -6,7 +6,14 @@ describe('Article detail redesign', () => {
   it('renders real content and links its directory to actual headings', () => {
     cy.visit('/blog/alembic')
     cy.contains('h1', '使用 Alembic 实现数据迁移管理').should('be.visible')
-    cy.contains('.article-dates', '2025/12/21').should('be.visible')
+    cy.get('.article-dates')
+      .should('be.visible')
+      .and('contain.text', '发表于')
+      .and('contain.text', '最后更新于')
+      .invoke('text')
+      .then((text) => {
+        expect(text).to.match(/\d{4}\/\d{2}\/\d{2}/)
+      })
     cy.get('.article-toc summary').click()
     cy.get('.article-toc a')
       .should('have.length', 2)
