@@ -16,6 +16,27 @@ describe('Shared editorial lists', () => {
     }
   })
 
+  it('opens the original drawing files through encoded editor links', () => {
+    cy.visit('/excalidraws')
+    cy.get('.archive-post-list a')
+      .should('have.length.at.least', 1)
+      .each((link) => {
+        const href = link.attr('href')
+        const baseUrl = Cypress.config('baseUrl')
+        expect(href, 'excalidraw link href').to.be.a('string')
+        expect(baseUrl, 'Cypress baseUrl').to.be.a('string')
+        if (!href) {
+          throw new Error('Missing href on excalidraw link')
+        }
+        if (!baseUrl) {
+          throw new Error('Missing Cypress baseUrl')
+        }
+        const url = new URL(href, baseUrl)
+        expect(url.pathname).to.eq('/excalidraw')
+        expect(url.searchParams.get('f')).to.match(/\.excalidraw$/)
+      })
+  })
+
   it('preserves reader pagination and external article links', () => {
     cy.visit('/reader?p=2')
     cy.contains('h1', '阅读').should('be.visible')
