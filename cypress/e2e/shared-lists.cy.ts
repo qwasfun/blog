@@ -23,13 +23,8 @@ describe('Shared editorial lists', () => {
       .each((link) => {
         const href = link.attr('href')
         const baseUrl = Cypress.config('baseUrl')
-        expect(href, 'excalidraw link href').to.be.a('string')
-        expect(baseUrl, 'Cypress baseUrl').to.be.a('string')
-        if (!href) {
-          throw new Error('Missing href on excalidraw link')
-        }
-        if (!baseUrl) {
-          throw new Error('Missing Cypress baseUrl')
+        if (!href || !baseUrl) {
+          throw new Error('Missing href or Cypress baseUrl for Excalidraw link')
         }
         const url = new URL(href, baseUrl)
         expect(url.pathname).to.eq('/excalidraw')
