@@ -30,8 +30,8 @@ importers:
         specifier: 0.45.2
         version: 0.45.2(@neondatabase/serverless@1.1.0)
       fs-extra:
-        specifier: 11.4.0
-        version: 11.4.0
+        specifier: 11.4.1
+        version: 11.4.1
       lucide-react:
         specifier: 1.43.0
         version: 1.43.0(react@19.2.7)
@@ -2890,8 +2890,8 @@ packages:
     resolution: {integrity: sha512-PcOxmqwYCW7O2ovKRU8OoQQj2yqTfEB/yeTYk4gPid6dN5ODRfU1hXd9tTVZzax/0NkO7AxpHykvZnT1aYp/BQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  fs-extra@11.4.0:
-    resolution: {integrity: sha512-EQsFzMUJkCKGr1ePqlYADkIUmHW1s3ZXr5Yqy6wbGrfUCphpl2maM/kyOIRA2HpP3AaFQTZXD4ldjek+nccddA==}
+  fs-extra@11.4.1:
+    resolution: {integrity: sha512-KYAb4c9BJQI6QqGKthV68OHe0badztdXJWKo0WtBA9IuCFPTKvE5ZdUBglP833aMjhaSPNO4A5j/EkzZtGlKjA==}
     engines: {node: '>=14.14'}
 
   fs-extra@9.1.0:
@@ -7486,7 +7486,7 @@ snapshots:
 
   fractional-indexing@3.2.0: {}
 
-  fs-extra@11.4.0:
+  fs-extra@11.4.1:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.2.1
