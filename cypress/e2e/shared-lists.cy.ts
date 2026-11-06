@@ -21,7 +21,12 @@ describe('Shared editorial lists', () => {
     cy.get('.archive-post-list a')
       .should('have.length.at.least', 1)
       .each((link) => {
-        const url = new URL(link.attr('href')!, 'http://localhost:3001')
+        const href = link.attr('href')
+        const baseUrl = Cypress.config('baseUrl')
+        if (!href || !baseUrl) {
+          throw new Error('Missing href or Cypress baseUrl for Excalidraw link')
+        }
+        const url = new URL(href, baseUrl)
         expect(url.pathname).to.eq('/excalidraw')
         expect(url.searchParams.get('f')).to.match(/\.excalidraw$/)
       })
